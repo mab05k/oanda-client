@@ -14,8 +14,7 @@ namespace Mab05k\OandaClient\Bridge\Symfony\Bundle;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
- * Class Mab05kOandaClientBundle
- * @package Mab05k\OandaClient\Bridge\Symfony\Bundle
+ * Class Mab05kOandaClientBundle.
  */
 class Mab05kOandaClientBundle extends Bundle
 {
