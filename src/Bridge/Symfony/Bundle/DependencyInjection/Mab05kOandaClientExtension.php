@@ -18,8 +18,7 @@ use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 /**
- * Class Mab05kOandaClientExtension
- * @package Mab05k\OandaClient\Bridge\Symfony\Bundle\DependencyInjection
+ * Class Mab05kOandaClientExtension.
  */
 class Mab05kOandaClientExtension extends Extension implements PrependExtensionInterface
 {

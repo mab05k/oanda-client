@@ -26,10 +26,16 @@ fix-cs:
 	./vendor/bin/php-cs-fixer fix src/ --show-progress=estimating
 	./vendor/bin/php-cs-fixer fix tests/ --show-progress=estimating
 
+.PHONY: validate-cs
+validate-cs:
+	./vendor/bin/php-cs-fixer fix src/ --show-progress=estimating --dry-run
+	./vendor/bin/php-cs-fixer fix tests/ --show-progress=estimating --dry-run
+
 .PHONY: test
 test: clear
 	./vendor/bin/phpunit \
-	  --coverage-html build/coverage
+	  --coverage-html build/coverage \
+	  --log-junit build/logs/phpunit/junit.xml
 
 .PHONY: test-unit
 test-unit:

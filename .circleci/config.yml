@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/php:7.2.8-cli
+    steps:
+      - checkout
+      - run: 
+          name: Build Dependencies
+          command: make build
+      - run:
+          name: Validate PHP-CS-FIXER
+          command: make validate-cs 
+      - run:
+          name: PHPUnit Tests (Unit / Functional)
+          command: make test 
+      - store_test_results:
+          path: build/logs
