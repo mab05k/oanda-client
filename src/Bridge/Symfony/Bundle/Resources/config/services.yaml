@@ -1,0 +1,8 @@
+services:
+
+  Mab05k\OandaClient\Account\AccountDiscriminator: '@mab05k.oanda_client.account.account_discriminator'
+  mab05k.oanda_client.account.account_discriminator:
+    class: Mab05k\OandaClient\Account\AccountDiscriminator
+    public: false
+    arguments:
+      $accounts: []

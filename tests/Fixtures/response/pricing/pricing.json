@@ -1,0 +1,48 @@
+{
+  "time": "2019-01-01T00:00:00.000000000Z",
+  "prices": [
+    {
+      "type": "PRICE",
+      "time": "2019-01-01T00:00:00.000000000Z",
+      "bids": [
+        {
+          "price": "1.29360",
+          "liquidity": 10000000
+        }
+      ],
+      "asks": [
+        {
+          "price": "1.29470",
+          "liquidity": 10000000
+        }
+      ],
+      "closeoutBid": "1.29335",
+      "closeoutAsk": "1.29495",
+      "status": "non-tradeable",
+      "tradeable": false,
+      "unitsAvailable": {
+        "default": {
+          "long": "77263",
+          "short": "77263"
+        },
+        "openOnly": {
+          "long": "77263",
+          "short": "77263"
+        },
+        "reduceFirst": {
+          "long": "77263",
+          "short": "77263"
+        },
+        "reduceOnly": {
+          "long": "0",
+          "short": "0"
+        }
+      },
+      "quoteHomeConversionFactors": {
+        "positiveUnits": "1.00000000",
+        "negativeUnits": "1.00000000"
+      },
+      "instrument": "EUR_USD"
+    }
+  ]
+}

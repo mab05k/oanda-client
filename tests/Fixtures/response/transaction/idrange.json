@@ -1,0 +1,51 @@
+{
+  "transactions": [
+    {
+      "type": "DAILY_FINANCING",
+      "financing": "-0.0082",
+      "accountBalance": "100003.6114",
+      "accountFinancingMode": "SECOND_BY_SECOND",
+      "positionFinancings": [
+        {
+          "instrument": "EUR_USD",
+          "financing": "-0.0082",
+          "openTradeFinancings": [
+            {
+              "tradeID": "84",
+              "financing": "-0.0082"
+            }
+          ]
+        }
+      ],
+      "id": "100",
+      "userID": 0,
+      "accountID": "000-000-0000000-000",
+      "batchID": "100",
+      "time": "2018-04-23T20:00:00.000000000Z"
+    },
+    {
+      "type": "DAILY_FINANCING",
+      "financing": "-0.0082",
+      "accountBalance": "100003.6032",
+      "accountFinancingMode": "SECOND_BY_SECOND",
+      "positionFinancings": [
+        {
+          "instrument": "EUR_USD",
+          "financing": "-0.0082",
+          "openTradeFinancings": [
+            {
+              "tradeID": "84",
+              "financing": "-0.0082"
+            }
+          ]
+        }
+      ],
+      "id": "101",
+      "userID": 0,
+      "accountID": "000-000-0000000-000",
+      "batchID": "101",
+      "time": "2018-04-24T20:00:00.000000000Z"
+    }
+  ],
+  "lastTransactionID": "414"
+}

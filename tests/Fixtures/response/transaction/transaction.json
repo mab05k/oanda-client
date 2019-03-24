@@ -1,0 +1,17 @@
+{
+  "transaction": {
+    "type": "CREATE",
+    "divisionID": 1,
+    "siteID": 101,
+    "accountUserID": 1234567,
+    "accountNumber": 1,
+    "homeCurrency": "USD",
+    "id": "1",
+    "userID": 7654321,
+    "accountID": "000-000-0000000-000",
+    "batchID": "1",
+    "requestID": "1753748261751290922",
+    "time": "2017-12-27T02:15:56.647913422Z"
+  },
+  "lastTransactionID": "414"
+}

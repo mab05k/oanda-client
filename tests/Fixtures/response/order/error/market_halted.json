@@ -1,0 +1,37 @@
+{
+  "orderCreateTransaction": {
+    "type": "MARKET_ORDER",
+    "instrument": "EUR_USD",
+    "units": "1000",
+    "timeInForce": "FOK",
+    "positionFill": "OPEN_ONLY",
+    "reason": "CLIENT_ORDER",
+    "clientExtensions": {
+      "id": "id",
+      "tag": "tag"
+    },
+    "id": "1",
+    "accountID": "000-000-0000000-000",
+    "userID": 1234567,
+    "batchID": "1",
+    "requestID": "24514834665124128",
+    "time": "2017-01-01T00:00:00.000000000Z"
+  },
+  "orderCancelTransaction": {
+    "type": "ORDER_CANCEL",
+    "orderID": "2",
+    "clientOrderID": "id",
+    "reason": "MARKET_HALTED",
+    "id": "2",
+    "accountID": "000-000-0000000-000",
+    "userID": 1234567,
+    "batchID": "2",
+    "requestID": "24514834665124128",
+    "time": "2017-01-01T00:00:00.000000000Z"
+  },
+  "relatedTransactionIDs": [
+    "1",
+    "2"
+  ],
+  "lastTransactionID": "2"
+}

@@ -1,0 +1,29 @@
+{
+  "position": {
+    "instrument": "EUR_USD",
+    "long": {
+      "units": "0",
+      "pl": "-3.0000",
+      "resettablePL": "-3.0000",
+      "financing": "-0.2558",
+      "guaranteedExecutionFees": "0.0000",
+      "unrealizedPL": "0.0000"
+    },
+    "short": {
+      "units": "0",
+      "pl": "0.0000",
+      "resettablePL": "0.0000",
+      "financing": "0.0000",
+      "guaranteedExecutionFees": "0.0000",
+      "unrealizedPL": "0.0000"
+    },
+    "pl": "-3.0000",
+    "resettablePL": "-3.0000",
+    "financing": "-0.2558",
+    "commission": "0.0000",
+    "guaranteedExecutionFees": "0.0000",
+    "unrealizedPL": "0.0000",
+    "marginUsed": "0.0000"
+  },
+  "lastTransactionID": "1"
+}

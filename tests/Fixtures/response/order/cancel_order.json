@@ -1,0 +1,17 @@
+{
+  "orderCancelTransaction": {
+    "type": "ORDER_CANCEL",
+    "orderID": "2",
+    "reason": "CLIENT_REQUEST",
+    "id": "1",
+    "accountID": "000-000-0000000-000",
+    "userID": 1234567,
+    "batchID": "1",
+    "requestID": "78555572259378545",
+    "time": "2019-01-01T00:00:00.000000000Z"
+  },
+  "relatedTransactionIDs": [
+    "1"
+  ],
+  "lastTransactionID": "1"
+}

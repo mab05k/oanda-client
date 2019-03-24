@@ -1,0 +1,7 @@
+mab05k_oanda_client:
+  hostname: https://api-fxpractice.oanda.com
+  path_prefix: /v3
+  accounts:
+  - name: long_account
+    account_id: 000-000-0000000-000
+    account_secret: ba0578f0-3abd-492f-a57c-ece1c1695eaa

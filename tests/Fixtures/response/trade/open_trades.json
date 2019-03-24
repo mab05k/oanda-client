@@ -1,0 +1,19 @@
+{
+  "trades": [
+    {
+      "id": "1",
+      "instrument": "EUR_USD",
+      "price": "1.13387",
+      "openTime": "2019-01-01T00:00:00.000000000Z",
+      "initialUnits": "100",
+      "initialMarginRequired": "113.3800",
+      "state": "OPEN",
+      "currentUnits": "100",
+      "realizedPL": "0.0000",
+      "financing": "0.0000",
+      "unrealizedPL": "-0.0140",
+      "marginUsed": "113.3800"
+    }
+  ],
+  "lastTransactionID": "1"
+}

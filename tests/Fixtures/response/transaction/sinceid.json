@@ -1,0 +1,46 @@
+{
+  "transactions": [
+    {
+      "type": "MARKET_ORDER_REJECT",
+      "rejectReason": "CLOSEOUT_POSITION_DOESNT_EXIST",
+      "instrument": "EUR_USD",
+      "timeInForce": "FOK",
+      "positionFill": "REDUCE_ONLY",
+      "reason": "POSITION_CLOSEOUT",
+      "shortPositionCloseout": {
+        "instrument": "EUR_USD",
+        "units": "ALL"
+      },
+      "id": "413",
+      "accountID": "000-000-0000000-000",
+      "userID": 1234567,
+      "batchID": "412",
+      "requestID": "42530092137270721",
+      "time": "2019-02-13T03:45:44.845438120Z"
+    },
+    {
+      "type": "DAILY_FINANCING",
+      "financing": "-0.0083",
+      "accountBalance": "99991.1237",
+      "accountFinancingMode": "SECOND_BY_SECOND",
+      "positionFinancings": [
+        {
+          "instrument": "EUR_USD",
+          "financing": "-0.0083",
+          "openTradeFinancings": [
+            {
+              "tradeID": "409",
+              "financing": "-0.0083"
+            }
+          ]
+        }
+      ],
+      "id": "414",
+      "accountID": "000-000-0000000-000",
+      "userID": 1234567,
+      "batchID": "414",
+      "time": "2019-02-13T21:00:00.000000000Z"
+    }
+  ],
+  "lastTransactionID": "414"
+}

@@ -1,0 +1,96 @@
+{
+  "account": {
+    "guaranteedStopLossOrderMode": "DISABLED",
+    "hedgingEnabled": false,
+    "id": "000-000-0000000-000",
+    "createdTime": "2017-01-01T00:00:00.000000000Z",
+    "currency": "USD",
+    "createdByUserID": 1234567,
+    "alias": "Primary",
+    "marginRate": "1",
+    "lastTransactionID": "1",
+    "balance": "100000.0000",
+    "openTradeCount": 0,
+    "openPositionCount": 0,
+    "pendingOrderCount": 0,
+    "pl": "25.0000",
+    "resettablePL": "25.0000",
+    "resettablePLTime": "2017-01-01T00:00:00.000000000Z",
+    "financing": "0.0000",
+    "commission": "0.0000",
+    "guaranteedExecutionFees": "0.0000",
+    "orders": [
+      {
+        "id": "1",
+        "createTime": "2017-01-01T00:00:00.000000000Z",
+        "type": "MARKET_IF_TOUCHED",
+        "instrument": "GBP_USD",
+        "units": "1000",
+        "timeInForce": "GTC",
+        "price": "1.50000",
+        "triggerCondition": "DEFAULT",
+        "partialFill": "DEFAULT_FILL",
+        "positionFill": "OPEN_ONLY",
+        "state": "PENDING"
+      }
+    ],
+    "positions": [
+      {
+        "instrument": "EUR_USD",
+        "long": {
+          "units": "0",
+          "pl": "0.0000",
+          "resettablePL": "0.0000",
+          "financing": "0.0000",
+          "guaranteedExecutionFees": "0.0000",
+          "unrealizedPL": "0.0000"
+        },
+        "short": {
+          "units": "0",
+          "pl": "0.0000",
+          "resettablePL": "0.0000",
+          "financing": "0.0000",
+          "guaranteedExecutionFees": "0.0000",
+          "unrealizedPL": "0.0000"
+        },
+        "pl": "0.0000",
+        "resettablePL": "0.0000",
+        "financing": "0.0000",
+        "commission": "0.0000",
+        "guaranteedExecutionFees": "0.0000",
+        "unrealizedPL": "0.0000",
+        "marginUsed": "0.0000"
+      }
+    ],
+    "trades": [
+      {
+        "id": "1",
+        "instrument": "EUR_USD",
+        "price": "1.2500",
+        "openTime": "2017-01-01T00:00:00.000000000Z",
+        "initialUnits": "1000",
+        "initialMarginRequired": "1000.0000",
+        "state": "OPEN",
+        "currentUnits": "100",
+        "realizedPL": "0.0000",
+        "financing": "0.0000",
+        "unrealizedPL": "-0.0000",
+        "marginUsed": "1000.0000"
+      }
+    ],
+    "unrealizedPL": "0.0000",
+    "NAV": "100000.0000",
+    "marginUsed": "0.0000",
+    "marginAvailable": "100000.0000",
+    "positionValue": "0.0000",
+    "marginCloseoutUnrealizedPL": "0.0000",
+    "marginCloseoutNAV": "100000.0000",
+    "marginCloseoutMarginUsed": "0.0000",
+    "marginCloseoutPositionValue": "0.0000",
+    "marginCloseoutPercent": "0.00000",
+    "withdrawalLimit": "100000.0000",
+    "marginCallMarginUsed": "0.0000",
+    "marginCallPercent": "0.00000"
+  },
+  "lastTransactionID": "1"
+}

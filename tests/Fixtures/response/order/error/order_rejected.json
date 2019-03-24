@@ -1,0 +1,26 @@
+{
+  "orderRejectTransaction": {
+    "type": "MARKET_IF_TOUCHED_ORDER_REJECT",
+    "instrument": "GBP_USD",
+    "units": "101",
+    "price": "1.33687666666666",
+    "timeInForce": "GTC",
+    "triggerCondition": "DEFAULT",
+    "partialFill": "DEFAULT",
+    "positionFill": "OPEN_ONLY",
+    "reason": "CLIENT_ORDER",
+    "rejectReason": "PRICE_PRECISION_EXCEEDED",
+    "id": "1",
+    "accountID": "000-000-0000000-000",
+    "userID": 1234567,
+    "batchID": "1",
+    "requestID": "60543718328515697",
+    "time": "2019-01-01T00:00:00.000000000Z"
+  },
+  "relatedTransactionIDs": [
+    "1"
+  ],
+  "lastTransactionID": "1",
+  "errorMessage": "The price specified contains more precision than is allowed for the instrument",
+  "errorCode": "PRICE_PRECISION_EXCEEDED"
+}

@@ -1,0 +1,13 @@
+{
+  "clientConfigureTransaction": {
+    "type": "CLIENT_CONFIGURE",
+    "marginRate": "1",
+    "id": "1",
+    "accountID": "000-000-0000000-000",
+    "userID": 1234567,
+    "batchID": "1",
+    "requestID": "42526785970370774",
+    "time": "2017-01-01T00:00:00.000000000Z"
+  },
+  "lastTransactionID": "1"
+}

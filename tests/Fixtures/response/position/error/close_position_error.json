@@ -1,0 +1,46 @@
+{
+  "longOrderRejectTransaction": {
+    "type": "MARKET_ORDER_REJECT",
+    "rejectReason": "CLOSEOUT_POSITION_REJECT",
+    "instrument": "EUR_USD",
+    "units": "-100",
+    "timeInForce": "FOK",
+    "positionFill": "REDUCE_ONLY",
+    "reason": "POSITION_CLOSEOUT",
+    "longPositionCloseout": {
+      "instrument": "EUR_USD",
+      "units": "ALL"
+    },
+    "id": "410",
+    "accountID": "101-001-7435927-001",
+    "userID": 7435927,
+    "batchID": "410",
+    "requestID": "42530091113342502",
+    "time": "2019-02-13T03:41:40.010421973Z"
+  },
+  "shortOrderRejectTransaction": {
+    "type": "MARKET_ORDER_REJECT",
+    "rejectReason": "CLOSEOUT_POSITION_DOESNT_EXIST",
+    "instrument": "EUR_USD",
+    "timeInForce": "FOK",
+    "positionFill": "REDUCE_ONLY",
+    "reason": "POSITION_CLOSEOUT",
+    "shortPositionCloseout": {
+      "instrument": "EUR_USD",
+      "units": "ALL"
+    },
+    "id": "411",
+    "accountID": "101-001-7435927-001",
+    "userID": 7435927,
+    "batchID": "410",
+    "requestID": "42530091113342502",
+    "time": "2019-02-13T03:41:40.010421973Z"
+  },
+  "relatedTransactionIDs": [
+    "410",
+    "411"
+  ],
+  "lastTransactionID": "411",
+  "errorMessage": "The Position requested to be closed out does not exist",
+  "errorCode": "CLOSEOUT_POSITION_DOESNT_EXIST"
+}

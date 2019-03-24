@@ -1,0 +1,73 @@
+{
+    "orderCreateTransaction": {
+        "type": "MARKET_ORDER",
+        "instrument": "EUR_USD",
+        "units": "1000",
+        "timeInForce": "FOK",
+        "positionFill": "OPEN_ONLY",
+        "reason": "CLIENT_ORDER",
+        "clientExtensions": {
+            "id": "id",
+            "tag": "tag"
+        },
+        "id": "1",
+        "userID": 1234567,
+        "accountID": "000-000-0000000-000",
+        "batchID": "1",
+        "requestID": "42445612591956348",
+        "time": "2017-01-01T00:00:00.000000000Z"
+    },
+    "orderFillTransaction": {
+        "type": "ORDER_FILL",
+        "orderID": "2",
+        "clientOrderID": "id",
+        "instrument": "EUR_USD",
+        "units": "1000",
+        "price": "1.16555",
+        "pl": "0.0000",
+        "financing": "0.0000",
+        "commission": "0.0000",
+        "accountBalance": "100000.0000",
+        "gainQuoteHomeConversionFactor": "1",
+        "lossQuoteHomeConversionFactor": "1",
+        "guaranteedExecutionFee": "0.0000",
+        "halfSpreadCost": "0.0080",
+        "reason": "MARKET_ORDER",
+        "tradeOpened": {
+            "price": "1.16555",
+            "tradeID": "1",
+            "units": "1000",
+            "guaranteedExecutionFee": "0.0000",
+            "halfSpreadCost": "0.0000",
+            "initialMarginRequired": "0.0000"
+        },
+        "fullPrice": {
+            "closeoutBid": "1.16524",
+            "closeoutAsk": "1.16570",
+            "timestamp": "2017-01-01T00:00:00.000000000Z",
+            "bids": [
+                {
+                    "price": "1.16539",
+                    "liquidity": "10000000"
+                }
+            ],
+            "asks": [
+                {
+                    "price": "1.16555",
+                    "liquidity": "10000000"
+                }
+            ]
+        },
+        "id": "2",
+        "userID": 1234567,
+        "accountID": "000-000-0000000-000",
+        "batchID": "2",
+        "requestID": "42445612591956348",
+        "time": "2017-01-01T00:00:00.000000000Z"
+    },
+    "relatedTransactionIDs": [
+        "1",
+        "2"
+    ],
+    "lastTransactionID": "2"
+}

@@ -1,0 +1,10 @@
+services:
+  mab05k.oanda_client.bridge.jms.handler.brick_money_handler:
+    class: Mab05k\OandaClient\Bridge\Jms\Handler\BrickMoneyHandler
+    tags:
+      - { name: jms_serializer.subscribing_handler }
+
+  mab05k.oanda_client.bridge.jms.handler.big_decimal_handler:
+    class: Mab05k\OandaClient\Bridge\Jms\Handler\BigDecimalHandler
+    tags:
+      - { name: jms_serializer.subscribing_handler }

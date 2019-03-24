@@ -1,0 +1,11 @@
+version: '3'
+services:
+  php:
+    container_name: bos-oanda-client
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    env_file:
+      - ./.env
+    volumes:
+      - ./:/srv:rw

@@ -1,0 +1,34 @@
+{
+  "trades": [
+    {
+      "id": "1",
+      "instrument": "EUR_USD",
+      "price": "1.13257",
+      "openTime": "2019-01-01T00:00:00.000000000Z",
+      "initialUnits": "100",
+      "initialMarginRequired": "113.2500",
+      "state": "OPEN",
+      "currentUnits": "100",
+      "realizedPL": "0.0000",
+      "financing": "0.0000",
+      "unrealizedPL": "0.0090",
+      "marginUsed": "113.2730",
+      "stopLossOrder": {
+        "id": "2",
+        "createTime": "2019-01-01T00:00:00.000000000Z",
+        "type": "STOP_LOSS",
+        "tradeID": "1",
+        "price": "1.10000",
+        "guaranteed": false,
+        "timeInForce": "GTC",
+        "triggerCondition": "DEFAULT",
+        "state": "PENDING",
+        "clientExtensions": {
+          "id": "id",
+          "tag": "tag"
+        }
+      }
+    }
+  ],
+  "lastTransactionID": "2"
+}
