@@ -3,6 +3,9 @@
 This is a PHP Client Library for interacting with the [Oanda REST-V20 API](http://developer.oanda.com/rest-live-v20/introduction/).
 This API is designed with flexibility in mind, and supports using multiple Oanda Accounts.
 
+## Contributing
+If you want to help contribute, please visiting the [Contributing](CONTRIBUTING.md) documentation.
+
 ## Endpoints
 * [Account](http://developer.oanda.com/rest-live-v20/account-ep/)
 * [Instrument](http://developer.oanda.com/rest-live-v20/instrument-ep/)
@@ -53,16 +56,16 @@ httplug:
     logger: 
       logger: 'logger'
   clients:
-    bos_oanda_client:
+    mab05k_oanda_client:
       factory: 'httplug.collector.factory.guzzle6'
       config:
         timeout: 3
        plugins:
         - add_host:
-            host: '%bos_oanda_client.hostname%'
+            host: '%mab05k_oanda_client.hostname%'
             replace: true
         - add_path:
-            path: '%bos_oanda_client.path_prefix%'
+            path: '%mab05k_oanda_client.path_prefix%'
         - header_defaults:
             headers:
               Content-Type: 'application/json'
