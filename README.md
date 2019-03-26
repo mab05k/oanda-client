@@ -1,10 +1,10 @@
-# Oanda Client
+# Oanda Client  [![CircleCI](https://circleci.com/gh/mab05k/oanda-client/tree/master.svg?style=svg)](https://circleci.com/gh/mab05k/oanda-client/tree/master)
 
 This is a PHP Client Library for interacting with the [Oanda REST-V20 API](http://developer.oanda.com/rest-live-v20/introduction/).
 This API is designed with flexibility in mind, and supports using multiple Oanda Accounts.
 
 ## Contributing
-If you want to help contribute, please visiting the [Contributing](CONTRIBUTING.md) documentation.
+If you want to help contribute, please visit the [Contributing](CONTRIBUTING.md) documentation.
 
 ## Endpoints
 * [Account](http://developer.oanda.com/rest-live-v20/account-ep/)
