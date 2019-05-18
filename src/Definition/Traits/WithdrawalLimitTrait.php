@@ -15,34 +15,34 @@ use Brick\Money\Money;
 use JMS\Serializer\Annotation as Serializer;
 
 /**
- * Trait FinancingTrait.
+ * Trait WithdrawalLimitTrait.
  */
-trait FinancingTrait
+trait WithdrawalLimitTrait
 {
     /**
      * @var Money|null
      *
-     * @Serializer\SerializedName("financing")
+     * @Serializer\SerializedName("withdrawalLimit")
      * @Serializer\Type("Brick\Money\Money")
      */
-    private $financing;
+    private $withdrawalLimit;
 
     /**
      * @return Money|null
      */
-    public function getFinancing(): ?Money
+    public function getWithdrawalLimit(): ?Money
     {
-        return $this->financing;
+        return $this->withdrawalLimit;
     }
 
     /**
-     * @param Money|null $financing
+     * @param Money|null $withdrawalLimit
      *
      * @return $this
      */
-    public function setFinancing(?Money $financing)
+    public function setWithdrawalLimit(?Money $withdrawalLimit)
     {
-        $this->financing = $financing;
+        $this->withdrawalLimit = $withdrawalLimit;
 
         return $this;
     }

@@ -15,34 +15,34 @@ use Brick\Money\Money;
 use JMS\Serializer\Annotation as Serializer;
 
 /**
- * Trait FinancingTrait.
+ * Trait PositionValueTrait.
  */
-trait FinancingTrait
+trait PositionValueTrait
 {
     /**
      * @var Money|null
      *
-     * @Serializer\SerializedName("financing")
+     * @Serializer\SerializedName("positionValue")
      * @Serializer\Type("Brick\Money\Money")
      */
-    private $financing;
+    private $positionValue;
 
     /**
      * @return Money|null
      */
-    public function getFinancing(): ?Money
+    public function getPositionValue(): ?Money
     {
-        return $this->financing;
+        return $this->positionValue;
     }
 
     /**
-     * @param Money|null $financing
+     * @param Money|null $positionValue
      *
      * @return $this
      */
-    public function setFinancing(?Money $financing)
+    public function setPositionValue(?Money $positionValue)
     {
-        $this->financing = $financing;
+        $this->positionValue = $positionValue;
 
         return $this;
     }

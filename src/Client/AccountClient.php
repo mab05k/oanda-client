@@ -15,6 +15,9 @@ use Mab05k\OandaClient\Account\Account;
 use Mab05k\OandaClient\Definition\Account\AccountCollection;
 use Mab05k\OandaClient\Definition\Account\Configuration;
 use Mab05k\OandaClient\Definition\Transaction\Account\Configuration as ConfigurationTransaction;
+use Mab05k\OandaClient\Request\Query\Account\SinceTransactionId;
+use Mab05k\OandaClient\Request\Query\QueryBuilderFactory;
+use Mab05k\OandaClient\Response\Account\AccountChangesResponse;
 use Mab05k\OandaClient\Response\Account\AccountResponse;
 use Mab05k\OandaClient\Response\Account\AccountSummaryResponse;
 use Mab05k\OandaClient\Response\Account\InstrumentResponse;
@@ -105,8 +108,26 @@ class AccountClient extends AbstractOandaClient
         return $this->sendRequest($request, ConfigurationTransaction::class, 200);
     }
 
-    // TODO: implement /account/{accountID}/changes # http://developer.oanda.com/rest-live-v20/account-ep/
-//    public function changes(string $accountId)
-//    {
-//    }
+    /**
+     * @param int $sinceTransactionId
+     *
+     * @throws \Http\Client\Exception
+     * @throws \Mab05k\OandaClient\Exception\QueryBuilderException
+     * @throws \ReflectionException
+     * @throws \Throwable
+     *
+     * @return AccountChangesResponse|null
+     */
+    public function changes(int $sinceTransactionId): ?AccountChangesResponse
+    {
+        $queryBuilder = QueryBuilderFactory::accountChanges()->set(SinceTransactionId::class, $sinceTransactionId);
+        $request = $this->createRequest(
+            Request::METHOD_GET,
+            '/changes',
+            null,
+            $queryBuilder->toArray()
+        );
+
+        return $this->sendRequest($request, AccountChangesResponse::class, 200);
+    }
 }

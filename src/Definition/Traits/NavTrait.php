@@ -14,35 +14,32 @@ namespace Mab05k\OandaClient\Definition\Traits;
 use Brick\Money\Money;
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * Trait FinancingTrait.
- */
-trait FinancingTrait
+trait NavTrait
 {
     /**
      * @var Money|null
      *
-     * @Serializer\SerializedName("financing")
+     * @Serializer\SerializedName("NAV")
      * @Serializer\Type("Brick\Money\Money")
      */
-    private $financing;
+    private $nav;
 
     /**
      * @return Money|null
      */
-    public function getFinancing(): ?Money
+    public function getNav(): ?Money
     {
-        return $this->financing;
+        return $this->nav;
     }
 
     /**
-     * @param Money|null $financing
+     * @param Money|null $nav
      *
      * @return $this
      */
-    public function setFinancing(?Money $financing)
+    public function setNav(?Money $nav)
     {
-        $this->financing = $financing;
+        $this->nav = $nav;
 
         return $this;
     }

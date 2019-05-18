@@ -1,0 +1,166 @@
+{
+  "changes": {
+    "ordersCreated": [],
+    "ordersCancelled": [
+      {
+        "id": "1035",
+        "createTime": "2019-04-24T19:36:53.121553723Z",
+        "type": "MARKET_IF_TOUCHED",
+        "instrument": "EUR_USD",
+        "units": "188",
+        "timeInForce": "GTC",
+        "price": "1.12186",
+        "triggerCondition": "DEFAULT",
+        "partialFill": "DEFAULT_FILL",
+        "positionFill": "OPEN_ONLY",
+        "state": "CANCELLED",
+        "cancellingTransactionID": "1038",
+        "cancelledTime": "2019-04-24T19:36:57.171182795Z",
+        "clientExtensions": {
+          "tag": "51"
+        }
+      }
+    ],
+    "ordersFilled": [
+      {
+        "id": "1058",
+        "createTime": "2019-04-26T14:26:55.828048150Z",
+        "type": "MARKET",
+        "instrument": "EUR_USD",
+        "units": "-150",
+        "timeInForce": "FOK",
+        "positionFill": "REDUCE_ONLY",
+        "state": "FILLED",
+        "fillingTransactionID": "1059",
+        "filledTime": "2019-04-26T14:26:55.828048150Z",
+        "tradeClosedIDs": [
+          "1053"
+        ]
+      }
+    ],
+    "ordersTriggered": [],
+    "tradesOpened": [],
+    "tradesReduced": [],
+    "tradesClosed": [
+      {
+        "id": "997",
+        "instrument": "EUR_USD",
+        "price": "1.12576",
+        "openTime": "2019-04-18T10:51:46.838331929Z",
+        "initialUnits": "150",
+        "initialMarginRequired": "168.8550",
+        "state": "CLOSED",
+        "currentUnits": "0",
+        "realizedPL": "-0.3945",
+        "closingTransactionIDs": [
+          "1007"
+        ],
+        "financing": "-0.0039",
+        "closeTime": "2019-04-18T16:17:30.248524727Z",
+        "averageClosePrice": "1.12313"
+      }
+    ],
+    "positions": [
+      {
+        "instrument": "EUR_USD",
+        "long": {
+          "units": "0",
+          "pl": "-7.7142",
+          "resettablePL": "-7.7142",
+          "financing": "-1.1697",
+          "guaranteedExecutionFees": "0.0000"
+        },
+        "short": {
+          "units": "0",
+          "pl": "-0.0310",
+          "resettablePL": "-0.0310",
+          "financing": "0.0000",
+          "guaranteedExecutionFees": "0.0000"
+        },
+        "pl": "-7.7452",
+        "resettablePL": "-7.7452",
+        "financing": "-1.1697",
+        "commission": "0.0000",
+        "guaranteedExecutionFees": "0.0000"
+      }
+    ],
+    "transactions": [
+      {
+        "type": "ORDER_FILL",
+        "orderID": "1001",
+        "instrument": "AUD_USD",
+        "units": "-150",
+        "requestedUnits": "-150",
+        "price": "0.71471",
+        "pl": "-0.4155",
+        "financing": "-0.0039",
+        "commission": "0.0000",
+        "accountBalance": "99988.0814",
+        "gainQuoteHomeConversionFactor": "1",
+        "lossQuoteHomeConversionFactor": "1",
+        "guaranteedExecutionFee": "0.0000",
+        "halfSpreadCost": "0.0090",
+        "fullVWAP": "0.71471",
+        "reason": "MARKET_ORDER_TRADE_CLOSE",
+        "tradesClosed": [
+          {
+            "tradeID": "978",
+            "units": "-150",
+            "realizedPL": "-0.4155",
+            "financing": "-0.0039",
+            "price": "0.71471",
+            "guaranteedExecutionFee": "0.0000",
+            "halfSpreadCost": "0.0090"
+          }
+        ],
+        "fullPrice": {
+          "closeoutBid": "0.71456",
+          "closeoutAsk": "0.71498",
+          "timestamp": "2019-04-18T14:54:28.150407735Z",
+          "bids": [
+            {
+              "price": "0.71471",
+              "liquidity": "10000000"
+            }
+          ],
+          "asks": [
+            {
+              "price": "0.71483",
+              "liquidity": "10000000"
+            }
+          ]
+        },
+        "id": "1002",
+        "accountID": "000-000-0000000-001",
+        "userID": 1234567,
+        "batchID": "1001",
+        "requestID": "24539054752975922",
+        "time": "2019-04-18T14:54:30.123963232Z"
+      }
+    ]
+  },
+  "state": {
+    "unrealizedPL": "0.0000",
+    "NAV": "94984.8867",
+    "marginUsed": "0.0000",
+    "marginAvailable": "94984.8867",
+    "positionValue": "0.0000",
+    "marginCloseoutUnrealizedPL": "0.0000",
+    "marginCloseoutNAV": "94984.8867",
+    "marginCloseoutMarginUsed": "0.0000",
+    "marginCloseoutPercent": "0.00000",
+    "withdrawalLimit": "94984.8867",
+    "marginCallMarginUsed": "0.0000",
+    "marginCallPercent": "0.00000",
+    "balance": "94984.8867",
+    "pl": "-12.6526",
+    "resettablePL": "-12.6526",
+    "financing": "-2.4607",
+    "commission": "0.0000",
+    "guaranteedExecutionFees": "0.0000",
+    "orders": [],
+    "trades": [],
+    "positions": []
+  },
+  "lastTransactionID": "1071"
+}

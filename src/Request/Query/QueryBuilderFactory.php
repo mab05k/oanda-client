@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Request\Query;
 
+use Mab05k\OandaClient\Request\Query\Account\SinceTransactionId;
 use Mab05k\OandaClient\Request\Query\Candle\AlignmentTimezone;
 use Mab05k\OandaClient\Request\Query\Candle\CandlestickGranularity;
 use Mab05k\OandaClient\Request\Query\Candle\Count;
@@ -164,5 +165,17 @@ class QueryBuilderFactory
             ->add(TransactionPageSize::class, null)
             ->add(TransactionTo::class, null)
             ->add(TransactionType::class, null);
+    }
+
+    /**
+     * @throws \Mab05k\OandaClient\Exception\QueryBuilderException
+     * @throws \ReflectionException
+     *
+     * @return QueryBuilder
+     */
+    public static function accountChanges(): QueryBuilder
+    {
+        return self::create()
+            ->add(SinceTransactionId::class, null);
     }
 }
