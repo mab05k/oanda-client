@@ -14,7 +14,9 @@ namespace Mab05k\OandaClient\Client;
 use Mab05k\OandaClient\Account\Account;
 use Mab05k\OandaClient\Definition\Transaction\Order\OrderTransactionResponse;
 use Mab05k\OandaClient\Request\Order\Envelope\OrderInterface;
+use Mab05k\OandaClient\Request\Order\OrderClientExtensionsRequest;
 use Mab05k\OandaClient\Request\Query\QueryBuilder;
+use Mab05k\OandaClient\Response\Order\OrderClientExtensionsResponse;
 use Mab05k\OandaClient\Response\Order\OrderResponse;
 use Mab05k\OandaClient\Response\Order\OrdersResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -125,8 +127,47 @@ class OrderClient extends AbstractOandaClient
         return $this->sendRequest($request, OrderTransactionResponse::class, 200);
     }
 
-    // TODO: implement PUT /v3/accounts/{accountID}/orders/{orderSpecifier}
-    // TODO: implement PUT /v3/accounts/{accountID}/orders/{orderSpecifier}/clientExtensions
-//    public function replace
-//    public function clientExtensions
+    /**
+     * @param string         $orderSpecifier
+     * @param OrderInterface $order
+     *
+     * @throws \Http\Client\Exception
+     * @throws \Throwable
+     *
+     * Replace an Order in an Account by simultaneously cancelling it and creating a replacement Order
+     *
+     * @return OrderTransactionResponse|null
+     */
+    public function replace(string $orderSpecifier, OrderInterface $order): ?OrderTransactionResponse
+    {
+        $request = $this->createRequest(
+            Request::METHOD_PUT,
+            '/accounts/%s'.sprintf('/orders/%s', $orderSpecifier),
+            $order
+        );
+
+        return $this->sendRequest($request, OrderTransactionResponse::class, 201);
+    }
+
+    /**
+     * @param string                       $orderSpecifier
+     * @param OrderClientExtensionsRequest $orderClientExtensionsRequest
+     *
+     * @throws \Http\Client\Exception
+     * @throws \Throwable
+     *
+     * Update the Client Extensions for an Order in an Account. Do not set, modify, or delete clientExtensions if your account is associated with MT4.
+     *
+     * @return OrderClientExtensionsResponse|null
+     */
+    public function clientExtensions(string $orderSpecifier, OrderClientExtensionsRequest $orderClientExtensionsRequest): ?OrderClientExtensionsResponse
+    {
+        $request = $this->createRequest(
+            Request::METHOD_PUT,
+            '/accounts/%s'.sprintf('/orders/%s/clientExtensions', $orderSpecifier),
+            $orderClientExtensionsRequest
+        );
+
+        return $this->sendRequest($request, OrderClientExtensionsResponse::class, 200);
+    }
 }

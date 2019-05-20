@@ -12,27 +12,17 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Transaction\Order;
 
 use JMS\Serializer\Annotation as Serializer;
+use Mab05k\OandaClient\Definition\Traits\LastTransactionIdTrait;
+use Mab05k\OandaClient\Definition\Traits\RelatedTransactionIdsTrait;
+use Mab05k\OandaClient\Definition\Transaction\Transaction;
 
 /**
  * Class OrderTransactionResponse.
  */
 class OrderTransactionResponse
 {
-    /**
-     * @var array|null
-     *
-     * @Serializer\SerializedName("relatedTransactionIDs")
-     * @Serializer\Type("array<string>")
-     */
-    private $relatedTransactionIds;
-
-    /**
-     * @var string|null
-     *
-     * @Serializer\SerializedName("lastTransactionID")
-     * @Serializer\Type("string")
-     */
-    private $lastTransactionId;
+    use RelatedTransactionIdsTrait;
+    use LastTransactionIdTrait;
 
     /**
      * @var string|null
@@ -91,44 +81,28 @@ class OrderTransactionResponse
     private $orderCancelRejectTransaction;
 
     /**
-     * @return array|null
-     */
-    public function getRelatedTransactionIds(): ?array
-    {
-        return $this->relatedTransactionIds;
-    }
-
-    /**
-     * @param array|null $relatedTransactionIds
+     * @var Transaction|null
      *
-     * @return OrderTransactionResponse
+     * @Serializer\SerializedName("orderReissueTransaction")
+     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Transaction")
      */
-    public function setRelatedTransactionIds(?array $relatedTransactionIds): self
-    {
-        $this->relatedTransactionIds = $relatedTransactionIds;
-
-        return $this;
-    }
+    private $orderReissueTransaction;
 
     /**
-     * @return string|null
-     */
-    public function getLastTransactionId(): ?string
-    {
-        return $this->lastTransactionId;
-    }
-
-    /**
-     * @param string|null $lastTransactionId
+     * @var Transaction|null
      *
-     * @return OrderTransactionResponse
+     * @Serializer\SerializedName("orderReissueRejectTransaction")
+     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Transaction")
      */
-    public function setLastTransactionId(?string $lastTransactionId): self
-    {
-        $this->lastTransactionId = $lastTransactionId;
+    private $orderReissueRejectTransaction;
 
-        return $this;
-    }
+    /**
+     * @var OrderCancelTransaction|null
+     *
+     * @Serializer\SerializedName("replacingOrderCancelTransaction")
+     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\OrderCancelTransaction")
+     */
+    private $replacingOrderCancelTransaction;
 
     /**
      * @return string|null
@@ -266,6 +240,66 @@ class OrderTransactionResponse
     public function setOrderCancelRejectTransaction(?OrderCancelRejectTransaction $orderCancelRejectTransaction): self
     {
         $this->orderCancelRejectTransaction = $orderCancelRejectTransaction;
+
+        return $this;
+    }
+
+    /**
+     * @return Transaction|null
+     */
+    public function getOrderReissueTransaction(): ?Transaction
+    {
+        return $this->orderReissueTransaction;
+    }
+
+    /**
+     * @param Transaction|null $orderReissueTransaction
+     *
+     * @return OrderTransactionResponse
+     */
+    public function setOrderReissueTransaction(?Transaction $orderReissueTransaction): self
+    {
+        $this->orderReissueTransaction = $orderReissueTransaction;
+
+        return $this;
+    }
+
+    /**
+     * @return Transaction|null
+     */
+    public function getOrderReissueRejectTransaction(): ?Transaction
+    {
+        return $this->orderReissueRejectTransaction;
+    }
+
+    /**
+     * @param Transaction|null $orderReissueRejectTransaction
+     *
+     * @return OrderTransactionResponse
+     */
+    public function setOrderReissueRejectTransaction(?Transaction $orderReissueRejectTransaction): self
+    {
+        $this->orderReissueRejectTransaction = $orderReissueRejectTransaction;
+
+        return $this;
+    }
+
+    /**
+     * @return OrderCancelTransaction|null
+     */
+    public function getReplacingOrderCancelTransaction(): ?OrderCancelTransaction
+    {
+        return $this->replacingOrderCancelTransaction;
+    }
+
+    /**
+     * @param OrderCancelTransaction|null $replacingOrderCancelTransaction
+     *
+     * @return OrderTransactionResponse
+     */
+    public function setReplacingOrderCancelTransaction(?OrderCancelTransaction $replacingOrderCancelTransaction): self
+    {
+        $this->replacingOrderCancelTransaction = $replacingOrderCancelTransaction;
 
         return $this;
     }

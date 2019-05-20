@@ -1,0 +1,19 @@
+{
+  "orderClientExtensionsModifyTransaction": {
+    "type": "ORDER_CLIENT_EXTENSIONS_MODIFY",
+    "orderID": "1078",
+    "clientExtensionsModify": {
+      "tag": "testing"
+    },
+    "id": "1079",
+    "accountID": "000-000-1234567-000",
+    "userID": 1234567,
+    "batchID": "1079",
+    "requestID": "78593615733829389",
+    "time": "2019-05-19T23:36:45.885565366Z"
+  },
+  "relatedTransactionIDs": [
+    "1079"
+  ],
+  "lastTransactionID": "1079"
+}

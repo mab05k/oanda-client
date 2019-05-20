@@ -29,7 +29,7 @@ class PositionRequestFactory
      */
     public static function closePositionRequest(
         string $longUnits,
-        string $shortUnits,
+        string $shortUnits = null,
         ?ClientExtension $longClientExtensions = null,
         ?ClientExtension $shortClientExtensions = null
     ): ClosePositionRequest {

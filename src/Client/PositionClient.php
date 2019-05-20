@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Client;
 
+use Mab05k\OandaClient\Request\Position\ClosePositionRequest;
+use Mab05k\OandaClient\Response\Position\ClosePositionResponse;
 use Mab05k\OandaClient\Response\Position\PositionResponse;
 use Mab05k\OandaClient\Response\Position\PositionsResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -76,5 +78,25 @@ class PositionClient extends AbstractOandaClient
         return $this->sendRequest($request, PositionResponse::class, 200);
     }
 
-    // TODO: implement PUT /accounts/{id}/positions/{instrument}/close
+    /**
+     * @param string               $instrument
+     * @param ClosePositionRequest $closePositionRequest
+     *
+     * @throws \Http\Client\Exception
+     * @throws \Throwable
+     *
+     * Closeout the open Position for a specific instrument in an Account
+     *
+     * @return ClosePositionResponse|null
+     */
+    public function close(string $instrument, ClosePositionRequest $closePositionRequest): ?ClosePositionResponse
+    {
+        $request = $this->createRequest(
+            Request::METHOD_PUT,
+            '/accounts/%s'.sprintf('/positions/%s/close', $instrument),
+            $closePositionRequest
+        );
+
+        return $this->sendRequest($request, ClosePositionResponse::class, 200);
+    }
 }
