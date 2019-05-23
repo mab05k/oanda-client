@@ -80,27 +80,16 @@ class Mab05kOandaClientExtension extends Extension implements PrependExtensionIn
     private function prependHttplugExtension(ContainerBuilder $container, array $config)
     {
         $plugins = [];
-        $plugins[] = ['add_host' => [
-            'host' => $config[Configuration::OANDA_HOSTNAME],
-            'replace' => true,
-        ]];
-        $plugins[] = [
-            'add_path' => [
-                'path' => $config[Configuration::OANDA_PREFIX],
-            ],
-        ];
-        $plugins[] = [
-            'header_defaults' => [
-                'headers' => [
-                    'Content-Type' => 'application/json',
-                ],
-            ],
-        ];
-        $plugins[] = [
-            'logger' => [
-                'logger' => 'logger',
-            ],
-        ];
+        $plugins[] = $this->hostPlugin($config, Configuration::OANDA_HOSTNAME);
+        $plugins[] = $this->pathPlugin($config);
+        $plugins[] = $this->headerPlugin();
+        $plugins[] = $this->loggerPlugin();
+
+        $streamPlugins = [];
+        $streamPlugins[] = $this->hostPlugin($config, Configuration::OANDA_STREAM_HOSTNAME);
+        $streamPlugins[] = $this->pathPlugin($config);
+        $streamPlugins[] = $this->headerPlugin();
+        $streamPlugins[] = $this->loggerPlugin();
 
         $container->prependExtensionConfig('httplug', [
             'plugins' => [
@@ -115,6 +104,13 @@ class Mab05kOandaClientExtension extends Extension implements PrependExtensionIn
                         'timeout' => 3,
                     ],
                     'plugins' => $plugins,
+                ],
+                'mab05k_oanda_stream_client' => [
+                    'factory' => 'httplug.factory.guzzle6',
+                    'config' => [
+                        'timeout' => 3,
+                    ],
+                    'plugins' => $streamPlugins,
                 ],
             ],
         ]);
@@ -132,5 +128,59 @@ class Mab05kOandaClientExtension extends Extension implements PrependExtensionIn
                 ],
             ],
         ]);
+    }
+
+    /**
+     * @param array  $config
+     * @param string $host
+     *
+     * @return array
+     */
+    private function hostPlugin(array $config, string $host)
+    {
+        return ['add_host' => [
+            'host' => $config[$host],
+            'replace' => true,
+        ]];
+    }
+
+    /**
+     * @param array $config
+     *
+     * @return array
+     */
+    private function pathPlugin(array $config): array
+    {
+        return [
+            'add_path' => [
+                'path' => $config[Configuration::OANDA_PREFIX],
+            ],
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    private function headerPlugin(): array
+    {
+        return [
+            'header_defaults' => [
+                'headers' => [
+                    'Content-Type' => 'application/json',
+                ],
+            ],
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    private function loggerPlugin(): array
+    {
+        return [
+            'logger' => [
+                'logger' => 'logger',
+            ],
+        ];
     }
 }

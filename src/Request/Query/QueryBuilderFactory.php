@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Request\Query;
 
+use Mab05k\OandaClient\Request\Query\Account\SinceTransactionId;
 use Mab05k\OandaClient\Request\Query\Candle\AlignmentTimezone;
 use Mab05k\OandaClient\Request\Query\Candle\CandlestickGranularity;
 use Mab05k\OandaClient\Request\Query\Candle\Count;
@@ -32,6 +33,7 @@ use Mab05k\OandaClient\Request\Query\Pricing\IncludeHomeConversions;
 use Mab05k\OandaClient\Request\Query\Pricing\IncludeUnitsAvailable;
 use Mab05k\OandaClient\Request\Query\Pricing\Instruments;
 use Mab05k\OandaClient\Request\Query\Pricing\Since;
+use Mab05k\OandaClient\Request\Query\Pricing\Snapshot;
 use Mab05k\OandaClient\Request\Query\Trade\BeforeId as TradeBeforeId;
 use Mab05k\OandaClient\Request\Query\Trade\Count as TradeCount;
 use Mab05k\OandaClient\Request\Query\Trade\Ids as TradeIds;
@@ -140,6 +142,19 @@ class QueryBuilderFactory
      *
      * @return QueryBuilder
      */
+    public static function pricingStream(): QueryBuilder
+    {
+        return self::create()
+            ->add(Instruments::class, null)
+            ->add(Snapshot::class, true);
+    }
+
+    /**
+     * @throws \Mab05k\OandaClient\Exception\QueryBuilderException
+     * @throws \ReflectionException
+     *
+     * @return QueryBuilder
+     */
     public static function trade(): QueryBuilder
     {
         return self::create()
@@ -164,5 +179,17 @@ class QueryBuilderFactory
             ->add(TransactionPageSize::class, null)
             ->add(TransactionTo::class, null)
             ->add(TransactionType::class, null);
+    }
+
+    /**
+     * @throws \Mab05k\OandaClient\Exception\QueryBuilderException
+     * @throws \ReflectionException
+     *
+     * @return QueryBuilder
+     */
+    public static function accountChanges(): QueryBuilder
+    {
+        return self::create()
+            ->add(SinceTransactionId::class, null);
     }
 }

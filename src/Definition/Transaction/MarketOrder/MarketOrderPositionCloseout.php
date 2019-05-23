@@ -11,8 +11,9 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Transaction\MarketOrder;
 
+use Brick\Math\BigDecimal;
+use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\InstrumentTrait;
-use Mab05k\OandaClient\Definition\Traits\UnitTrait;
 
 /**
  * Class MarketOrderPositionCloseout.
@@ -22,5 +23,36 @@ use Mab05k\OandaClient\Definition\Traits\UnitTrait;
 class MarketOrderPositionCloseout
 {
     use InstrumentTrait;
-    use UnitTrait;
+
+    /**
+     * @var string|BigDecimal|null
+     *
+     * @Serializer\SerializedName("units")
+     * @Serializer\Type("string")
+     */
+    private $units;
+
+    /**
+     * @return BigDecimal|string|null
+     */
+    public function getUnits()
+    {
+        if (is_numeric($this->units)) {
+            return BigDecimal::of($this->units);
+        }
+
+        return $this->units;
+    }
+
+    /**
+     * @param BigDecimal|string|null $units
+     *
+     * @return MarketOrderPositionCloseout
+     */
+    public function setUnits($units)
+    {
+        $this->units = $units;
+
+        return $this;
+    }
 }

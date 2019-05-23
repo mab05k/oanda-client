@@ -10,8 +10,7 @@
     "brick/money": "^0.4.1",
     "jms/serializer-bundle": "^2.3",
     "php-http/guzzle6-adapter": "^2.0",
-    "php-http/httplug-bundle": "^1.14",
-    "symfony/event-dispatcher": "^4.2"
+    "php-http/httplug-bundle": "^1.14"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.14",

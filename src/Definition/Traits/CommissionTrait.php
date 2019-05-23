@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Traits;
 
 use Brick\Money\Money;
+use JMS\Serializer\Annotation as Serializer;
 
 /**
  * Class CommissionTrait.

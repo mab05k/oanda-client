@@ -12,6 +12,11 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Tests\Functional\Client;
 
 use Mab05k\OandaClient\Client\PositionClient;
+use Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderPositionCloseout;
+use Mab05k\OandaClient\Definition\Transaction\Order\MarketOrderTransaction;
+use Mab05k\OandaClient\Definition\Transaction\Order\OrderFillTransaction;
+use Mab05k\OandaClient\Request\PositionRequestFactory;
+use Mab05k\OandaClient\Response\Position\ClosePositionResponse;
 use Mab05k\OandaClient\Response\Position\PositionResponse;
 use Mab05k\OandaClient\Response\Position\PositionsResponse;
 
@@ -138,5 +143,23 @@ class PositionClientTest extends AbstractClientTest
         $this->assertEquals(0.0000, $positionSideShort->getFinancing()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $positionSideShort->getGuaranteedExecutionFees()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $positionSideShort->getUnrealizedProfitLoss()->getAmount()->toFloat());
+    }
+
+    public function testClose()
+    {
+        $this->createMockResponse(200, 'position/close_position.json');
+        $request = PositionRequestFactory::closePositionRequest('ALL');
+
+        $result = $this->SUT->close('EUR_USD', $request);
+        $this->assertInstanceOf(ClosePositionResponse::class, $result);
+
+        $longOrderCreateTransaction = $result->getLongOrderCreateTransaction();
+        $this->assertInstanceOf(MarketOrderTransaction::class, $longOrderCreateTransaction);
+        $this->assertInstanceOf(MarketOrderPositionCloseout::class, $longOrderCreateTransaction->getLongPositionCloseout());
+        $this->assertEquals('ALL', $longOrderCreateTransaction->getLongPositionCloseout()->getUnits());
+        $this->assertEquals('POSITION_CLOSEOUT', $longOrderCreateTransaction->getReason());
+
+        $longOrderFillTransaction = $result->getLongOrderFillTransaction();
+        $this->assertInstanceOf(OrderFillTransaction::class, $longOrderFillTransaction);
     }
 }

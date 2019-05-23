@@ -31,6 +31,7 @@ use Mab05k\OandaClient\Request\Order\Envelope\TrailingStopLossOrderRequestEnvelo
 use Mab05k\OandaClient\Request\Order\LimitOrderRequest;
 use Mab05k\OandaClient\Request\Order\MarketIfTouchedOrderRequest;
 use Mab05k\OandaClient\Request\Order\MarketOrderRequest;
+use Mab05k\OandaClient\Request\Order\OrderClientExtensionsRequest;
 use Mab05k\OandaClient\Request\Order\StopLossOrderRequest;
 use Mab05k\OandaClient\Request\Order\StopOrderRequest;
 use Mab05k\OandaClient\Request\Order\TakeProfitOrderRequest;
@@ -344,5 +345,19 @@ class OrderRequestFactory
             ->setTriggerCondition($triggerCondition);
 
         return $trailingStopLossOrderRequestEnvelope->setOrder($trailingStopLossOrderRequest);
+    }
+
+    /**
+     * @param ClientExtension      $orderClientExtension
+     * @param ClientExtension|null $tradeClientExtension
+     *
+     * @return OrderClientExtensionsRequest
+     */
+    public static function clientExtensions(ClientExtension $orderClientExtension, ClientExtension $tradeClientExtension = null)
+    {
+        $clientExtensionsRequest = new OrderClientExtensionsRequest();
+
+        return $clientExtensionsRequest->setClientExtensions($orderClientExtension)
+            ->setTradeClientExtensions($tradeClientExtension);
     }
 }

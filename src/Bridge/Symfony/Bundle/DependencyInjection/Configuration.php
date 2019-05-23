@@ -24,6 +24,7 @@ class Configuration implements ConfigurationInterface
     public const ACCOUNT_ID = 'account_id';
     public const ACCOUNT_SECRET = 'account_secret';
     public const OANDA_HOSTNAME = 'hostname';
+    public const OANDA_STREAM_HOSTNAME = 'stream_hostname';
     public const OANDA_PREFIX = 'path_prefix';
 
     /**
@@ -52,6 +53,7 @@ class Configuration implements ConfigurationInterface
                     ->end()
                 ->end()
                 ->scalarNode(self::OANDA_HOSTNAME)->defaultValue('https://api-fxpractice.oanda.com')->end()
+                ->scalarNode(self::OANDA_STREAM_HOSTNAME)->defaultValue('https://stream-fxpractice.oanda.com')->end()
                 ->scalarNode(self::OANDA_PREFIX)->defaultValue('/v3')->end()
             ->end();
 

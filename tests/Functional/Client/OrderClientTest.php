@@ -20,8 +20,10 @@ use Mab05k\OandaClient\Definition\Constant\OrderType;
 use Mab05k\OandaClient\Definition\Constant\TimeInForce;
 use Mab05k\OandaClient\Definition\Order\Order;
 use Mab05k\OandaClient\Definition\Transaction\ClientExtension\ClientExtension;
+use Mab05k\OandaClient\Definition\Transaction\ClientExtension\Factory\ClientExtensionFactory;
 use Mab05k\OandaClient\Definition\Transaction\Order\FullPrice;
 use Mab05k\OandaClient\Definition\Transaction\Order\OrderCancelTransaction;
+use Mab05k\OandaClient\Definition\Transaction\Order\OrderClientExtensionsModifyTransaction;
 use Mab05k\OandaClient\Definition\Transaction\Order\OrderCreateTransaction;
 use Mab05k\OandaClient\Definition\Transaction\Order\OrderFillTransaction;
 use Mab05k\OandaClient\Definition\Transaction\Order\OrderRejectTransaction;
@@ -33,6 +35,7 @@ use Mab05k\OandaClient\Request\Query\Order\State;
 use Mab05k\OandaClient\Request\Query\Pricing\Instruments;
 use Mab05k\OandaClient\Request\Query\QueryBuilderFactory;
 use Mab05k\OandaClient\Request\Query\Transaction\Type;
+use Mab05k\OandaClient\Response\Order\OrderClientExtensionsResponse;
 use Mab05k\OandaClient\Response\Order\OrderResponse;
 use Mab05k\OandaClient\Response\Order\OrdersResponse;
 
@@ -347,5 +350,43 @@ class OrderClientTest extends AbstractClientTest
         $this->assertEquals(State::PENDING, $order->getState());
         $this->assertEquals(BigDecimal::of(101), $order->getUnits());
         $this->assertEquals(BrickMoneyHelper::create(1.33600), $order->getPrice());
+    }
+
+    public function testReplace()
+    {
+        $this->createMockResponse(201, 'order/replace.json');
+        $marketIfTouchedOrder = OrderRequestFactory::marketIfTouchedOrderRequest(
+            'EUR_USD',
+            BigDecimal::of(1000),
+            BrickMoneyHelper::create(1.1234)
+        );
+
+        $result = $this->SUT->replace('1', $marketIfTouchedOrder);
+        $this->assertInstanceOf(OrderTransactionResponse::class, $result);
+        $this->assertInstanceOf(OrderCancelTransaction::class, $result->getOrderCancelTransaction());
+        $this->assertInstanceOf(OrderCreateTransaction::class, $result->getOrderCreateTransaction());
+    }
+
+    public function testClientExtensions()
+    {
+        $this->createMockResponse(200, 'order/client_extensions.json');
+        $orderClientExtension = ClientExtensionFactory::create('id', 'tag');
+        $orderClientExtensionRequest = OrderRequestFactory::clientExtensions($orderClientExtension);
+
+        $result = $this->SUT->clientExtensions('1', $orderClientExtensionRequest);
+
+        $this->assertInstanceOf(OrderClientExtensionsResponse::class, $result);
+        $orderClientExtensionsModifyTransaction = $result->getOrderClientExtensionsModifyTransaction();
+        $this->assertInstanceOf(OrderClientExtensionsModifyTransaction::class, $orderClientExtensionsModifyTransaction);
+        $this->assertEquals('ORDER_CLIENT_EXTENSIONS_MODIFY', $orderClientExtensionsModifyTransaction->getType());
+        $this->assertEquals(1078, $orderClientExtensionsModifyTransaction->getOrderId());
+        $this->assertEquals(1079, $orderClientExtensionsModifyTransaction->getId());
+        $this->assertEquals('000-000-1234567-000', $orderClientExtensionsModifyTransaction->getAccountId());
+        $this->assertEquals(1234567, $orderClientExtensionsModifyTransaction->getUserId());
+        $this->assertEquals(1079, $orderClientExtensionsModifyTransaction->getBatchId());
+        $this->assertEquals('78593615733829389', $orderClientExtensionsModifyTransaction->getRequestId());
+        $this->assertInstanceOf(\DateTime::class, $orderClientExtensionsModifyTransaction->getTime());
+        $this->assertInstanceOf(ClientExtension::class, $orderClientExtensionsModifyTransaction->getClientExtensionsModify());
+        $this->assertEquals('testing', $orderClientExtensionsModifyTransaction->getClientExtensionsModify()->getTag());
     }
 }

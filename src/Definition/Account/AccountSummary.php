@@ -11,7 +11,6 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Account;
 
-use Brick\Money\Money;
 use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\AccountCreatedTrait;
 use Mab05k\OandaClient\Definition\Traits\AccountMarginTrait;
@@ -27,7 +26,10 @@ use Mab05k\OandaClient\Definition\Traits\LastTransactionIdTrait;
 use Mab05k\OandaClient\Definition\Traits\MarginAvailableTrait;
 use Mab05k\OandaClient\Definition\Traits\MarginCloseoutTrait;
 use Mab05k\OandaClient\Definition\Traits\MarginUsedTrait;
+use Mab05k\OandaClient\Definition\Traits\NavTrait;
+use Mab05k\OandaClient\Definition\Traits\PositionValueTrait;
 use Mab05k\OandaClient\Definition\Traits\ProfitLossTrait;
+use Mab05k\OandaClient\Definition\Traits\WithdrawalLimitTrait;
 
 /**
  * Class AccountDetail.
@@ -49,6 +51,9 @@ class AccountSummary
     use MarginUsedTrait;
     use MarginAvailableTrait;
     use MarginCloseoutTrait;
+    use NavTrait;
+    use PositionValueTrait;
+    use WithdrawalLimitTrait;
 
     /**
      * @var string|null
@@ -67,36 +72,12 @@ class AccountSummary
     private $hedgingEnabled;
 
     /**
-     * @var Money|null
-     *
-     * @Serializer\SerializedName("NAV")
-     * @Serializer\Type("Brick\Money\Money")
-     */
-    private $nav;
-
-    /**
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("resettablePLTime")
      * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $resettablePlTime;
-
-    /**
-     * @var Money|null
-     *
-     * @Serializer\SerializedName("positionValue")
-     * @Serializer\Type("Brick\Money\Money")
-     */
-    private $positionValue;
-
-    /**
-     * @var Money|null
-     *
-     * @Serializer\SerializedName("withdrawalLimit")
-     * @Serializer\Type("Brick\Money\Money")
-     */
-    private $withdrawalLimit;
 
     /**
      * @return string|null
@@ -139,26 +120,6 @@ class AccountSummary
     }
 
     /**
-     * @return Money|null
-     */
-    public function getNav(): ?Money
-    {
-        return $this->nav;
-    }
-
-    /**
-     * @param Money|null $nav
-     *
-     * @return AccountSummary
-     */
-    public function setNav(?Money $nav): self
-    {
-        $this->nav = $nav;
-
-        return $this;
-    }
-
-    /**
      * @return \DateTime|null
      */
     public function getResettablePlTime(): ?\DateTime
@@ -174,46 +135,6 @@ class AccountSummary
     public function setResettablePlTime(?\DateTime $resettablePlTime): self
     {
         $this->resettablePlTime = $resettablePlTime;
-
-        return $this;
-    }
-
-    /**
-     * @return Money|null
-     */
-    public function getPositionValue(): ?Money
-    {
-        return $this->positionValue;
-    }
-
-    /**
-     * @param Money|null $positionValue
-     *
-     * @return AccountSummary
-     */
-    public function setPositionValue(?Money $positionValue): self
-    {
-        $this->positionValue = $positionValue;
-
-        return $this;
-    }
-
-    /**
-     * @return Money|null
-     */
-    public function getWithdrawalLimit(): ?Money
-    {
-        return $this->withdrawalLimit;
-    }
-
-    /**
-     * @param Money|null $withdrawalLimit
-     *
-     * @return AccountSummary
-     */
-    public function setWithdrawalLimit(?Money $withdrawalLimit): self
-    {
-        $this->withdrawalLimit = $withdrawalLimit;
 
         return $this;
     }

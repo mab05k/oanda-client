@@ -13,6 +13,7 @@ namespace Mab05k\OandaClient\Definition\Traits;
 
 use Brick\Math\BigDecimal;
 use Brick\Money\Money;
+use JMS\Serializer\Annotation as Serializer;
 
 /**
  * Trait MarginCloseoutTrait.

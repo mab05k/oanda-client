@@ -1,0 +1,77 @@
+{
+  "longOrderCreateTransaction": {
+    "type": "MARKET_ORDER",
+    "instrument": "EUR_USD",
+    "units": "-100",
+    "timeInForce": "FOK",
+    "positionFill": "REDUCE_ONLY",
+    "reason": "POSITION_CLOSEOUT",
+    "longPositionCloseout": {
+      "instrument": "EUR_USD",
+      "units": "ALL"
+    },
+    "id": "1085",
+    "accountID": "000-000-1234567-000",
+    "userID": 1234567,
+    "batchID": "1085",
+    "requestID": "78593616447105596",
+    "time": "2019-05-19T23:39:35.572206617Z"
+  },
+  "longOrderFillTransaction": {
+    "type": "ORDER_FILL",
+    "orderID": "1085",
+    "instrument": "EUR_USD",
+    "units": "-100",
+    "requestedUnits": "-100",
+    "price": "1.11626",
+    "pl": "-0.0140",
+    "financing": "0.0000",
+    "commission": "0.0000",
+    "accountBalance": "94984.8727",
+    "gainQuoteHomeConversionFactor": "1",
+    "lossQuoteHomeConversionFactor": "1",
+    "guaranteedExecutionFee": "0.0000",
+    "halfSpreadCost": "0.0070",
+    "fullVWAP": "1.11626",
+    "reason": "MARKET_ORDER_POSITION_CLOSEOUT",
+    "tradesClosed": [
+      {
+        "tradeID": "1082",
+        "units": "-100",
+        "realizedPL": "-0.0140",
+        "financing": "0.0000",
+        "price": "1.11626",
+        "guaranteedExecutionFee": "0.0000",
+        "halfSpreadCost": "0.0070"
+      }
+    ],
+    "fullPrice": {
+      "closeoutBid": "1.11611",
+      "closeoutAsk": "1.11655",
+      "timestamp": "2019-05-19T23:37:21.542252516Z",
+      "bids": [
+        {
+          "price": "1.11626",
+          "liquidity": "10000000"
+        }
+      ],
+      "asks": [
+        {
+          "price": "1.11640",
+          "liquidity": "10000000"
+        }
+      ]
+    },
+    "id": "1086",
+    "accountID": "000-000-1234567-000",
+    "userID": 1234567,
+    "batchID": "1085",
+    "requestID": "78593616447105596",
+    "time": "2019-05-19T23:39:35.572206617Z"
+  },
+  "relatedTransactionIDs": [
+    "1085",
+    "1086"
+  ],
+  "lastTransactionID": "1086"
+}

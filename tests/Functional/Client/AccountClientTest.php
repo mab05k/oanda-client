@@ -14,15 +14,20 @@ namespace Mab05k\OandaClient\Tests\Functional\Client;
 use Brick\Math\BigDecimal;
 use Mab05k\OandaClient\Client\AccountClient;
 use Mab05k\OandaClient\Definition\Account\Account;
+use Mab05k\OandaClient\Definition\Account\AccountChanges;
 use Mab05k\OandaClient\Definition\Account\AccountCollection;
 use Mab05k\OandaClient\Definition\Account\AccountProperty;
+use Mab05k\OandaClient\Definition\Account\AccountState;
 use Mab05k\OandaClient\Definition\Account\AccountSummary;
 use Mab05k\OandaClient\Definition\Account\Instrument;
 use Mab05k\OandaClient\Definition\Order\Order;
 use Mab05k\OandaClient\Definition\Position\Position;
 use Mab05k\OandaClient\Definition\Position\PositionSide;
+use Mab05k\OandaClient\Definition\Trade\Trade;
 use Mab05k\OandaClient\Definition\Transaction\Account\Configuration;
+use Mab05k\OandaClient\Definition\Transaction\Transaction;
 use Mab05k\OandaClient\Request\AccountRequestFactory;
+use Mab05k\OandaClient\Response\Account\AccountChangesResponse;
 use Mab05k\OandaClient\Response\Account\AccountResponse;
 use Mab05k\OandaClient\Response\Account\AccountSummaryResponse;
 use Mab05k\OandaClient\Response\Account\InstrumentResponse;
@@ -230,9 +235,58 @@ class AccountClientTest extends AbstractClientTest
         $this->assertInstanceOf(\DateTime::class, $clientConfigureTransaction->getTime());
     }
 
-    // TODO: this still needs to be implemented
-//    public function testChanges()
-//    {
-//
-//    }
+    public function testChanges()
+    {
+        $this->createMockResponse(200, 'account/changes.json');
+        $result = $this->SUT->changes(1);
+        $this->assertInstanceOf(AccountChangesResponse::class, $result);
+
+        $this->assertEquals(1071, $result->getLastTransactionId());
+
+        $changes = $result->getChanges();
+        $this->assertInstanceOf(AccountChanges::class, $changes);
+
+        $this->assertEmpty($changes->getOrdersCreated());
+        $this->assertEmpty($changes->getOrdersTriggered());
+
+        $this->assertCount(1, $changes->getOrdersCancelled());
+        $this->assertInstanceOf(Order::class, $changes->getOrdersCancelled()[0]);
+
+        $this->assertCount(1, $changes->getOrdersFilled());
+        $this->assertInstanceOf(Order::class, $changes->getOrdersFilled()[0]);
+
+        $this->assertEmpty($changes->getTradesOpened());
+        $this->assertEmpty($changes->getTradesReduced());
+
+        $this->assertCount(1, $changes->getTradesClosed());
+        $this->assertInstanceOf(Trade::class, $changes->getTradesClosed()[0]);
+
+        $this->assertCount(1, $changes->getPositions());
+        $this->assertInstanceOf(Position::class, $changes->getPositions()[0]);
+
+        $this->assertCount(1, $changes->getTransactions());
+        $this->assertInstanceOf(Transaction::class, $changes->getTransactions()[0]);
+
+        $state = $result->getState();
+        $this->assertInstanceOf(AccountState::class, $state);
+        $this->assertEquals(0.0000, $state->getUnrealizedProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(94984.8867, $state->getNav()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $state->getMarginUsed()->getAmount()->toFloat());
+        $this->assertEquals(94984.8867, $state->getMarginAvailable()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $state->getPositionValue()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $state->getMarginCloseoutUnrealizedPl()->getAmount()->toFloat());
+        $this->assertEquals(94984.8867, $state->getMarginCloseoutNav()->getAmount()->toFloat());
+        $this->assertEquals(94984.8867, $state->getWithdrawalLimit()->getAmount()->toFloat());
+        $this->assertEquals(94984.8867, $state->getBalance()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $state->getMarginCloseoutMarginUsed()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $state->getMarginCloseoutPercent()->toFloat());
+        $this->assertEquals(-12.6526, $state->getProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(-12.6526, $state->getResettableProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(-2.4607, $state->getFinancing()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $state->getCommission()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $state->getGuaranteedExecutionFees()->getAmount()->toFloat());
+        $this->assertEmpty($state->getOrders());
+        $this->assertEmpty($state->getTrades());
+        $this->assertEmpty($state->getPositions());
+    }
 }
