@@ -33,6 +33,7 @@ use Mab05k\OandaClient\Request\Query\Pricing\IncludeHomeConversions;
 use Mab05k\OandaClient\Request\Query\Pricing\IncludeUnitsAvailable;
 use Mab05k\OandaClient\Request\Query\Pricing\Instruments;
 use Mab05k\OandaClient\Request\Query\Pricing\Since;
+use Mab05k\OandaClient\Request\Query\Pricing\Snapshot;
 use Mab05k\OandaClient\Request\Query\Trade\BeforeId as TradeBeforeId;
 use Mab05k\OandaClient\Request\Query\Trade\Count as TradeCount;
 use Mab05k\OandaClient\Request\Query\Trade\Ids as TradeIds;
@@ -133,6 +134,19 @@ class QueryBuilderFactory
             ->add(IncludeUnitsAvailable::class, true)
             ->add(Instruments::class, null)
             ->add(Since::class, null);
+    }
+
+    /**
+     * @throws \Mab05k\OandaClient\Exception\QueryBuilderException
+     * @throws \ReflectionException
+     *
+     * @return QueryBuilder
+     */
+    public static function pricingStream(): QueryBuilder
+    {
+        return self::create()
+            ->add(Instruments::class, null)
+            ->add(Snapshot::class, true);
     }
 
     /**

@@ -35,6 +35,7 @@ return [
 
 mab05k_oanda_client:
   hostname: https://api-fxpractice.oanda.com
+  stream_hostname: https://stream-fxpractice.oanda.com
   path_prefix: /v3
   accounts:
   - name: primary_account

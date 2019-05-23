@@ -8,11 +8,20 @@ services:
     arguments:
       $client: '@httplug.client.mab05k_oanda_client'
 
+  mab05k.oanda_client.stream_client.abstract_oanda_client:
+    class: Mab05k\OandaClient\Client\AbstractOandaClient
+    abstract: true
+    autowire: true
+    public: false
+    arguments:
+      $client: '@httplug.client.mab05k_oanda_stream_client'
+
   Mab05k\OandaClient\Client\AccountClient: '@mab05k.oanda_client.client.account_client'
   Mab05k\OandaClient\Client\InstrumentClient: '@mab05k.oanda_client.client.instrument_client'
   Mab05k\OandaClient\Client\OrderClient: '@mab05k.oanda_client.client.order_client'
   Mab05k\OandaClient\Client\PositionClient: '@mab05k.oanda_client.client.position_client'
   Mab05k\OandaClient\Client\PricingClient: '@mab05k.oanda_client.client.pricing_client'
+  Mab05k\OandaClient\Client\StreamClient: '@mab05k.oanda_client.client.stream_client'
   Mab05k\OandaClient\Client\TradeClient: '@mab05k.oanda_client.client.trade_client'
   Mab05k\OandaClient\Client\TransactionClient: '@mab05k.oanda_client.client.transaction_client'
 
@@ -55,5 +64,11 @@ services:
   mab05k.oanda_client.client.transaction_client:
     class: Mab05k\OandaClient\Client\TransactionClient
     parent: 'mab05k.oanda_client.client.abstract_oanda_client'
+    autowire: true
+    public: false
+
+  mab05k.oanda_client.client.stream_client:
+    class: Mab05k\OandaClient\Client\StreamClient
+    parent: 'mab05k.oanda_client.stream_client.abstract_oanda_client'
     autowire: true
     public: false
