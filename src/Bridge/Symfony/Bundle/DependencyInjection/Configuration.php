@@ -26,6 +26,7 @@ class Configuration implements ConfigurationInterface
     public const OANDA_HOSTNAME = 'hostname';
     public const OANDA_STREAM_HOSTNAME = 'stream_hostname';
     public const OANDA_PREFIX = 'path_prefix';
+    public const OANDA_CLIENT_TIMEOUT = 'oanda_client_timeout';
 
     /**
      * @return TreeBuilder
@@ -55,6 +56,7 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode(self::OANDA_HOSTNAME)->defaultValue('https://api-fxpractice.oanda.com')->end()
                 ->scalarNode(self::OANDA_STREAM_HOSTNAME)->defaultValue('https://stream-fxpractice.oanda.com')->end()
                 ->scalarNode(self::OANDA_PREFIX)->defaultValue('/v3')->end()
+                ->scalarNode(self::OANDA_CLIENT_TIMEOUT)->defaultValue(3)->end()
             ->end();
 
         return $treeBuilder;

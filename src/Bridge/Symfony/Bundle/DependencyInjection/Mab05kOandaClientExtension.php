@@ -101,14 +101,14 @@ class Mab05kOandaClientExtension extends Extension implements PrependExtensionIn
                 'mab05k_oanda_client' => [
                     'factory' => 'httplug.factory.guzzle6',
                     'config' => [
-                        'timeout' => 3,
+                        'timeout' => $config[Configuration::OANDA_CLIENT_TIMEOUT],
                     ],
                     'plugins' => $plugins,
                 ],
                 'mab05k_oanda_stream_client' => [
                     'factory' => 'httplug.factory.guzzle6',
                     'config' => [
-                        'timeout' => 3,
+                        'timeout' => $config[Configuration::OANDA_CLIENT_TIMEOUT],
                     ],
                     'plugins' => $streamPlugins,
                 ],
