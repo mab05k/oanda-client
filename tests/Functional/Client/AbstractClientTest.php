@@ -15,16 +15,20 @@ use Http\Message\MessageFactory\GuzzleMessageFactory;
 use Http\Message\StreamFactory\GuzzleStreamFactory;
 use Http\Message\UriFactory\GuzzleUriFactory;
 use Http\Mock\Client;
-use JMS\Serializer\Handler\HandlerRegistry;
-use JMS\Serializer\SerializerBuilder;
-use JMS\Serializer\SerializerInterface;
 use Mab05k\OandaClient\Account\AccountDiscriminator;
-use Mab05k\OandaClient\Bridge\Jms\Handler\BigDecimalHandler;
-use Mab05k\OandaClient\Bridge\Jms\Handler\BrickMoneyHandler;
 use Mab05k\OandaClient\Bridge\Symfony\Bundle\DependencyInjection\Configuration;
+use Mab05k\OandaClient\Bridge\Symfony\Serializer\BigDecimalNormalizer;
+use Mab05k\OandaClient\Bridge\Symfony\Serializer\MoneyNormalizer;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
+use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Serializer\SerializerInterface;
 
 /**
  * Class AbstractClientTest.
@@ -80,13 +84,17 @@ abstract class AbstractClientTest extends WebTestCase
         $client = static::createClient();
         $this->mockClient = $client->getContainer()->get('httplug.client.mock');
         $this->accountDiscriminator = new AccountDiscriminator($this->accountsArray);
-        $this->serializer = SerializerBuilder::create()
-            ->configureHandlers(function (HandlerRegistry $registry) {
-                $registry->registerSubscribingHandler(new BrickMoneyHandler());
-                $registry->registerSubscribingHandler(new BigDecimalHandler());
-            })
-            ->addDefaultHandlers()
-            ->build();
+        $propertyInfoExtractor = new PhpDocExtractor();
+        $normalizers = [
+            new MoneyNormalizer(),
+            new BigDecimalNormalizer(),
+            new DateTimeNormalizer(),
+            new ArrayDenormalizer(),
+            new ObjectNormalizer(null, null, null, $propertyInfoExtractor),
+        ];
+        $encoders = [new JsonEncoder()];
+//        $this->serializer = new Serializer($normalizers, $encoders);
+        $this->serializer = $client->getContainer()->get('serializer');
         $this->logger = \Phake::mock(LoggerInterface::class); // Logger('test');
 
         $this->guzzleMessageFactory = new GuzzleMessageFactory();

@@ -12,7 +12,6 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Transaction;
 
 use Brick\Money\Money;
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\FinancingTrait;
 use Mab05k\OandaClient\Definition\Traits\FullPriceTrait;
 use Mab05k\OandaClient\Definition\Traits\HalfSpreadCostTrait;
@@ -30,6 +29,7 @@ use Mab05k\OandaClient\Definition\Traits\TradesClosedTrait;
 use Mab05k\OandaClient\Definition\Traits\TransactionOrderIdTrait;
 use Mab05k\OandaClient\Definition\Traits\TypeTrait;
 use Mab05k\OandaClient\Definition\Traits\UnitTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class Transaction.
@@ -55,10 +55,9 @@ class Transaction
     use PositionFillTrait;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("accountBalance")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $accountBalance;
 
@@ -66,7 +65,6 @@ class Transaction
      * @var string|null
      *
      * @Serializer\SerializedName("accountFinancingMode")
-     * @Serializer\Type("string")
      */
     private $accountFinancingMode;
 
@@ -74,7 +72,6 @@ class Transaction
      * @var int|null
      *
      * @Serializer\SerializedName("divisionID")
-     * @Serializer\Type("integer")
      */
     private $divisionId;
 
@@ -82,7 +79,6 @@ class Transaction
      * @var int|null
      *
      * @Serializer\SerializedName("siteID")
-     * @Serializer\Type("integer")
      */
     private $siteId;
 
@@ -90,7 +86,6 @@ class Transaction
      * @var int|null
      *
      * @Serializer\SerializedName("accountUserID")
-     * @Serializer\Type("integer")
      */
     private $accountUserId;
 
@@ -98,7 +93,6 @@ class Transaction
      * @var int|null
      *
      * @Serializer\SerializedName("accountNumber")
-     * @Serializer\Type("integer")
      */
     private $accountNumber;
 
@@ -106,7 +100,6 @@ class Transaction
      * string|null.
      *
      * @Serializer\SerializedName("homeCurrency")
-     * @Serializer\Type("string")
      */
     private $homeCurrency;
 
@@ -114,7 +107,6 @@ class Transaction
      * @var int|null
      *
      * @Serializer\SerializedName("userID")
-     * @Serializer\Type("integer")
      */
     private $userId;
 
@@ -122,15 +114,13 @@ class Transaction
      * @var string|null
      *
      * @Serializer\SerializedName("accountID")
-     * @Serializer\Type("string")
      */
     private $accountId;
 
     /**
-     * @var int|null
+     * @var string|null
      *
      * @Serializer\SerializedName("batchID")
-     * @Serializer\Type("integer")
      */
     private $batchId;
 
@@ -138,12 +128,11 @@ class Transaction
      * @var string|null
      *
      * @Serializer\SerializedName("requestID")
-     * @Serializer\Type("string")
      */
     private $requestId;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getAccountBalance(): ?Money
     {
@@ -151,7 +140,7 @@ class Transaction
     }
 
     /**
-     * @param Money|null $accountBalance
+     * @param \Brick\Money\Money|null $accountBalance
      *
      * @return Transaction
      */
@@ -323,19 +312,19 @@ class Transaction
     }
 
     /**
-     * @return int|null
+     * @return string|null
      */
-    public function getBatchId(): ?int
+    public function getBatchId(): ?string
     {
         return $this->batchId;
     }
 
     /**
-     * @param int|null $batchId
+     * @param string|null $batchId
      *
      * @return Transaction
      */
-    public function setBatchId(?int $batchId): self
+    public function setBatchId(?string $batchId): self
     {
         $this->batchId = $batchId;
 

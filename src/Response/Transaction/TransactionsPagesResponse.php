@@ -11,9 +11,9 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Response\Transaction;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\LastTransactionIdTrait;
 use Mab05k\OandaClient\Definition\Traits\TypeTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class TransactionsPagesResponse.
@@ -27,7 +27,6 @@ class TransactionsPagesResponse
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("from")
-     * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $from;
 
@@ -35,7 +34,6 @@ class TransactionsPagesResponse
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("to")
-     * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $to;
 
@@ -43,7 +41,6 @@ class TransactionsPagesResponse
      * @var int|null
      *
      * @Serializer\SerializedName("pageSize")
-     * @Serializer\Type("integer")
      */
     private $pageSize;
 
@@ -51,7 +48,6 @@ class TransactionsPagesResponse
      * @var int|null
      *
      * @Serializer\SerializedName("count")
-     * @Serializer\Type("integer")
      */
     private $count;
 
@@ -59,7 +55,6 @@ class TransactionsPagesResponse
      * @var array|null
      *
      * @Serializer\SerializedName("pages")
-     * @Serializer\Type("array<string>")
      */
     private $pages;
 

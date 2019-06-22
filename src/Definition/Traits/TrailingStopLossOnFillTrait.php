@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Traits;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Transaction\Detail\TrailingStopLossDetail;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait TrailingStopLossOnFillTrait.
@@ -25,7 +25,6 @@ trait TrailingStopLossOnFillTrait
      * @var TrailingStopLossDetail|null
      *
      * @Serializer\SerializedName("trailingStopLossOnFill")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Detail\TrailingStopLossDetail")
      */
     private $trailingStopLossOnFill;
 

@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Traits;
 
 use Brick\Math\BigDecimal;
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait DistanceTrait.
@@ -22,15 +22,14 @@ use JMS\Serializer\Annotation as Serializer;
 trait DistanceTrait
 {
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("distance")
-     * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $distance;
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getDistance(): ?BigDecimal
     {
@@ -38,7 +37,7 @@ trait DistanceTrait
     }
 
     /**
-     * @param BigDecimal|null $distance
+     * @param \Brick\Math\BigDecimal|null $distance
      *
      * @return $this
      */

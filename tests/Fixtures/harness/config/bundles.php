@@ -12,7 +12,6 @@ declare(strict_types=1);
 return [
     Symfony\Bundle\FrameworkBundle\FrameworkBundle::class => ['all' => true],
     Http\HttplugBundle\HttplugBundle::class => ['all' => true],
-    JMS\SerializerBundle\JMSSerializerBundle::class => ['all' => true],
     Mab05k\OandaClient\Bridge\Symfony\Bundle\Mab05kOandaClientBundle::class => ['all' => true],
     Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => true],
 ];

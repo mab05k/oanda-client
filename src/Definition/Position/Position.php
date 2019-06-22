@@ -11,13 +11,13 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Position;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\CommissionTrait;
 use Mab05k\OandaClient\Definition\Traits\FinancingTrait;
 use Mab05k\OandaClient\Definition\Traits\GuaranteedExecutionFeesTrait;
 use Mab05k\OandaClient\Definition\Traits\InstrumentTrait;
 use Mab05k\OandaClient\Definition\Traits\MarginUsedTrait;
 use Mab05k\OandaClient\Definition\Traits\ProfitLossTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class Position.
@@ -35,7 +35,6 @@ class Position
      * @var PositionSide|null
      *
      * @Serializer\SerializedName("long")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Position\PositionSide")
      */
     private $long;
 
@@ -43,7 +42,6 @@ class Position
      * @var PositionSide|null
      *
      * @Serializer\SerializedName("short")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Position\PositionSide")
      */
     private $short;
 

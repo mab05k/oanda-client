@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Traits;
 
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait CreateTimeTrait.
@@ -22,7 +22,6 @@ trait CreateTimeTrait
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("createTime")
-     * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $createTime;
 

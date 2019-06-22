@@ -35,15 +35,14 @@ class TrailingStopLossOrder extends TrailingStopLossOrderRequest
     use ReplacedOrderTrait;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("trailingStopValue")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $trailingStopValue;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getTrailingStopValue(): ?Money
     {
@@ -51,7 +50,7 @@ class TrailingStopLossOrder extends TrailingStopLossOrderRequest
     }
 
     /**
-     * @param Money|null $trailingStopValue
+     * @param \Brick\Money\Money|null $trailingStopValue
      *
      * @return TrailingStopLossOrder
      */

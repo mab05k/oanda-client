@@ -80,9 +80,9 @@ class TradeClientTest extends AbstractClientTest
         $this->assertEquals(100, $trade->getCurrentUnits()->toInt());
         $this->assertEquals(113.25000, $trade->getInitialMarginRequired()->getAmount()->toFloat());
         $this->assertEquals(113.27300, $trade->getMarginUsed()->getAmount()->toFloat());
-        $this->assertEquals(0.0000, $trade->getRealizedProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $trade->getRealizedPl()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $trade->getFinancing()->getAmount()->toFloat());
-        $this->assertEquals(0.0090, $trade->getUnrealizedProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0090, $trade->getUnrealizedPl()->getAmount()->toFloat());
 
         $stopLossOrder = $trade->getStopLossOrder();
         $this->assertInstanceOf(StopLossOrder::class, $stopLossOrder);
@@ -118,9 +118,9 @@ class TradeClientTest extends AbstractClientTest
         $this->assertEquals(BrickMoneyHelper::create(1.13387), $trade->getPrice());
         $this->assertEquals(BrickMoneyHelper::create(113.3800), $trade->getInitialMarginRequired());
         $this->assertEquals(BrickMoneyHelper::create(113.3900), $trade->getMarginUsed());
-        $this->assertEquals(BrickMoneyHelper::create(0.0), $trade->getRealizedProfitLoss());
+        $this->assertEquals(BrickMoneyHelper::create(0.0), $trade->getRealizedPl());
         $this->assertEquals(BrickMoneyHelper::create(0.0), $trade->getFinancing());
-        $this->assertEquals(BrickMoneyHelper::create(-0.0040), $trade->getUnrealizedProfitLoss());
+        $this->assertEquals(BrickMoneyHelper::create(-0.0040), $trade->getUnrealizedPl());
         $this->assertEquals(BigDecimal::of(100), $trade->getInitialUnits());
         $this->assertEquals(BigDecimal::of(100), $trade->getCurrentUnits());
     }
@@ -144,9 +144,9 @@ class TradeClientTest extends AbstractClientTest
         $this->assertEquals(BrickMoneyHelper::create(1.13387), $trade->getPrice());
         $this->assertEquals(BrickMoneyHelper::create(113.3800), $trade->getInitialMarginRequired());
         $this->assertEquals(BrickMoneyHelper::create(113.3800), $trade->getMarginUsed());
-        $this->assertEquals(BrickMoneyHelper::create(0.0), $trade->getRealizedProfitLoss());
+        $this->assertEquals(BrickMoneyHelper::create(0.0), $trade->getRealizedPl());
         $this->assertEquals(BrickMoneyHelper::create(0.0), $trade->getFinancing());
-        $this->assertEquals(BrickMoneyHelper::create(-0.0140), $trade->getUnrealizedProfitLoss());
+        $this->assertEquals(BrickMoneyHelper::create(-0.0140), $trade->getUnrealizedPl());
         $this->assertEquals(BigDecimal::of(100), $trade->getInitialUnits());
         $this->assertEquals(BigDecimal::of(100), $trade->getCurrentUnits());
     }
@@ -191,7 +191,7 @@ class TradeClientTest extends AbstractClientTest
         $this->assertEquals(BigDecimal::of(1), $orderFillTransaction->getGainQuoteHomeConversionFactor());
         $this->assertEquals(BigDecimal::of(1), $orderFillTransaction->getLossQuoteHomeConversionFactor());
         $this->assertEquals(BrickMoneyHelper::create(1.14541), $orderFillTransaction->getPrice());
-        $this->assertEquals(BrickMoneyHelper::create(-0.0420), $orderFillTransaction->getProfitLoss());
+        $this->assertEquals(BrickMoneyHelper::create(-0.0420), $orderFillTransaction->getPl());
         $this->assertEquals(BrickMoneyHelper::create(0.0), $orderFillTransaction->getFinancing());
         $this->assertEquals(BrickMoneyHelper::create(0.0), $orderFillTransaction->getCommission());
         $this->assertEquals(BrickMoneyHelper::create(0.0), $orderFillTransaction->getGuaranteedExecutionFee());

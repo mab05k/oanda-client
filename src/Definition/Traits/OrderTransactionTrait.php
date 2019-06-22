@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Traits;
 
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait OrderTransactionTrait.
@@ -19,10 +19,9 @@ use JMS\Serializer\Annotation as Serializer;
 trait OrderTransactionTrait
 {
     /**
-     * @var int|null
+     * @var string|null
      *
      * @Serializer\SerializedName("id")
-     * @Serializer\Type("integer")
      */
     private $id;
 
@@ -30,7 +29,6 @@ trait OrderTransactionTrait
      * @var int|null
      *
      * @Serializer\SerializedName("userID")
-     * @Serializer\Type("integer")
      */
     private $userId;
 
@@ -38,15 +36,13 @@ trait OrderTransactionTrait
      * @var string|null
      *
      * @Serializer\SerializedName("accountID")
-     * @Serializer\Type("string")
      */
     private $accountId;
 
     /**
-     * @var int|null
+     * @var string|null
      *
      * @Serializer\SerializedName("batchID")
-     * @Serializer\Type("integer")
      */
     private $batchId;
 
@@ -54,7 +50,6 @@ trait OrderTransactionTrait
      * @var string|null
      *
      * @Serializer\SerializedName("requestID")
-     * @Serializer\Type("string")
      */
     private $requestId;
 
@@ -62,24 +57,23 @@ trait OrderTransactionTrait
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("time")
-     * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $time;
 
     /**
-     * @return int|null
+     * @return string|null
      */
-    public function getId(): ?int
+    public function getId(): ?string
     {
         return $this->id;
     }
 
     /**
-     * @param int|null $id
+     * @param string|null $id
      *
      * @return $this
      */
-    public function setId(?int $id)
+    public function setId(?string $id)
     {
         $this->id = $id;
 
@@ -127,19 +121,19 @@ trait OrderTransactionTrait
     }
 
     /**
-     * @return int|null
+     * @return string|null
      */
-    public function getBatchId(): ?int
+    public function getBatchId(): ?string
     {
         return $this->batchId;
     }
 
     /**
-     * @param int|null $batchId
+     * @param string|null $batchId
      *
      * @return $this
      */
-    public function setBatchId(?int $batchId)
+    public function setBatchId(?string $batchId)
     {
         $this->batchId = $batchId;
 

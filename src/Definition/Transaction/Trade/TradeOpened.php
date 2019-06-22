@@ -12,12 +12,12 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Transaction\Trade;
 
 use Brick\Money\Money;
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\ClientExtensionsTrait;
 use Mab05k\OandaClient\Definition\Traits\HalfSpreadCostTrait;
 use Mab05k\OandaClient\Definition\Traits\PriceTrait;
 use Mab05k\OandaClient\Definition\Traits\TradeIdTrait;
 use Mab05k\OandaClient\Definition\Traits\UnitTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class TradeOpened.
@@ -31,23 +31,21 @@ class TradeOpened
     use ClientExtensionsTrait;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("initialMarginRequired")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $initialMarginRequired;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("guaranteedExecutionFee")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $guaranteedExecutionFee;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getInitialMarginRequired(): ?Money
     {
@@ -55,7 +53,7 @@ class TradeOpened
     }
 
     /**
-     * @param Money|null $initialMarginRequired
+     * @param \Brick\Money\Money|null $initialMarginRequired
      *
      * @return TradeOpened
      */
@@ -67,7 +65,7 @@ class TradeOpened
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getGuaranteedExecutionFee(): ?Money
     {
@@ -75,7 +73,7 @@ class TradeOpened
     }
 
     /**
-     * @param Money|null $guaranteedExecutionFee
+     * @param \Brick\Money\Money|null $guaranteedExecutionFee
      *
      * @return TradeOpened
      */

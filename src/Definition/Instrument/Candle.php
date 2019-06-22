@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Instrument;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\InstrumentTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class Candle.
@@ -27,15 +27,13 @@ class Candle
      * @var string|null
      *
      * @Serializer\SerializedName("granularity")
-     * @Serializer\Type("string")
      */
     private $granularity;
 
     /**
-     * @var array|Candlestick[]|null
+     * @var Candlestick[]|null
      *
      * @Serializer\SerializedName("candles")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Instrument\Candlestick>")
      */
     private $candlesticks;
 
@@ -60,7 +58,7 @@ class Candle
     }
 
     /**
-     * @return Candlestick[]|array|null
+     * @return Candlestick[]|null
      */
     public function getCandlesticks()
     {

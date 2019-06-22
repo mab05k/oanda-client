@@ -11,9 +11,9 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Response\Account;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Account\Instrument;
 use Mab05k\OandaClient\Definition\Traits\LastTransactionIdTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class InstrumentResponse.
@@ -23,15 +23,14 @@ class InstrumentResponse
     use LastTransactionIdTrait;
 
     /**
-     * @var array|Instrument[]
+     * @var Instrument[]
      *
      * @Serializer\SerializedName("instruments")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Account\Instrument>")
      */
     private $instruments = [];
 
     /**
-     * @return array|Instrument[]
+     * @return Instrument[]
      */
     public function getInstruments()
     {
@@ -39,7 +38,7 @@ class InstrumentResponse
     }
 
     /**
-     * @param array|Instrument[] $instruments
+     * @param Instrument[] $instruments
      *
      * @return InstrumentResponse
      */

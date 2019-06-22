@@ -12,14 +12,14 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Pricing\Price;
 
 use Brick\Money\Money;
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class AbstractPrice.
  *
- * @Serializer\Discriminator(
- *     field="objectType",
- *     map={
+ * @Serializer\DiscriminatorMap(
+ *     typeProperty="type",
+ *     mapping={
  *         "ask"="Mab05k\OandaClient\Definition\Pricing\Price\Ask",
  *         "mid"="Mab05k\OandaClient\Definition\Pricing\Price\Mid",
  *         "bid"="Mab05k\OandaClient\Definition\Pricing\Price\Bid",
@@ -29,47 +29,42 @@ use JMS\Serializer\Annotation as Serializer;
 abstract class AbstractPrice
 {
     /**
-     * @var Money
+     * @var \Brick\Money\Money
      *
      * @Serializer\SerializedName("o")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $open;
 
     /**
-     * @var Money
+     * @var \Brick\Money\Money
      *
      * @Serializer\SerializedName("h")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $high;
 
     /**
-     * @var Money
+     * @var \Brick\Money\Money
      *
      * @Serializer\SerializedName("l")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $low;
 
     /**
-     * @var Money
+     * @var \Brick\Money\Money
      *
      * @Serializer\SerializedName("c")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $close;
 
     /**
      * @return string
      *
-     * @Serializer\VirtualProperty
      * @Serializer\SerializedName("objectType")
      */
     abstract public function getType(): string;
 
     /**
-     * @return Money
+     * @return \Brick\Money\Money
      */
     public function getOpen(): Money
     {
@@ -77,7 +72,7 @@ abstract class AbstractPrice
     }
 
     /**
-     * @param Money $open
+     * @param \Brick\Money\Money $open
      *
      * @return AbstractPrice
      */
@@ -89,7 +84,7 @@ abstract class AbstractPrice
     }
 
     /**
-     * @return Money
+     * @return \Brick\Money\Money
      */
     public function getHigh(): Money
     {
@@ -97,7 +92,7 @@ abstract class AbstractPrice
     }
 
     /**
-     * @param Money $high
+     * @param \Brick\Money\Money $high
      *
      * @return AbstractPrice
      */
@@ -109,7 +104,7 @@ abstract class AbstractPrice
     }
 
     /**
-     * @return Money
+     * @return \Brick\Money\Money
      */
     public function getLow(): Money
     {
@@ -117,7 +112,7 @@ abstract class AbstractPrice
     }
 
     /**
-     * @param Money $low
+     * @param \Brick\Money\Money $low
      *
      * @return AbstractPrice
      */
@@ -129,7 +124,7 @@ abstract class AbstractPrice
     }
 
     /**
-     * @return Money
+     * @return \Brick\Money\Money
      */
     public function getClose(): Money
     {
@@ -137,7 +132,7 @@ abstract class AbstractPrice
     }
 
     /**
-     * @param Money $close
+     * @param \Brick\Money\Money $close
      *
      * @return AbstractPrice
      */

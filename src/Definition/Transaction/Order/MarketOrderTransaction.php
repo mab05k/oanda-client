@@ -11,7 +11,6 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Transaction\Order;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\StopLossOnFillTrait;
 use Mab05k\OandaClient\Definition\Traits\TakeProfitOnFillTrait;
 use Mab05k\OandaClient\Definition\Traits\TradeClientExtensionsTrait;
@@ -19,6 +18,7 @@ use Mab05k\OandaClient\Definition\Traits\TrailingStopLossOnFillTrait;
 use Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderDelayedTradeClose;
 use Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderMarginCloseout;
 use Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderPositionCloseout;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class MarketOrderTransaction.
@@ -34,7 +34,6 @@ class MarketOrderTransaction extends OrderCreateTransaction
      * @var MarketOrderPositionCloseout|null
      *
      * @Serializer\SerializedName("longPositionCloseout")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderPositionCloseout")
      */
     private $longPositionCloseout;
 
@@ -42,7 +41,6 @@ class MarketOrderTransaction extends OrderCreateTransaction
      * @var MarketOrderPositionCloseout|null
      *
      * @Serializer\SerializedName("shortPositionCloseout")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderPositionCloseout")
      */
     private $shortPositionCloseout;
 
@@ -50,7 +48,6 @@ class MarketOrderTransaction extends OrderCreateTransaction
      * @var MarketOrderMarginCloseout|null
      *
      * @Serializer\SerializedName("marginCloseout")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderMarginCloseout")
      */
     private $marginCloseout;
 
@@ -58,7 +55,6 @@ class MarketOrderTransaction extends OrderCreateTransaction
      * @var MarketOrderDelayedTradeClose|null
      *
      * @Serializer\SerializedName("delayedTradeClose")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderDelayedTradeClose")
      */
     private $delayedTradeClose;
 

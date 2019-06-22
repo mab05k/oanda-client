@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Traits;
 
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait CancelledOrderTrait.
@@ -24,7 +24,6 @@ trait CancelledOrderTrait
      * @var string|null
      *
      * @Serializer\SerializedName("cancellingTransactionID")
-     * @Serializer\Type("string")
      */
     private $cancellingTransactionId;
 
@@ -32,7 +31,6 @@ trait CancelledOrderTrait
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("cancelledTime")
-     * @Serializer\Type("string")
      */
     private $cancelledTime;
 

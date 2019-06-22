@@ -12,20 +12,19 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Traits;
 
 use Brick\Money\Money;
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 trait NavTrait
 {
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("NAV")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $nav;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getNav(): ?Money
     {
@@ -33,7 +32,7 @@ trait NavTrait
     }
 
     /**
-     * @param Money|null $nav
+     * @param \Brick\Money\Money|null $nav
      *
      * @return $this
      */

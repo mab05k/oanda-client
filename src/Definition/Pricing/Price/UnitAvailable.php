@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Pricing\Price;
 
 use Brick\Math\BigDecimal;
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class UnitAvailable.
@@ -20,23 +20,21 @@ use JMS\Serializer\Annotation as Serializer;
 class UnitAvailable
 {
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("long")
-     * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $long;
 
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("long")
-     * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $short;
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getLong(): ?BigDecimal
     {
@@ -44,7 +42,7 @@ class UnitAvailable
     }
 
     /**
-     * @param BigDecimal|null $long
+     * @param \Brick\Math\BigDecimal|null $long
      *
      * @return UnitAvailable
      */
@@ -56,7 +54,7 @@ class UnitAvailable
     }
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getShort(): ?BigDecimal
     {
@@ -64,7 +62,7 @@ class UnitAvailable
     }
 
     /**
-     * @param BigDecimal|null $short
+     * @param \Brick\Math\BigDecimal|null $short
      *
      * @return UnitAvailable
      */

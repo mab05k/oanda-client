@@ -11,9 +11,9 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Transaction\MarketOrder;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\ClientTradeIdTrait;
 use Mab05k\OandaClient\Definition\Traits\TradeIdTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class MarketOrderTradeClose.
@@ -29,7 +29,6 @@ class MarketOrderTradeClose
      * @var string|null
      *
      * @Serializer\SerializedName("units")
-     * @Serializer\Type("string")
      */
     private $units;
 

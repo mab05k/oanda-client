@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Traits;
 
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait IdTrait.
@@ -19,27 +19,26 @@ use JMS\Serializer\Annotation as Serializer;
 trait IdTrait
 {
     /**
-     * @var int|null
+     * @var string|null
      *
      * @Serializer\SerializedName("id")
-     * @Serializer\Type("integer")
      */
     private $id;
 
     /**
-     * @return int|null
+     * @return string|null
      */
-    public function getId(): ?int
+    public function getId(): ?string
     {
         return $this->id;
     }
 
     /**
-     * @param int|null $id
+     * @param string|null $id
      *
      * @return $this
      */
-    public function setId(?int $id)
+    public function setId(?string $id)
     {
         $this->id = $id;
 

@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Traits;
 
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait ClientIdTrait.
@@ -24,7 +24,6 @@ trait ClientTradeIdTrait
      * @var string|null
      *
      * @Serializer\SerializedName("clientTradeID")
-     * @Serializer\Type("string")
      */
     protected $clientTradeId;
 

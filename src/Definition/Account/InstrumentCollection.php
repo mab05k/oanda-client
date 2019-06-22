@@ -11,8 +11,6 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Account;
 
-use JMS\Serializer\Annotation as Serializer;
-
 /**
  * Class InstrumentCollection.
  *
@@ -21,9 +19,7 @@ use JMS\Serializer\Annotation as Serializer;
 class InstrumentCollection
 {
     /**
-     * @var array|Instrument[]
-     *
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Account\Instrument>")
+     * @var Instrument[]
      */
     private $instruments;
 
@@ -36,7 +32,7 @@ class InstrumentCollection
     }
 
     /**
-     * @param array|Instrument[] $instruments
+     * @param Instrument[] $instruments
      *
      * @return InstrumentCollection
      */

@@ -51,29 +51,29 @@ class PositionClientTest extends AbstractClientTest
         $positions = $result->getPositions();
         $this->assertCount(1, $positions);
         $this->assertEquals('EUR_USD', $positions[0]->getInstrument());
-        $this->assertEquals(-3.0000, $positions[0]->getProfitLoss()->getAmount()->toFloat());
-        $this->assertEquals(-3.0000, $positions[0]->getResettableProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(-3.0000, $positions[0]->getPl()->getAmount()->toFloat());
+        $this->assertEquals(-3.0000, $positions[0]->getResettablePl()->getAmount()->toFloat());
         $this->assertEquals(-0.2558, $positions[0]->getFinancing()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $positions[0]->getCommission()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $positions[0]->getGuaranteedExecutionFees()->getAmount()->toFloat());
-        $this->assertEquals(0.0000, $positions[0]->getUnrealizedProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $positions[0]->getUnrealizedPl()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $positions[0]->getMarginUsed()->getAmount()->toFloat());
 
         $positionSideLong = $positions[0]->getLong();
         $this->assertEquals(0, $positionSideLong->getUnits()->toInt());
-        $this->assertEquals(-3.0000, $positionSideLong->getProfitLoss()->getAmount()->toFloat());
-        $this->assertEquals(-3.0000, $positionSideLong->getResettableProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(-3.0000, $positionSideLong->getPl()->getAmount()->toFloat());
+        $this->assertEquals(-3.0000, $positionSideLong->getResettablePl()->getAmount()->toFloat());
         $this->assertEquals(-0.2558, $positionSideLong->getFinancing()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $positionSideLong->getGuaranteedExecutionFees()->getAmount()->toFloat());
-        $this->assertEquals(0.0000, $positionSideLong->getUnrealizedProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $positionSideLong->getUnrealizedPl()->getAmount()->toFloat());
 
         $positionSideShort = $positions[0]->getShort();
         $this->assertEquals(0, $positionSideShort->getUnits()->toInt());
-        $this->assertEquals(0.0000, $positionSideShort->getProfitLoss()->getAmount()->toFloat());
-        $this->assertEquals(0.0000, $positionSideShort->getResettableProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $positionSideShort->getPl()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $positionSideShort->getResettablePl()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $positionSideShort->getFinancing()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $positionSideShort->getGuaranteedExecutionFees()->getAmount()->toFloat());
-        $this->assertEquals(0.0000, $positionSideShort->getUnrealizedProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $positionSideShort->getUnrealizedPl()->getAmount()->toFloat());
     }
 
     public function testPositions()
@@ -86,29 +86,29 @@ class PositionClientTest extends AbstractClientTest
         $positions = $result->getPositions();
         $this->assertCount(1, $positions);
         $this->assertEquals('EUR_USD', $positions[0]->getInstrument());
-        $this->assertEquals(-3.0000, $positions[0]->getProfitLoss()->getAmount()->toFloat());
-        $this->assertEquals(-3.0000, $positions[0]->getResettableProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(-3.0000, $positions[0]->getPl()->getAmount()->toFloat());
+        $this->assertEquals(-3.0000, $positions[0]->getResettablePl()->getAmount()->toFloat());
         $this->assertEquals(-0.2558, $positions[0]->getFinancing()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $positions[0]->getCommission()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $positions[0]->getGuaranteedExecutionFees()->getAmount()->toFloat());
-        $this->assertEquals(0.0000, $positions[0]->getUnrealizedProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $positions[0]->getUnrealizedPl()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $positions[0]->getMarginUsed()->getAmount()->toFloat());
 
         $positionSideLong = $positions[0]->getLong();
         $this->assertEquals(0, $positionSideLong->getUnits()->toInt());
-        $this->assertEquals(-3.0000, $positionSideLong->getProfitLoss()->getAmount()->toFloat());
-        $this->assertEquals(-3.0000, $positionSideLong->getResettableProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(-3.0000, $positionSideLong->getPl()->getAmount()->toFloat());
+        $this->assertEquals(-3.0000, $positionSideLong->getResettablePl()->getAmount()->toFloat());
         $this->assertEquals(-0.2558, $positionSideLong->getFinancing()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $positionSideLong->getGuaranteedExecutionFees()->getAmount()->toFloat());
-        $this->assertEquals(0.0000, $positionSideLong->getUnrealizedProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $positionSideLong->getUnrealizedPl()->getAmount()->toFloat());
 
         $positionSideShort = $positions[0]->getShort();
         $this->assertEquals(0, $positionSideShort->getUnits()->toInt());
-        $this->assertEquals(0.0000, $positionSideShort->getProfitLoss()->getAmount()->toFloat());
-        $this->assertEquals(0.0000, $positionSideShort->getResettableProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $positionSideShort->getPl()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $positionSideShort->getResettablePl()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $positionSideShort->getFinancing()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $positionSideShort->getGuaranteedExecutionFees()->getAmount()->toFloat());
-        $this->assertEquals(0.0000, $positionSideShort->getUnrealizedProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $positionSideShort->getUnrealizedPl()->getAmount()->toFloat());
     }
 
     public function testPosition()
@@ -120,29 +120,29 @@ class PositionClientTest extends AbstractClientTest
 
         $position = $result->getPosition();
         $this->assertEquals('EUR_USD', $position->getInstrument());
-        $this->assertEquals(-3.0000, $position->getProfitLoss()->getAmount()->toFloat());
-        $this->assertEquals(-3.0000, $position->getResettableProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(-3.0000, $position->getPl()->getAmount()->toFloat());
+        $this->assertEquals(-3.0000, $position->getResettablePl()->getAmount()->toFloat());
         $this->assertEquals(-0.2558, $position->getFinancing()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $position->getCommission()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $position->getGuaranteedExecutionFees()->getAmount()->toFloat());
-        $this->assertEquals(0.0000, $position->getUnrealizedProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $position->getUnrealizedPl()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $position->getMarginUsed()->getAmount()->toFloat());
 
         $positionSideLong = $position->getLong();
         $this->assertEquals(0, $positionSideLong->getUnits()->toInt());
-        $this->assertEquals(-3.0000, $positionSideLong->getProfitLoss()->getAmount()->toFloat());
-        $this->assertEquals(-3.0000, $positionSideLong->getResettableProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(-3.0000, $positionSideLong->getPl()->getAmount()->toFloat());
+        $this->assertEquals(-3.0000, $positionSideLong->getResettablePl()->getAmount()->toFloat());
         $this->assertEquals(-0.2558, $positionSideLong->getFinancing()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $positionSideLong->getGuaranteedExecutionFees()->getAmount()->toFloat());
-        $this->assertEquals(0.0000, $positionSideLong->getUnrealizedProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $positionSideLong->getUnrealizedPl()->getAmount()->toFloat());
 
         $positionSideShort = $position->getShort();
         $this->assertEquals(0, $positionSideShort->getUnits()->toInt());
-        $this->assertEquals(0.0000, $positionSideShort->getProfitLoss()->getAmount()->toFloat());
-        $this->assertEquals(0.0000, $positionSideShort->getResettableProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $positionSideShort->getPl()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $positionSideShort->getResettablePl()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $positionSideShort->getFinancing()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $positionSideShort->getGuaranteedExecutionFees()->getAmount()->toFloat());
-        $this->assertEquals(0.0000, $positionSideShort->getUnrealizedProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $positionSideShort->getUnrealizedPl()->getAmount()->toFloat());
     }
 
     public function testClose()

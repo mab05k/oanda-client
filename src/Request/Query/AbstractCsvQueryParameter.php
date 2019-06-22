@@ -19,7 +19,7 @@ abstract class AbstractCsvQueryParameter extends AbstractQueryParameter implemen
     /**
      * AbstractCsvQueryParameter constructor.
      *
-     * @param array|null $value
+     * @param null $value
      */
     public function __construct(?array $value = null)
     {

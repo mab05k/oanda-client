@@ -8,9 +8,11 @@
     "ext-json": "*",
     "brick/math": "^0.8.4",
     "brick/money": "^0.4.1",
-    "jms/serializer-bundle": "^2.3",
     "php-http/guzzle6-adapter": "^2.0",
-    "php-http/httplug-bundle": "^1.14"
+    "php-http/httplug-bundle": "^1.14",
+    "symfony/property-access": "^4.3",
+    "symfony/property-info": "^4.3",
+    "symfony/serializer": "^4.3"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.14",
@@ -20,6 +22,7 @@
     "phpunit/phpunit": "^7.0",
     "symfony/browser-kit": "^4.2",
     "symfony/dotenv": "^4.2",
+    "symfony/framework-bundle": "^4.3",
     "symfony/monolog-bundle": "^3.3",
     "symfony/yaml": "^4.2"
   },

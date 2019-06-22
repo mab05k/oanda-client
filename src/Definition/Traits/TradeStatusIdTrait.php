@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Traits;
 
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait TradeStatusIdTrait.
@@ -24,7 +24,6 @@ trait TradeStatusIdTrait
      * @var int|null
      *
      * @Serializer\SerializedName("tradeOpenedID")
-     * @Serializer\Type("integer")
      */
     private $tradeOpenedId;
 
@@ -32,7 +31,6 @@ trait TradeStatusIdTrait
      * @var int|null
      *
      * @Serializer\SerializedName("tradeReducedID")
-     * @Serializer\Type("integer")
      */
     private $tradeReducedId;
 
@@ -40,7 +38,6 @@ trait TradeStatusIdTrait
      * @var array|null
      *
      * @Serializer\SerializedName("tradeClosedIDs")
-     * @Serializer\Type("array<string>")
      */
     private $tradeClosedIds;
 

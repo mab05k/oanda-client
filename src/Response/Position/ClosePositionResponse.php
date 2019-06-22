@@ -11,12 +11,12 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Response\Position;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\LastTransactionIdTrait;
 use Mab05k\OandaClient\Definition\Traits\RelatedTransactionIdsTrait;
 use Mab05k\OandaClient\Definition\Transaction\Order\MarketOrderTransaction;
 use Mab05k\OandaClient\Definition\Transaction\Order\OrderCancelTransaction;
 use Mab05k\OandaClient\Definition\Transaction\Order\OrderFillTransaction;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class ClosePositionResponse.
@@ -30,7 +30,6 @@ class ClosePositionResponse
      * @var MarketOrderTransaction|null
      *
      * @Serializer\SerializedName("longOrderCreateTransaction")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\MarketOrderTransaction")
      */
     private $longOrderCreateTransaction;
 
@@ -38,7 +37,6 @@ class ClosePositionResponse
      * @var OrderFillTransaction|null
      *
      * @Serializer\SerializedName("longOrderFillTransaction")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\OrderFillTransaction")
      */
     private $longOrderFillTransaction;
 
@@ -46,7 +44,6 @@ class ClosePositionResponse
      * @var OrderCancelTransaction|null
      *
      * @Serializer\SerializedName("longOrderCancelTransaction")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\OrderCancelTransaction")
      */
     private $longOrderCancelTransaction;
 
@@ -54,7 +51,6 @@ class ClosePositionResponse
      * @var MarketOrderTransaction|null
      *
      * @Serializer\SerializedName("shortOrderCreateTransaction")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\MarketOrderTransaction")
      */
     private $shortOrderCreateTransaction;
 
@@ -62,7 +58,6 @@ class ClosePositionResponse
      * @var OrderFillTransaction|null
      *
      * @Serializer\SerializedName("shortOrderFillTransaction")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\OrderFillTransaction")
      */
     private $shortOrderFillTransaction;
 
@@ -70,7 +65,6 @@ class ClosePositionResponse
      * @var OrderCancelTransaction|null
      *
      * @Serializer\SerializedName("shortOrderCancelTransaction")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\OrderCancelTransaction")
      */
     private $shortOrderCancelTransaction;
 

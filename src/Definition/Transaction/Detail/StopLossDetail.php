@@ -11,12 +11,12 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Transaction\Detail;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\ClientExtensionsTrait;
 use Mab05k\OandaClient\Definition\Traits\DistanceTrait;
 use Mab05k\OandaClient\Definition\Traits\GoodUntilDateTrait;
 use Mab05k\OandaClient\Definition\Traits\PriceTrait;
 use Mab05k\OandaClient\Definition\Traits\TimeInForceTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class StopLossDetail.
@@ -35,7 +35,6 @@ class StopLossDetail
      * @var bool|null
      *
      * @Serializer\SerializedName("guaranteed")
-     * @Serializer\Type("boolean")
      */
     private $guaranteed;
 

@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Traits;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Transaction\ClientExtension\ClientExtension;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait TradeClientExtensionsTrait.
@@ -25,7 +25,6 @@ trait TradeClientExtensionsTrait
      * @var ClientExtension|null
      *
      * @Serializer\SerializedName("tradeClientExtensions")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\ClientExtension\ClientExtension")
      */
     private $tradeClientExtensions;
 

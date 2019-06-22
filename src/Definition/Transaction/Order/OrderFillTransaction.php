@@ -13,7 +13,6 @@ namespace Mab05k\OandaClient\Definition\Transaction\Order;
 
 use Brick\Math\BigDecimal;
 use Brick\Money\Money;
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\CommissionTrait;
 use Mab05k\OandaClient\Definition\Traits\FinancingTrait;
 use Mab05k\OandaClient\Definition\Traits\FullPriceTrait;
@@ -28,6 +27,7 @@ use Mab05k\OandaClient\Definition\Traits\TradesClosedTrait;
 use Mab05k\OandaClient\Definition\Traits\TransactionOrderIdTrait;
 use Mab05k\OandaClient\Definition\Traits\TypeTrait;
 use Mab05k\OandaClient\Definition\Traits\UnitTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class OrderFillTransaction.
@@ -50,55 +50,49 @@ class OrderFillTransaction implements OrderTransactionInterface
     use ProfitLossTrait;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("accountBalance")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $accountBalance;
 
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("gainQuoteHomeConversionFactor")
-     * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $gainQuoteHomeConversionFactor;
 
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("lossQuoteHomeConversionFactor")
-     * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $lossQuoteHomeConversionFactor;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("guaranteedExecutionFee")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $guaranteedExecutionFee;
 
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("requestedUnits")
-     * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $requestedUnits;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("fullVWAP")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $fullVWap;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getAccountBalance(): ?Money
     {
@@ -106,7 +100,7 @@ class OrderFillTransaction implements OrderTransactionInterface
     }
 
     /**
-     * @param Money|null $accountBalance
+     * @param \Brick\Money\Money|null $accountBalance
      *
      * @return OrderFillTransaction
      */
@@ -118,7 +112,7 @@ class OrderFillTransaction implements OrderTransactionInterface
     }
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getGainQuoteHomeConversionFactor(): ?BigDecimal
     {
@@ -126,7 +120,7 @@ class OrderFillTransaction implements OrderTransactionInterface
     }
 
     /**
-     * @param BigDecimal|null $gainQuoteHomeConversionFactor
+     * @param \Brick\Math\BigDecimal|null $gainQuoteHomeConversionFactor
      *
      * @return OrderFillTransaction
      */
@@ -138,7 +132,7 @@ class OrderFillTransaction implements OrderTransactionInterface
     }
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getLossQuoteHomeConversionFactor(): ?BigDecimal
     {
@@ -146,7 +140,7 @@ class OrderFillTransaction implements OrderTransactionInterface
     }
 
     /**
-     * @param BigDecimal|null $lossQuoteHomeConversionFactor
+     * @param \Brick\Math\BigDecimal|null $lossQuoteHomeConversionFactor
      *
      * @return OrderFillTransaction
      */
@@ -158,7 +152,7 @@ class OrderFillTransaction implements OrderTransactionInterface
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getGuaranteedExecutionFee(): ?Money
     {
@@ -166,7 +160,7 @@ class OrderFillTransaction implements OrderTransactionInterface
     }
 
     /**
-     * @param Money|null $guaranteedExecutionFee
+     * @param \Brick\Money\Money|null $guaranteedExecutionFee
      *
      * @return OrderFillTransaction
      */
@@ -178,7 +172,7 @@ class OrderFillTransaction implements OrderTransactionInterface
     }
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getRequestedUnits(): ?BigDecimal
     {
@@ -186,7 +180,7 @@ class OrderFillTransaction implements OrderTransactionInterface
     }
 
     /**
-     * @param BigDecimal|null $requestedUnits
+     * @param \Brick\Math\BigDecimal|null $requestedUnits
      *
      * @return OrderFillTransaction
      */
@@ -198,7 +192,7 @@ class OrderFillTransaction implements OrderTransactionInterface
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getFullVWap(): ?Money
     {
@@ -206,7 +200,7 @@ class OrderFillTransaction implements OrderTransactionInterface
     }
 
     /**
-     * @param Money|null $fullVWap
+     * @param \Brick\Money\Money|null $fullVWap
      *
      * @return OrderFillTransaction
      */

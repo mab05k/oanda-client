@@ -12,9 +12,9 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Instrument;
 
 use Brick\Money\Money;
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\InstrumentTrait;
 use Mab05k\OandaClient\Definition\Traits\PriceTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class BookInstrument.
@@ -28,23 +28,20 @@ class Book
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("time")
-     * @Serializer\Type("DateTime<'Y-m-d\TH:i:s\Z'>")
      */
     private $time;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("bucketWidth")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $bucketWidth;
 
     /**
-     * @var array|BookBucket[]|null
+     * @var BookBucket[]|null
      *
      * @Serializer\SerializedName("buckets")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Instrument\BookBucket>")
      */
     private $buckets;
 
@@ -69,7 +66,7 @@ class Book
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getBucketWidth(): ?Money
     {
@@ -77,7 +74,7 @@ class Book
     }
 
     /**
-     * @param Money|null $bucketWidth
+     * @param \Brick\Money\Money|null $bucketWidth
      *
      * @return Book
      */
@@ -89,7 +86,7 @@ class Book
     }
 
     /**
-     * @return array|BookBucket[]|null
+     * @return BookBucket[]|null
      */
     public function getBuckets()
     {
@@ -97,7 +94,7 @@ class Book
     }
 
     /**
-     * @param array|BookBucket[]|null $buckets
+     * @param BookBucket[]|null $buckets
      *
      * @return Book
      */

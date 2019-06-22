@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Traits;
 
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait ReasonTrait.
@@ -22,7 +22,6 @@ trait ReasonTrait
      * @var string|null
      *
      * @Serializer\SerializedName("reason")
-     * @Serializer\Type("string")
      */
     private $reason;
 

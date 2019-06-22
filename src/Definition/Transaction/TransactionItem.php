@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Transaction;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\LastTransactionIdTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class TransactionObject.
@@ -25,7 +25,6 @@ class TransactionItem
      * @var Transaction|null
      *
      * @Serializer\SerializedName("transaction")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Transaction")
      */
     private $transaction;
 

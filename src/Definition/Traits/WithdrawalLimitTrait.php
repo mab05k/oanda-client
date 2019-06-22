@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Traits;
 
 use Brick\Money\Money;
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait WithdrawalLimitTrait.
@@ -20,15 +20,14 @@ use JMS\Serializer\Annotation as Serializer;
 trait WithdrawalLimitTrait
 {
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("withdrawalLimit")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $withdrawalLimit;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getWithdrawalLimit(): ?Money
     {
@@ -36,7 +35,7 @@ trait WithdrawalLimitTrait
     }
 
     /**
-     * @param Money|null $withdrawalLimit
+     * @param \Brick\Money\Money|null $withdrawalLimit
      *
      * @return $this
      */

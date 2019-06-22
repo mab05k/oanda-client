@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Traits;
 
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 trait InstrumentTrait
 {
@@ -19,7 +19,6 @@ trait InstrumentTrait
      * @var string|null
      *
      * @Serializer\SerializedName("instrument")
-     * @Serializer\Type("string")
      */
     private $instrument;
 

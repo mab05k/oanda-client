@@ -12,11 +12,11 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Position;
 
 use Brick\Money\Money;
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\FinancingTrait;
 use Mab05k\OandaClient\Definition\Traits\GuaranteedExecutionFeesTrait;
 use Mab05k\OandaClient\Definition\Traits\ProfitLossTrait;
 use Mab05k\OandaClient\Definition\Traits\UnitTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class PositionSide.
@@ -29,23 +29,21 @@ class PositionSide
     use UnitTrait;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("averagePrice")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $averagePrice;
 
     /**
-     * @var array|null
+     * @var null
      *
      * @Serializer\SerializedName("tradeIDs")
-     * @Serializer\Type("array<string>")
      */
     private $tradeIds;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getAveragePrice(): ?Money
     {
@@ -53,7 +51,7 @@ class PositionSide
     }
 
     /**
-     * @param Money|null $averagePrice
+     * @param \Brick\Money\Money|null $averagePrice
      *
      * @return PositionSide
      */
@@ -64,16 +62,13 @@ class PositionSide
         return $this;
     }
 
-    /**
-     * @return array|null
-     */
     public function getTradeIds(): ?array
     {
         return $this->tradeIds;
     }
 
     /**
-     * @param array|null $tradeIds
+     * @param null $tradeIds
      *
      * @return PositionSide
      */

@@ -44,9 +44,9 @@ class OrderRequestFactory
 {
     /**
      * @param string                      $instrument
-     * @param BigDecimal                  $units
+     * @param \Brick\Math\BigDecimal      $units
      * @param ClientExtension             $clientExtension
-     * @param Money|null                  $priceBound
+     * @param \Brick\Money\Money|null     $priceBound
      * @param string                      $timeInForce
      * @param string                      $positionFill
      * @param TakeProfitDetail|null       $takeProfitOnFill
@@ -88,8 +88,8 @@ class OrderRequestFactory
 
     /**
      * @param string                      $instrument
-     * @param BigDecimal                  $units
-     * @param Money                       $price
+     * @param \Brick\Math\BigDecimal      $units
+     * @param \Brick\Money\Money          $price
      * @param ClientExtension|null        $clientExtension
      * @param string                      $timeInForce
      * @param \DateTime|null              $gtdTime
@@ -137,10 +137,10 @@ class OrderRequestFactory
 
     /**
      * @param string                      $instrument
-     * @param BigDecimal                  $units
-     * @param Money                       $price
+     * @param \Brick\Math\BigDecimal      $units
+     * @param \Brick\Money\Money          $price
      * @param ClientExtension|null        $clientExtension
-     * @param Money|null                  $priceBound
+     * @param \Brick\Money\Money|null     $priceBound
      * @param string                      $timeInForce
      * @param \DateTime|null              $gtdTime
      * @param string                      $positionFill
@@ -188,20 +188,20 @@ class OrderRequestFactory
     }
 
     /**
-     * @param int             $tradeId
-     * @param string          $clientTradeId
-     * @param Money           $price
-     * @param BigDecimal      $distance
-     * @param ClientExtension $clientExtension
-     * @param string          $timeInForce
-     * @param \DateTime|null  $gtdTime
-     * @param string          $triggerCondition
-     * @param bool            $guaranteed
+     * @param int                    $tradeId
+     * @param string                 $clientTradeId
+     * @param \Brick\Money\Money     $price
+     * @param \Brick\Math\BigDecimal $distance
+     * @param ClientExtension        $clientExtension
+     * @param string                 $timeInForce
+     * @param \DateTime|null         $gtdTime
+     * @param string                 $triggerCondition
+     * @param bool                   $guaranteed
      *
      * @return StopLossOrderRequestEnvelope
      */
     public static function stopLossOrderRequest(
-        int $tradeId,
+        string $tradeId,
         Money $price,
         ?BigDecimal $distance = null,
         ?string $clientTradeId = null,
@@ -229,9 +229,9 @@ class OrderRequestFactory
 
     /**
      * @param string                      $instrument
-     * @param BigDecimal                  $units
-     * @param Money                       $price
-     * @param Money                       $priceBound
+     * @param \Brick\Math\BigDecimal      $units
+     * @param \Brick\Money\Money          $price
+     * @param \Brick\Money\Money          $priceBound
      * @param ClientExtension|null        $clientExtension
      * @param string                      $timeInForce
      * @param \DateTime|null              $gtdTime
@@ -280,13 +280,13 @@ class OrderRequestFactory
     }
 
     /**
-     * @param int             $tradeId
-     * @param string          $clientTradeId
-     * @param Money           $price
-     * @param ClientExtension $clientExtension
-     * @param string          $timeInForce
-     * @param \DateTime|null  $gtdTime
-     * @param string          $triggerCondition
+     * @param int                $tradeId
+     * @param string             $clientTradeId
+     * @param \Brick\Money\Money $price
+     * @param ClientExtension    $clientExtension
+     * @param string             $timeInForce
+     * @param \DateTime|null     $gtdTime
+     * @param string             $triggerCondition
      *
      * @return TakeProfitOrderRequestEnvelope
      */
@@ -314,13 +314,13 @@ class OrderRequestFactory
     }
 
     /**
-     * @param int             $tradeId
-     * @param string          $clientTradeId
-     * @param BigDecimal      $distance
-     * @param ClientExtension $clientExtension
-     * @param string          $timeInForce
-     * @param \DateTime|null  $gtdTime
-     * @param string          $triggerCondition
+     * @param int                    $tradeId
+     * @param string                 $clientTradeId
+     * @param \Brick\Math\BigDecimal $distance
+     * @param ClientExtension        $clientExtension
+     * @param string                 $timeInForce
+     * @param \DateTime|null         $gtdTime
+     * @param string                 $triggerCondition
      *
      * @return TrailingStopLossOrderRequestEnvelope
      */

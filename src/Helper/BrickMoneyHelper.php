@@ -24,7 +24,7 @@ class BrickMoneyHelper
      * @param $amount
      * @param int $precision
      *
-     * @return Money
+     * @return \Brick\Money\Money
      */
     public static function create($amount, int $precision = 5): Money
     {

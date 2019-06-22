@@ -12,8 +12,8 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Traits;
 
 use Brick\Money\Money;
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Transaction\Order\FullPrice;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait FullPriceTrait.
@@ -21,10 +21,9 @@ use Mab05k\OandaClient\Definition\Transaction\Order\FullPrice;
 trait FullPriceTrait
 {
     /**
-     * @var FullPrice|null
+     * @var \Mab05k\OandaClient\Definition\Transaction\Order\FullPrice|null
      *
      * @Serializer\SerializedName("fullPrice")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\FullPrice")
      */
     private $fullPrice;
 
@@ -49,7 +48,7 @@ trait FullPriceTrait
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getSpread(): ?Money
     {

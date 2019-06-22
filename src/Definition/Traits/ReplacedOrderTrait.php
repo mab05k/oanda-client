@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Traits;
 
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait ReplacedOrderTrait.
@@ -24,7 +24,6 @@ trait ReplacedOrderTrait
      * @var string|null
      *
      * @Serializer\SerializedName("replacesOrderID")
-     * @Serializer\Type("string")
      */
     private $replacesOrderId;
 
@@ -32,7 +31,6 @@ trait ReplacedOrderTrait
      * @var string|null
      *
      * @Serializer\SerializedName("replacedByOrderID")
-     * @Serializer\Type("string")
      */
     private $replacedByOrderId;
 

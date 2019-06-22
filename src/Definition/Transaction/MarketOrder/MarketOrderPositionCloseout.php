@@ -12,8 +12,8 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Transaction\MarketOrder;
 
 use Brick\Math\BigDecimal;
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\InstrumentTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class MarketOrderPositionCloseout.
@@ -28,12 +28,11 @@ class MarketOrderPositionCloseout
      * @var string|BigDecimal|null
      *
      * @Serializer\SerializedName("units")
-     * @Serializer\Type("string")
      */
     private $units;
 
     /**
-     * @return BigDecimal|string|null
+     * @return \Brick\Math\BigDecimal|string|null
      */
     public function getUnits()
     {
@@ -45,7 +44,7 @@ class MarketOrderPositionCloseout
     }
 
     /**
-     * @param BigDecimal|string|null $units
+     * @param \Brick\Math\BigDecimal|string|null $units
      *
      * @return MarketOrderPositionCloseout
      */

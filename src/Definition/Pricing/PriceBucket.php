@@ -12,8 +12,8 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Pricing;
 
 use Brick\Math\BigDecimal;
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\PriceTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class PriceBucket.
@@ -23,15 +23,14 @@ class PriceBucket
     use PriceTrait;
 
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("liquidity")
-     * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $liquidity;
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getLiquidity(): ?BigDecimal
     {
@@ -39,7 +38,7 @@ class PriceBucket
     }
 
     /**
-     * @param BigDecimal|null $liquidity
+     * @param \Brick\Math\BigDecimal|null $liquidity
      *
      * @return PriceBucket
      */

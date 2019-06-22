@@ -11,11 +11,11 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Transaction\Order;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\OrderTransactionTrait;
 use Mab05k\OandaClient\Definition\Traits\TransactionOrderIdTrait;
 use Mab05k\OandaClient\Definition\Traits\TypeTrait;
 use Mab05k\OandaClient\Definition\Transaction\ClientExtension\ClientExtension;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class OrderClientExtensionsModifyTransaction.
@@ -30,7 +30,6 @@ class OrderClientExtensionsModifyTransaction
      * @var ClientExtension|null
      *
      * @Serializer\SerializedName("clientExtensionsModify")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\ClientExtension\ClientExtension")
      */
     private $clientExtensionsModify;
 
@@ -38,7 +37,6 @@ class OrderClientExtensionsModifyTransaction
      * @var ClientExtension|null
      *
      * @Serializer\SerializedName("tradeClientExtensionsModify")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\ClientExtension\ClientExtension")
      */
     private $tradeClientExtensionsModify;
 

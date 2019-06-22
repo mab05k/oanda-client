@@ -25,7 +25,7 @@ use Mab05k\OandaClient\Definition\Transaction\Detail\TrailingStopLossDetail;
 class OrderDetailFactory
 {
     /**
-     * @param Money                $price
+     * @param \Brick\Money\Money   $price
      * @param \DateTime            $goodUntilDate
      * @param string               $timeInForce
      * @param ClientExtension|null $clientExtension
@@ -46,12 +46,12 @@ class OrderDetailFactory
     }
 
     /**
-     * @param Money                $price
-     * @param BigDecimal           $distance
-     * @param \DateTime            $goodUntilDate
-     * @param string               $timeInForce
-     * @param ClientExtension|null $clientExtension
-     * @param bool                 $guaranteed
+     * @param \Brick\Money\Money     $price
+     * @param \Brick\Math\BigDecimal $distance
+     * @param \DateTime              $goodUntilDate
+     * @param string                 $timeInForce
+     * @param ClientExtension|null   $clientExtension
+     * @param bool                   $guaranteed
      *
      * @return StopLossDetail
      */
@@ -73,10 +73,10 @@ class OrderDetailFactory
     }
 
     /**
-     * @param BigDecimal           $distance
-     * @param \DateTime            $goodUntilDate
-     * @param string               $timeInForce
-     * @param ClientExtension|null $clientExtension
+     * @param \Brick\Math\BigDecimal $distance
+     * @param \DateTime              $goodUntilDate
+     * @param string                 $timeInForce
+     * @param ClientExtension|null   $clientExtension
      *
      * @return TrailingStopLossDetail
      */

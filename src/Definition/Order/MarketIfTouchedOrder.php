@@ -12,7 +12,6 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Order;
 
 use Brick\Money\Money;
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\CancelledOrderTrait;
 use Mab05k\OandaClient\Definition\Traits\CreateTimeTrait;
 use Mab05k\OandaClient\Definition\Traits\FilledOrderTrait;
@@ -21,6 +20,7 @@ use Mab05k\OandaClient\Definition\Traits\ReplacedOrderTrait;
 use Mab05k\OandaClient\Definition\Traits\StateTrait;
 use Mab05k\OandaClient\Definition\Traits\TradeStatusIdTrait;
 use Mab05k\OandaClient\Request\Order\MarketIfTouchedOrderRequest;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class MarketIfTouchedOrder.
@@ -38,15 +38,14 @@ class MarketIfTouchedOrder extends MarketIfTouchedOrderRequest
     use ReplacedOrderTrait;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("initialMarketPrice")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $initialMarketPrice;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getInitialMarketPrice(): ?Money
     {
@@ -54,7 +53,7 @@ class MarketIfTouchedOrder extends MarketIfTouchedOrderRequest
     }
 
     /**
-     * @param Money|null $initialMarketPrice
+     * @param \Brick\Money\Money|null $initialMarketPrice
      *
      * @return MarketIfTouchedOrder
      */

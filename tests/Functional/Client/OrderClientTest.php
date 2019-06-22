@@ -111,7 +111,7 @@ class OrderClientTest extends AbstractClientTest
         $this->assertEquals(1, $orderFillTransaction->getLossQuoteHomeConversionFactor()->toInt());
         $this->assertEquals(1000, $orderFillTransaction->getUnits()->toInt());
         $this->assertEquals(1.16555, $orderFillTransaction->getPrice()->getAmount()->toFloat());
-        $this->assertEquals(0.0000, $orderFillTransaction->getProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $orderFillTransaction->getPl()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $orderFillTransaction->getFinancing()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $orderFillTransaction->getCommission()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $orderFillTransaction->getGuaranteedExecutionFee()->getAmount()->toFloat());
@@ -222,7 +222,7 @@ class OrderClientTest extends AbstractClientTest
     {
         $this->createMockResponse(201, 'order/stop_loss_order.json');
         $stopLossOrder = OrderRequestFactory::stopLossOrderRequest(
-            1,
+            (string) 1,
             BrickMoneyHelper::create(1.1234),
             BigDecimal::of(.05),
             'id'

@@ -13,8 +13,8 @@ namespace Mab05k\OandaClient\Definition\Account;
 
 use Brick\Math\BigDecimal;
 use Brick\Money\Money;
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\CommissionTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class InstrumentCommission.
@@ -24,23 +24,21 @@ class InstrumentCommission
     use CommissionTrait;
 
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("unitsTraded")
-     * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $unitsTraded;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("minimumCommission")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $minimumCommission;
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getUnitsTraded(): ?BigDecimal
     {
@@ -48,7 +46,7 @@ class InstrumentCommission
     }
 
     /**
-     * @param BigDecimal|null $unitsTraded
+     * @param \Brick\Math\BigDecimal|null $unitsTraded
      *
      * @return InstrumentCommission
      */
@@ -60,7 +58,7 @@ class InstrumentCommission
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getMinimumCommission(): ?Money
     {
@@ -68,7 +66,7 @@ class InstrumentCommission
     }
 
     /**
-     * @param Money|null $minimumCommission
+     * @param \Brick\Money\Money|null $minimumCommission
      *
      * @return InstrumentCommission
      */

@@ -16,6 +16,7 @@ use Mab05k\OandaClient\Definition\Instrument\OrderBook;
 use Mab05k\OandaClient\Definition\Instrument\PositionBook;
 use Mab05k\OandaClient\Request\Query\QueryBuilder;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 
 /**
  * Class InstrumentClient.
@@ -65,7 +66,7 @@ class InstrumentClient extends AbstractOandaClient
             $queryBuilder->toArray()
         );
 
-        return $this->sendRequest($request, OrderBook::class, 200);
+        return $this->sendRequest($request, OrderBook::class, 200, [DateTimeNormalizer::FORMAT_KEY => \DateTime::ATOM]);
     }
 
     /**
@@ -88,6 +89,6 @@ class InstrumentClient extends AbstractOandaClient
             $queryBuilder->toArray()
         );
 
-        return $this->sendRequest($request, PositionBook::class, 200);
+        return $this->sendRequest($request, PositionBook::class, 200, [DateTimeNormalizer::FORMAT_KEY => \DateTime::ATOM]);
     }
 }

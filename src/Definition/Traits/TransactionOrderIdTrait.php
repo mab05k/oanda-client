@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Traits;
 
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait OrderIdTrait.
@@ -19,10 +19,9 @@ use JMS\Serializer\Annotation as Serializer;
 trait TransactionOrderIdTrait
 {
     /**
-     * @var int|null
+     * @var string|null
      *
      * @Serializer\SerializedName("orderID")
-     * @Serializer\Type("integer")
      */
     private $orderId;
 
@@ -30,24 +29,23 @@ trait TransactionOrderIdTrait
      * @var string|null
      *
      * @Serializer\SerializedName("clientOrderID")
-     * @Serializer\Type("string")
      */
     private $clientOrderId;
 
     /**
-     * @return int|null
+     * @return string|null
      */
-    public function getOrderId(): ?int
+    public function getOrderId(): ?string
     {
         return $this->orderId;
     }
 
     /**
-     * @param int|null $orderId
+     * @param string|null $orderId
      *
      * @return $this
      */
-    public function setOrderId(?int $orderId)
+    public function setOrderId(?string $orderId)
     {
         $this->orderId = $orderId;
 

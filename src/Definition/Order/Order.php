@@ -11,7 +11,6 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Order;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\ClientExtensionsTrait;
 use Mab05k\OandaClient\Definition\Traits\CreateTimeTrait;
 use Mab05k\OandaClient\Definition\Traits\FilledOrderTrait;
@@ -27,6 +26,7 @@ use Mab05k\OandaClient\Definition\Traits\TradeStatusIdTrait;
 use Mab05k\OandaClient\Definition\Traits\TriggerConditionTrait;
 use Mab05k\OandaClient\Definition\Traits\TypeTrait;
 use Mab05k\OandaClient\Definition\Traits\UnitTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class Order.
@@ -53,7 +53,6 @@ class Order
      * @var bool|null
      *
      * @Serializer\SerializedName("guaranteed")
-     * @Serializer\Type("boolean")
      */
     private $guaranteed;
 

@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Account;
 
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class AccountCollection.
@@ -19,15 +19,14 @@ use JMS\Serializer\Annotation as Serializer;
 class AccountCollection
 {
     /**
-     * @var array|AccountProperty[]
+     * @var \Mab05k\OandaClient\Definition\Account\AccountProperty[]
      *
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Account\AccountProperty>")
      * @Serializer\SerializedName("accounts")
      */
     private $accounts;
 
     /**
-     * @return array|AccountProperty[]
+     * @return AccountProperty[]
      */
     public function getAccounts(): array
     {

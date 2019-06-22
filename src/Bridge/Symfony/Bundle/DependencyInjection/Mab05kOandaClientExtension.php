@@ -28,7 +28,6 @@ class Mab05kOandaClientExtension extends Extension implements PrependExtensionIn
         $config = $this->processConfiguration(new Configuration(), $configs);
 
         $this->prependHttplugExtension($container, $config);
-        $this->prependJmsSerializerExtension($container);
     }
 
     /**
@@ -111,20 +110,6 @@ class Mab05kOandaClientExtension extends Extension implements PrependExtensionIn
                         'timeout' => $config[Configuration::OANDA_CLIENT_TIMEOUT],
                     ],
                     'plugins' => $streamPlugins,
-                ],
-            ],
-        ]);
-    }
-
-    /**
-     * @param ContainerBuilder $container
-     */
-    private function prependJmsSerializerExtension(ContainerBuilder $container)
-    {
-        $container->prependExtensionConfig('jms_serializer', [
-            'handlers' => [
-                'datetime' => [
-                    'default_format' => 'Y-m-d\\TH:i:s.u???\\Z',
                 ],
             ],
         ]);

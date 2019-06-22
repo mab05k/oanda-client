@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Pricing\Price;
 
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class UnitsAvailable.
@@ -22,7 +22,6 @@ class UnitsAvailable
      * @var UnitAvailable|null
      *
      * @Serializer\SerializedName("default")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Pricing\Price\UnitAvailable")
      */
     private $default;
 
@@ -30,7 +29,6 @@ class UnitsAvailable
      * @var UnitAvailable|null
      *
      * @Serializer\SerializedName("openOnly")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Pricing\Price\UnitAvailable")
      */
     private $openOnly;
 
@@ -38,7 +36,6 @@ class UnitsAvailable
      * @var UnitAvailable|null
      *
      * @Serializer\SerializedName("reduceFirst")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Pricing\Price\UnitAvailable")
      */
     private $reduceFirst;
 
@@ -46,7 +43,6 @@ class UnitsAvailable
      * @var UnitAvailable|null
      *
      * @Serializer\SerializedName("reduceOnly")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Pricing\Price\UnitAvailable")
      */
     private $reduceOnly;
 

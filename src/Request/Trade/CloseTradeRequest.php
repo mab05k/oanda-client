@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Request\Trade;
 
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class CloseTradeRequest.
@@ -24,7 +24,6 @@ class CloseTradeRequest
      * @var string|null
      *
      * @Serializer\SerializedName("units")
-     * @Serializer\Type("string")
      */
     private $units;
 

@@ -12,7 +12,6 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Trade;
 
 use Brick\Math\BigDecimal;
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\ClientExtensionsTrait;
 use Mab05k\OandaClient\Definition\Traits\ClosingTransactionIdsTrait;
 use Mab05k\OandaClient\Definition\Traits\FinancingTrait;
@@ -22,6 +21,7 @@ use Mab05k\OandaClient\Definition\Traits\MarginUsedTrait;
 use Mab05k\OandaClient\Definition\Traits\PriceTrait;
 use Mab05k\OandaClient\Definition\Traits\ProfitLossTrait;
 use Mab05k\OandaClient\Definition\Traits\StateTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class TradeSummary.
@@ -42,7 +42,6 @@ class TradeSummary
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("openTime")
-     * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $openTime;
 
@@ -50,39 +49,34 @@ class TradeSummary
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("closeTime")
-     * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $closeTime;
 
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("initialUnits")
-     * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $initialUnits;
 
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("initialMarginRequired")
-     * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $initialMarginRequired;
 
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("currentUnits")
-     * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $currentUnits;
 
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("averageClosePrice")
-     * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $averageClosePrice;
 
@@ -90,7 +84,6 @@ class TradeSummary
      * @var int|null
      *
      * @Serializer\SerializedName("takeProfitOrderId")
-     * @Serializer\Type("integer")
      */
     private $takeProfitOrderId;
 
@@ -98,7 +91,6 @@ class TradeSummary
      * @var int|null
      *
      * @Serializer\SerializedName("stopLossOrderId")
-     * @Serializer\Type("integer")
      */
     private $stopLossOrderId;
 
@@ -106,7 +98,6 @@ class TradeSummary
      * @var int|null
      *
      * @Serializer\SerializedName("trailingStopLossOrderId")
-     * @Serializer\Type("integer")
      */
     private $trailingStopLossOrderId;
 
@@ -151,7 +142,7 @@ class TradeSummary
     }
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getInitialUnits(): ?BigDecimal
     {
@@ -159,7 +150,7 @@ class TradeSummary
     }
 
     /**
-     * @param BigDecimal|null $initialUnits
+     * @param \Brick\Math\BigDecimal|null $initialUnits
      *
      * @return TradeSummary
      */
@@ -171,7 +162,7 @@ class TradeSummary
     }
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getInitialMarginRequired(): ?BigDecimal
     {
@@ -179,7 +170,7 @@ class TradeSummary
     }
 
     /**
-     * @param BigDecimal|null $initialMarginRequired
+     * @param \Brick\Math\BigDecimal|null $initialMarginRequired
      *
      * @return TradeSummary
      */
@@ -191,7 +182,7 @@ class TradeSummary
     }
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getCurrentUnits(): ?BigDecimal
     {
@@ -199,7 +190,7 @@ class TradeSummary
     }
 
     /**
-     * @param BigDecimal|null $currentUnits
+     * @param \Brick\Math\BigDecimal|null $currentUnits
      *
      * @return TradeSummary
      */
@@ -211,7 +202,7 @@ class TradeSummary
     }
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getAverageClosePrice(): ?BigDecimal
     {
@@ -219,7 +210,7 @@ class TradeSummary
     }
 
     /**
-     * @param BigDecimal|null $averageClosePrice
+     * @param \Brick\Math\BigDecimal|null $averageClosePrice
      *
      * @return TradeSummary
      */

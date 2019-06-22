@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Transaction\Account;
 
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class Configuration.
@@ -22,7 +22,6 @@ class Configuration
      * @var ClientConfigureTransaction|null
      *
      * @Serializer\SerializedName("clientConfigureTransaction")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Account\ClientConfigureTransaction")
      */
     private $clientConfigureTransaction;
 

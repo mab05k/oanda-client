@@ -12,7 +12,6 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Order;
 
 use Brick\Math\BigDecimal;
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\CancelledOrderTrait;
 use Mab05k\OandaClient\Definition\Traits\CreateTimeTrait;
 use Mab05k\OandaClient\Definition\Traits\FilledOrderTrait;
@@ -21,6 +20,7 @@ use Mab05k\OandaClient\Definition\Traits\ReplacedOrderTrait;
 use Mab05k\OandaClient\Definition\Traits\StateTrait;
 use Mab05k\OandaClient\Definition\Traits\TradeStatusIdTrait;
 use Mab05k\OandaClient\Request\Order\StopLossOrderRequest;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class StopLossOrder.
@@ -36,15 +36,14 @@ class StopLossOrder extends StopLossOrderRequest
     use ReplacedOrderTrait;
 
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("guaranteedExecutionPremium")
-     * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $guaranteedExecutionPremium;
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getGuaranteedExecutionPremium(): ?BigDecimal
     {
@@ -52,7 +51,7 @@ class StopLossOrder extends StopLossOrderRequest
     }
 
     /**
-     * @param BigDecimal|null $guaranteedExecutionPremium
+     * @param \Brick\Math\BigDecimal|null $guaranteedExecutionPremium
      *
      * @return StopLossOrder
      */

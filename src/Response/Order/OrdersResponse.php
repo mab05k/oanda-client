@@ -11,9 +11,9 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Response\Order;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Order\Order;
 use Mab05k\OandaClient\Definition\Traits\LastTransactionIdTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class Orders.
@@ -23,15 +23,14 @@ class OrdersResponse
     use LastTransactionIdTrait;
 
     /**
-     * @var array|Order[]|null
+     * @var Order[]|null
      *
      * @Serializer\SerializedName("orders")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Order\Order>")
      */
     private $orders;
 
     /**
-     * @return array|Order[]|null
+     * @return Order[]|null
      */
     public function getOrders()
     {
@@ -39,7 +38,7 @@ class OrdersResponse
     }
 
     /**
-     * @param array|Order[]|null $orders
+     * @param Order[]|null $orders
      *
      * @return OrdersResponse
      */

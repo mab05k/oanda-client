@@ -11,7 +11,6 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Client;
 
-use Mab05k\OandaClient\Account\Account;
 use Mab05k\OandaClient\Definition\Account\AccountCollection;
 use Mab05k\OandaClient\Definition\Account\Configuration;
 use Mab05k\OandaClient\Definition\Transaction\Account\Configuration as ConfigurationTransaction;

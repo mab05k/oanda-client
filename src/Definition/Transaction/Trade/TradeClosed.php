@@ -12,12 +12,12 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Transaction\Trade;
 
 use Brick\Money\Money;
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\FinancingTrait;
 use Mab05k\OandaClient\Definition\Traits\HalfSpreadCostTrait;
 use Mab05k\OandaClient\Definition\Traits\PriceTrait;
 use Mab05k\OandaClient\Definition\Traits\TradeIdTrait;
 use Mab05k\OandaClient\Definition\Traits\UnitTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class TradeClosed.
@@ -31,23 +31,21 @@ class TradeClosed
     use FinancingTrait;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("realizedPL")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $realizedPl;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("guaranteedExecutionFee")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $guaranteedExecutionFee;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getRealizedPl(): ?Money
     {
@@ -55,7 +53,7 @@ class TradeClosed
     }
 
     /**
-     * @param Money|null $realizedPl
+     * @param \Brick\Money\Money|null $realizedPl
      */
     public function setRealizedPl(?Money $realizedPl): void
     {
@@ -63,7 +61,7 @@ class TradeClosed
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getGuaranteedExecutionFee(): ?Money
     {
@@ -71,7 +69,7 @@ class TradeClosed
     }
 
     /**
-     * @param Money|null $guaranteedExecutionFee
+     * @param \Brick\Money\Money|null $guaranteedExecutionFee
      */
     public function setGuaranteedExecutionFee(?Money $guaranteedExecutionFee): void
     {

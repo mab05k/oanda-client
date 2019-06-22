@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Traits;
 
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait TradeIdTrait.
@@ -21,31 +21,26 @@ use JMS\Serializer\Annotation as Serializer;
 trait TradeIdTrait
 {
     /**
-     * @var int|null
+     * @var string|null
      *
      * @Serializer\SerializedName("tradeID")
-     * @Serializer\Type("string")
      */
     private $tradeId;
 
     /**
-     * @return int|null
+     * @return string|null
      */
-    public function getTradeId(): ?int
+    public function getTradeId(): ?string
     {
-        if (null === $this->tradeId) {
-            return null;
-        }
-
-        return (int) ($this->tradeId);
+        return $this->tradeId;
     }
 
     /**
-     * @param int|null $tradeId
+     * @param string|null $tradeId
      *
      * @return $this
      */
-    public function setTradeId(?int $tradeId)
+    public function setTradeId(?string $tradeId)
     {
         $this->tradeId = $tradeId;
 

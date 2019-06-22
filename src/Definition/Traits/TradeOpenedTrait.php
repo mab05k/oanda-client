@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Traits;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Transaction\Trade\TradeOpened;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait TradeOpenedTrait.
@@ -20,10 +20,9 @@ use Mab05k\OandaClient\Definition\Transaction\Trade\TradeOpened;
 trait TradeOpenedTrait
 {
     /**
-     * @var TradeOpened|null
+     * @var \Mab05k\OandaClient\Definition\Transaction\Trade\TradeOpened|null
      *
      * @Serializer\SerializedName("tradeOpened")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Trade\TradeOpened")
      */
     private $tradeOpened;
 

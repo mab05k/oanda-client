@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Instrument;
 
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class OrderBook.
@@ -24,7 +24,6 @@ class OrderBook
      * @var Book|null
      *
      * @Serializer\SerializedName("orderBook")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Instrument\Book")
      */
     private $orderBook;
 

@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Transaction\MarketOrder;
 
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class MarketOrderMarginCloseout.
@@ -24,7 +24,6 @@ class MarketOrderMarginCloseout
      * @var string|null
      *
      * @Serializer\SerializedName("reason")
-     * @Serializer\Type("string")
      */
     private $reason;
 

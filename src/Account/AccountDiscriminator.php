@@ -20,14 +20,14 @@ use Mab05k\OandaClient\Exception\ConfigurationException;
 class AccountDiscriminator
 {
     /**
-     * @var array|Account[]
+     * @var Account[]
      */
     private $accounts;
 
     /**
      * AccountDiscriminator constructor.
      *
-     * @param array|Account[] $accounts
+     * @param Account[] $accounts
      */
     public function __construct(array $accounts)
     {
@@ -43,7 +43,7 @@ class AccountDiscriminator
     }
 
     /**
-     * @return array|Account[]
+     * @return Account[]
      */
     public function getAccounts(): array
     {

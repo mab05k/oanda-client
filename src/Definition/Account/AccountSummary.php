@@ -11,7 +11,6 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Account;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\AccountCreatedTrait;
 use Mab05k\OandaClient\Definition\Traits\AccountMarginTrait;
 use Mab05k\OandaClient\Definition\Traits\AccountOpenStatusTrait;
@@ -30,9 +29,10 @@ use Mab05k\OandaClient\Definition\Traits\NavTrait;
 use Mab05k\OandaClient\Definition\Traits\PositionValueTrait;
 use Mab05k\OandaClient\Definition\Traits\ProfitLossTrait;
 use Mab05k\OandaClient\Definition\Traits\WithdrawalLimitTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
- * Class AccountDetail.
+ * Class AccountSummary.
  */
 class AccountSummary
 {
@@ -59,7 +59,6 @@ class AccountSummary
      * @var string|null
      *
      * @Serializer\SerializedName("id")
-     * @Serializer\Type("string")
      */
     private $id;
 
@@ -67,7 +66,6 @@ class AccountSummary
      * @var bool|null
      *
      * @Serializer\SerializedName("hedgingEnabled")
-     * @Serializer\Type("boolean")
      */
     private $hedgingEnabled;
 
@@ -75,7 +73,6 @@ class AccountSummary
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("resettablePLTime")
-     * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $resettablePlTime;
 

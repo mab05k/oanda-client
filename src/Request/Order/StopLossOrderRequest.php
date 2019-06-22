@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Request\Order;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\DistanceTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class StopLossOrderRequest.
@@ -27,7 +27,6 @@ class StopLossOrderRequest extends AbstractTradeOrderRequest
      * @var bool|null
      *
      * @Serializer\SerializedName("guaranteed")
-     * @Serializer\Type("boolean")
      */
     private $guaranteed;
 

@@ -11,10 +11,10 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Transaction\Order;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\LastTransactionIdTrait;
 use Mab05k\OandaClient\Definition\Traits\RelatedTransactionIdsTrait;
 use Mab05k\OandaClient\Definition\Transaction\Transaction;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class OrderTransactionResponse.
@@ -28,7 +28,6 @@ class OrderTransactionResponse
      * @var string|null
      *
      * @Serializer\SerializedName("errorMessage")
-     * @Serializer\Type("string")
      */
     private $errorMessage;
 
@@ -36,7 +35,6 @@ class OrderTransactionResponse
      * @var string|null
      *
      * @Serializer\SerializedName("errorCode")
-     * @Serializer\Type("string")
      */
     private $errorCode;
 
@@ -44,7 +42,6 @@ class OrderTransactionResponse
      * @var OrderFillTransaction|null
      *
      * @Serializer\SerializedName("orderFillTransaction")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\OrderFillTransaction")
      */
     private $orderFillTransaction;
 
@@ -52,7 +49,6 @@ class OrderTransactionResponse
      * @var OrderCreateTransaction|null
      *
      * @Serializer\SerializedName("orderCreateTransaction")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\OrderCreateTransaction")
      */
     private $orderCreateTransaction;
 
@@ -60,7 +56,6 @@ class OrderTransactionResponse
      * @var OrderRejectTransaction|null
      *
      * @Serializer\SerializedName("orderRejectTransaction")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\OrderRejectTransaction")
      */
     private $orderRejectTransaction;
 
@@ -68,7 +63,6 @@ class OrderTransactionResponse
      * @var OrderCancelTransaction|null
      *
      * @Serializer\SerializedName("orderCancelTransaction")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\OrderCancelTransaction")
      */
     private $orderCancelTransaction;
 
@@ -76,7 +70,6 @@ class OrderTransactionResponse
      * @var OrderCancelRejectTransaction|null
      *
      * @Serializer\SerializedName("orderCancelRejectTransaction")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\OrderCancelRejectTransaction")
      */
     private $orderCancelRejectTransaction;
 
@@ -84,7 +77,6 @@ class OrderTransactionResponse
      * @var Transaction|null
      *
      * @Serializer\SerializedName("orderReissueTransaction")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Transaction")
      */
     private $orderReissueTransaction;
 
@@ -92,7 +84,6 @@ class OrderTransactionResponse
      * @var Transaction|null
      *
      * @Serializer\SerializedName("orderReissueRejectTransaction")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Transaction")
      */
     private $orderReissueRejectTransaction;
 
@@ -100,7 +91,6 @@ class OrderTransactionResponse
      * @var OrderCancelTransaction|null
      *
      * @Serializer\SerializedName("replacingOrderCancelTransaction")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\OrderCancelTransaction")
      */
     private $replacingOrderCancelTransaction;
 

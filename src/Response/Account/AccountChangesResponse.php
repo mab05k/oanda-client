@@ -11,10 +11,10 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Response\Account;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Account\AccountChanges;
 use Mab05k\OandaClient\Definition\Account\AccountState;
 use Mab05k\OandaClient\Definition\Traits\LastTransactionIdTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class AccountChangesResponse.
@@ -27,7 +27,6 @@ class AccountChangesResponse
      * @var AccountChanges|null
      *
      * @Serializer\SerializedName("changes")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Account\AccountChanges")
      */
     private $changes;
 
@@ -35,7 +34,6 @@ class AccountChangesResponse
      * @var AccountState|null
      *
      * @Serializer\SerializedName("state")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Account\AccountState")
      */
     private $state;
 

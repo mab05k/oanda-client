@@ -12,9 +12,9 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Transaction\Order;
 
 use Brick\Money\Money;
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Pricing\PriceBucket;
 use Mab05k\OandaClient\Definition\Traits\IdTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class FullPrice.
@@ -24,18 +24,16 @@ class FullPrice
     use IdTrait;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("closeoutBid")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $closeoutBid;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("closeoutAsk")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $closeoutAsk;
 
@@ -43,28 +41,25 @@ class FullPrice
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("timestamp")
-     * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $timestamp;
 
     /**
-     * @var array|null
+     * @var \Mab05k\OandaClient\Definition\Pricing\PriceBucket[]|null
      *
      * @Serializer\SerializedName("bids")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Pricing\PriceBucket>")
      */
     private $bids;
 
     /**
-     * @var array|null
+     * @var \Mab05k\OandaClient\Definition\Pricing\PriceBucket[]|null
      *
      * @Serializer\SerializedName("asks")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Pricing\PriceBucket>")
      */
     private $asks;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getCloseoutBid(): ?Money
     {
@@ -72,7 +67,7 @@ class FullPrice
     }
 
     /**
-     * @param Money|null $closeoutBid
+     * @param \Brick\Money\Money|null $closeoutBid
      *
      * @return FullPrice
      */
@@ -84,7 +79,7 @@ class FullPrice
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getCloseoutAsk(): ?Money
     {
@@ -92,7 +87,7 @@ class FullPrice
     }
 
     /**
-     * @param Money|null $closeoutAsk
+     * @param \Brick\Money\Money|null $closeoutAsk
      *
      * @return FullPrice
      */
@@ -124,7 +119,7 @@ class FullPrice
     }
 
     /**
-     * @return array|PriceBucket[]|null
+     * @return PriceBucket[]|null
      */
     public function getBids(): ?array
     {
@@ -132,7 +127,7 @@ class FullPrice
     }
 
     /**
-     * @param array|null $bids
+     * @param null $bids
      *
      * @return FullPrice
      */
@@ -156,7 +151,7 @@ class FullPrice
     }
 
     /**
-     * @return array|PriceBucket[]|null
+     * @return PriceBucket[]|null
      */
     public function getAsks(): ?array
     {
@@ -176,7 +171,7 @@ class FullPrice
     }
 
     /**
-     * @param array|null $asks
+     * @param null $asks
      *
      * @return FullPrice
      */

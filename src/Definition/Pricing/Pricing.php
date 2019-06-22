@@ -11,9 +11,9 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Pricing;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\TimeTrait;
 use Mab05k\OandaClient\Exception\InvalidPriceException;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class Pricing.
@@ -23,10 +23,9 @@ class Pricing
     use TimeTrait;
 
     /**
-     * @var array|Price[]|null
+     * @var Price[]|null
      *
      * @Serializer\SerializedName("prices")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Pricing\Price>")
      */
     private $prices;
 
@@ -49,7 +48,7 @@ class Pricing
     }
 
     /**
-     * @return Price[]|array|null
+     * @return Price[]|null
      */
     public function getPrices()
     {
@@ -57,7 +56,7 @@ class Pricing
     }
 
     /**
-     * @param Price[]|array|null $prices
+     * @param Price[]|null $prices
      *
      * @return Pricing
      */

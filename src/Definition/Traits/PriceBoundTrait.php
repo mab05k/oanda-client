@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Traits;
 
 use Brick\Money\Money;
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait PriceBoundTrait.
@@ -22,15 +22,14 @@ use JMS\Serializer\Annotation as Serializer;
 trait PriceBoundTrait
 {
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("priceBound")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $priceBound;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getPriceBound(): ?Money
     {
@@ -38,7 +37,7 @@ trait PriceBoundTrait
     }
 
     /**
-     * @param Money|null $priceBound
+     * @param \Brick\Money\Money|null $priceBound
      *
      * @return $this
      */

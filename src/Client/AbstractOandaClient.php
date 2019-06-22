@@ -13,7 +13,6 @@ namespace Mab05k\OandaClient\Client;
 
 use Http\Message\MessageFactory;
 use Http\Message\UriFactory;
-use JMS\Serializer\SerializerInterface;
 use Mab05k\OandaClient\Account\Account;
 use Mab05k\OandaClient\Account\AccountDiscriminator;
 use Mab05k\OandaClient\Exception\InvalidStatusCodeException;
@@ -23,6 +22,8 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
+use Symfony\Component\Serializer\SerializerInterface;
 
 /**
  * Class AbstractClient.
@@ -122,22 +123,25 @@ class AbstractOandaClient
      * @param RequestInterface $request
      * @param string           $deserializationType
      * @param int              $expectedStatusCode
+     * @param array            $context
      *
+     * @throws InvalidStatusCodeException
      * @throws \Http\Client\Exception
      * @throws \Throwable
      *
-     * @return array|\JMS\Serializer\scalar|object
+     * @return object
      */
     public function sendRequest(
         RequestInterface $request,
         string $deserializationType,
-        int $expectedStatusCode
+        int $expectedStatusCode,
+        array $context = []
     ) {
         try {
             $response = $this->client->sendRequest($request);
             $this->validateResponseCode($response, $expectedStatusCode);
 
-            return $this->deserializeResponse($response, $deserializationType);
+            return $this->deserializeResponse($response, $deserializationType, $context);
         } catch (InvalidStatusCodeException $ex) {
             if ($this->logger instanceof LoggerInterface) {
                 $this->logger->error($ex->getMessage(), [
@@ -237,18 +241,25 @@ class AbstractOandaClient
     /**
      * @param ResponseInterface $response
      * @param string            $deserializationType
+     * @param array             $context
      *
      * @throws ResponseDeserializationException
      *
-     * @return array|\JMS\Serializer\scalar|object
+     * @return object
      */
     private function deserializeResponse(
         ResponseInterface $response,
-        string $deserializationType
+        string $deserializationType,
+        array $context = []
     ) {
         try {
             $contents = $response->getBody()->getContents();
-            $result = $this->serializer->deserialize($contents, $deserializationType, 'json');
+            $result = $this->serializer->deserialize(
+                $contents,
+                $deserializationType,
+                'json',
+                array_merge([DateTimeNormalizer::FORMAT_KEY => 'Y-m-d\\TH:i:s.u???\\Z'], $context)
+            );
             if (!$result instanceof $deserializationType) {
                 throw new ResponseDeserializationException(
                     sprintf('Deserialization Resulted in an incorrect object instance. Expected %s, got %s', $deserializationType, \get_class($result)),

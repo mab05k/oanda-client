@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Transaction;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\LastTransactionIdTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class TransactionCollection.
@@ -22,23 +22,19 @@ class TransactionCollection
     use LastTransactionIdTrait;
 
     /**
-     * @var array|null
+     * @var null
      *
      * @Serializer\SerializedName("transactions")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Transaction\Transaction>")
      */
     private $transactions;
 
-    /**
-     * @return array|null
-     */
     public function getTransactions(): ?array
     {
         return $this->transactions;
     }
 
     /**
-     * @param array|null $transactions
+     * @param null $transactions
      *
      * @return TransactionCollection
      */

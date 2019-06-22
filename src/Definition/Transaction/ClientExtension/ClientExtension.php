@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Transaction\ClientExtension;
 
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class ClientExtension.
@@ -22,7 +22,6 @@ class ClientExtension
      * @var string|null
      *
      * @Serializer\SerializedName("id")
-     * @Serializer\Type("string")
      */
     private $id;
 
@@ -30,7 +29,6 @@ class ClientExtension
      * @var string|null
      *
      * @Serializer\SerializedName("tag")
-     * @Serializer\Type("string")
      */
     private $tag;
 
@@ -38,7 +36,6 @@ class ClientExtension
      * @var string|null
      *
      * @Serializer\SerializedName("comment")
-     * @Serializer\Type("string")
      */
     private $comment;
 

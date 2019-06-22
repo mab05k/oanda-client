@@ -11,7 +11,6 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Transaction\Order;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\ClientExtensionsTrait;
 use Mab05k\OandaClient\Definition\Traits\InstrumentTrait;
 use Mab05k\OandaClient\Definition\Traits\OrderTransactionTrait;
@@ -25,6 +24,7 @@ use Mab05k\OandaClient\Definition\Traits\TradeIdTrait;
 use Mab05k\OandaClient\Definition\Traits\TriggerConditionTrait;
 use Mab05k\OandaClient\Definition\Traits\TypeTrait;
 use Mab05k\OandaClient\Definition\Traits\UnitTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class OrderCreateTransaction.
@@ -49,7 +49,6 @@ class OrderCreateTransaction implements OrderTransactionInterface
      * @var bool|null
      *
      * @Serializer\SerializedName("guaranteed")
-     * @Serializer\Type("boolean")
      */
     private $guaranteed;
 

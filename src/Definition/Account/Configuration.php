@@ -12,8 +12,8 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Account;
 
 use Brick\Math\BigDecimal;
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\AliasTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class Configuration.
@@ -23,15 +23,14 @@ class Configuration
     use AliasTrait;
 
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("marginRate")
-     * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $marginRate;
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getMarginRate(): ?BigDecimal
     {
@@ -39,7 +38,7 @@ class Configuration
     }
 
     /**
-     * @param BigDecimal|null $marginRate
+     * @param \Brick\Math\BigDecimal|null $marginRate
      *
      * @return Configuration
      */

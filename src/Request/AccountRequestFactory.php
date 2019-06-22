@@ -20,8 +20,8 @@ use Mab05k\OandaClient\Definition\Account\Configuration;
 class AccountRequestFactory
 {
     /**
-     * @param string     $alias
-     * @param BigDecimal $marginRate
+     * @param string                 $alias
+     * @param \Brick\Math\BigDecimal $marginRate
      *
      * @return Configuration
      */

@@ -90,13 +90,13 @@ class AccountClientTest extends AbstractClientTest
         $this->assertEquals(0, $account->getOpenTradeCount());
         $this->assertEquals(0, $account->getOpenPositionCount());
         $this->assertEquals(0, $account->getPendingOrderCount());
-        $this->assertEquals(25.0000, $account->getProfitLoss()->getAmount()->toFloat());
-        $this->assertEquals(25.0000, $account->getResettableProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(25.0000, $account->getPl()->getAmount()->toFloat());
+        $this->assertEquals(25.0000, $account->getResettablePl()->getAmount()->toFloat());
         $this->assertInstanceOf(\DateTime::class, $account->getResettablePlTime());
         $this->assertEquals(0.0000, $account->getFinancing()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $account->getCommission()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $account->getGuaranteedExecutionFees()->getAmount()->toFloat());
-        $this->assertEquals(0.0000, $account->getUnrealizedProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $account->getUnrealizedPl()->getAmount()->toFloat());
         $this->assertEquals(100000.0000, $account->getNav()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $account->getMarginUsed()->getAmount()->toFloat());
         $this->assertEquals(100000.0000, $account->getMarginAvailable()->getAmount()->toFloat());
@@ -127,30 +127,30 @@ class AccountClientTest extends AbstractClientTest
         $position = $account->getPositions()[0];
         $this->assertInstanceOf(Position::class, $position);
         $this->assertEquals('EUR_USD', $position->getInstrument());
-        $this->assertEquals(0.0000, $position->getProfitLoss()->getAmount()->toFloat());
-        $this->assertEquals(0.0000, $position->getResettableProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $position->getPl()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $position->getResettablePl()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $position->getFinancing()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $position->getCommission()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $position->getGuaranteedExecutionFees()->getAmount()->toFloat());
-        $this->assertEquals(0.0000, $position->getUnrealizedProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $position->getUnrealizedPl()->getAmount()->toFloat());
 
         $long = $position->getLong();
         $this->assertInstanceOf(PositionSide::class, $long);
         $this->assertEquals(0, $long->getUnits()->toInt());
-        $this->assertEquals(0.0000, $long->getProfitLoss()->getAmount()->toFloat());
-        $this->assertEquals(0.0000, $long->getResettableProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $long->getPl()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $long->getResettablePl()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $long->getFinancing()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $long->getGuaranteedExecutionFees()->getAmount()->toFloat());
-        $this->assertEquals(0.0000, $long->getUnrealizedProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $long->getUnrealizedPl()->getAmount()->toFloat());
 
         $short = $position->getShort();
         $this->assertInstanceOf(PositionSide::class, $short);
         $this->assertEquals(0, $short->getUnits()->toInt());
-        $this->assertEquals(0.0000, $short->getProfitLoss()->getAmount()->toFloat());
-        $this->assertEquals(0.0000, $short->getResettableProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $short->getPl()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $short->getResettablePl()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $short->getFinancing()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $short->getGuaranteedExecutionFees()->getAmount()->toFloat());
-        $this->assertEquals(0.0000, $short->getUnrealizedProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $short->getUnrealizedPl()->getAmount()->toFloat());
     }
 
     public function testAccountSummary()
@@ -175,13 +175,13 @@ class AccountClientTest extends AbstractClientTest
         $this->assertEquals(0, $account->getOpenTradeCount());
         $this->assertEquals(0, $account->getOpenPositionCount());
         $this->assertEquals(0, $account->getPendingOrderCount());
-        $this->assertEquals(0.0000, $account->getProfitLoss()->getAmount()->toFloat());
-        $this->assertEquals(0.0000, $account->getResettableProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $account->getPl()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $account->getResettablePl()->getAmount()->toFloat());
         $this->assertInstanceOf(\DateTime::class, $account->getResettablePlTime());
         $this->assertEquals(0.0000, $account->getFinancing()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $account->getCommission()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $account->getGuaranteedExecutionFees()->getAmount()->toFloat());
-        $this->assertEquals(0.0000, $account->getUnrealizedProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $account->getUnrealizedPl()->getAmount()->toFloat());
         $this->assertEquals(100000.0000, $account->getNav()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $account->getMarginUsed()->getAmount()->toFloat());
         $this->assertEquals(100000.0000, $account->getMarginAvailable()->getAmount()->toFloat());
@@ -269,7 +269,7 @@ class AccountClientTest extends AbstractClientTest
 
         $state = $result->getState();
         $this->assertInstanceOf(AccountState::class, $state);
-        $this->assertEquals(0.0000, $state->getUnrealizedProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(0.0000, $state->getUnrealizedPl()->getAmount()->toFloat());
         $this->assertEquals(94984.8867, $state->getNav()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $state->getMarginUsed()->getAmount()->toFloat());
         $this->assertEquals(94984.8867, $state->getMarginAvailable()->getAmount()->toFloat());
@@ -280,8 +280,8 @@ class AccountClientTest extends AbstractClientTest
         $this->assertEquals(94984.8867, $state->getBalance()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $state->getMarginCloseoutMarginUsed()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $state->getMarginCloseoutPercent()->toFloat());
-        $this->assertEquals(-12.6526, $state->getProfitLoss()->getAmount()->toFloat());
-        $this->assertEquals(-12.6526, $state->getResettableProfitLoss()->getAmount()->toFloat());
+        $this->assertEquals(-12.6526, $state->getPl()->getAmount()->toFloat());
+        $this->assertEquals(-12.6526, $state->getResettablePl()->getAmount()->toFloat());
         $this->assertEquals(-2.4607, $state->getFinancing()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $state->getCommission()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $state->getGuaranteedExecutionFees()->getAmount()->toFloat());

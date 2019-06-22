@@ -22,7 +22,6 @@ class LimitOrderRequestEnvelope implements OrderInterface
      * @var LimitOrderRequest|null
      *
      * @Serializer\SerializedName("order")
-     * @Serializer\Type("Mab05k\OandaClient\Request\Order\LimitOrderRequest")
      */
     private $order;
 

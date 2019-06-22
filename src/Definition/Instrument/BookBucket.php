@@ -12,8 +12,8 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Instrument;
 
 use Brick\Math\BigDecimal;
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\PriceTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class OrderBookBucket.
@@ -25,23 +25,21 @@ class BookBucket
     use PriceTrait;
 
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("longCountPercent")
-     * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $longCountPercent;
 
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("shortCountPercent")
-     * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $shortCountPercent;
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getLongCountPercent(): ?BigDecimal
     {
@@ -49,7 +47,7 @@ class BookBucket
     }
 
     /**
-     * @param BigDecimal|null $longCountPercent
+     * @param \Brick\Math\BigDecimal|null $longCountPercent
      *
      * @return BookBucket
      */
@@ -61,7 +59,7 @@ class BookBucket
     }
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getShortCountPercent(): ?BigDecimal
     {
@@ -69,7 +67,7 @@ class BookBucket
     }
 
     /**
-     * @param BigDecimal|null $shortCountPercent
+     * @param \Brick\Math\BigDecimal|null $shortCountPercent
      *
      * @return BookBucket
      */

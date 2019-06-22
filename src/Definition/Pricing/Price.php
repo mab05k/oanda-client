@@ -12,12 +12,12 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Pricing;
 
 use Brick\Money\Money;
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Pricing\Price\UnitsAvailable;
 use Mab05k\OandaClient\Definition\Traits\InstrumentTrait;
 use Mab05k\OandaClient\Definition\Traits\TimeTrait;
 use Mab05k\OandaClient\Definition\Traits\TypeTrait;
 use Mab05k\OandaClient\Exception\PriceBucketNotFoundException;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class Price.
@@ -29,34 +29,30 @@ class Price
     use TimeTrait;
 
     /**
-     * @var array|PriceBucket[]|null
+     * @var PriceBucket[]|null
      *
      * @Serializer\SerializedName("bids")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Pricing\PriceBucket>")
      */
     private $bids;
 
     /**
-     * @var array|PriceBucket[]|null
+     * @var PriceBucket[]|null
      *
      * @Serializer\SerializedName("asks")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Pricing\PriceBucket>")
      */
     private $asks;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("closeoutBid")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $closeoutBid;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("closeoutAsk")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $closeoutAsk;
 
@@ -64,7 +60,6 @@ class Price
      * @var bool|null
      *
      * @Serializer\SerializedName("tradeable")
-     * @Serializer\Type("boolean")
      */
     private $tradeable;
 
@@ -72,7 +67,6 @@ class Price
      * @var string|null
      *
      * @Serializer\SerializedName("status")
-     * @Serializer\Type("string")
      */
     private $status;
 
@@ -80,12 +74,11 @@ class Price
      * @var UnitsAvailable|null
      *
      * @Serializer\SerializedName("unitsAvailable")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Pricing\Price\UnitsAvailable")
      */
     private $unitsAvailable;
 
     /**
-     * @return PriceBucket[]|array|null
+     * @return PriceBucket[]|null
      */
     public function getBids()
     {
@@ -93,7 +86,7 @@ class Price
     }
 
     /**
-     * @param PriceBucket[]|array|null $bids
+     * @param PriceBucket[]|null $bids
      *
      * @return Price
      */
@@ -105,7 +98,7 @@ class Price
     }
 
     /**
-     * @return PriceBucket[]|array|null
+     * @return PriceBucket[]|null
      */
     public function getAsks()
     {
@@ -113,7 +106,7 @@ class Price
     }
 
     /**
-     * @param PriceBucket[]|array|null $asks
+     * @param PriceBucket[]|null $asks
      *
      * @return Price
      */
@@ -125,7 +118,7 @@ class Price
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getCloseoutBid(): ?Money
     {
@@ -133,7 +126,7 @@ class Price
     }
 
     /**
-     * @param Money|null $closeoutBid
+     * @param \Brick\Money\Money|null $closeoutBid
      *
      * @return Price
      */
@@ -145,7 +138,7 @@ class Price
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getCloseoutAsk(): ?Money
     {
@@ -153,7 +146,7 @@ class Price
     }
 
     /**
-     * @param Money|null $closeoutAsk
+     * @param \Brick\Money\Money|null $closeoutAsk
      *
      * @return Price
      */

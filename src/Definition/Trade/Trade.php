@@ -13,7 +13,6 @@ namespace Mab05k\OandaClient\Definition\Trade;
 
 use Brick\Math\BigDecimal;
 use Brick\Money\Money;
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Order\StopLossOrder;
 use Mab05k\OandaClient\Definition\Order\TakeProfitOrder;
 use Mab05k\OandaClient\Definition\Order\TrailingStopLossOrder;
@@ -24,6 +23,7 @@ use Mab05k\OandaClient\Definition\Traits\InstrumentTrait;
 use Mab05k\OandaClient\Definition\Traits\MarginUsedTrait;
 use Mab05k\OandaClient\Definition\Traits\PriceTrait;
 use Mab05k\OandaClient\Definition\Traits\StateTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class Trade.
@@ -42,7 +42,6 @@ class Trade
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("openTime")
-     * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $openTime;
 
@@ -50,63 +49,55 @@ class Trade
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("closeTime")
-     * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $closeTime;
 
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("initialUnits")
-     * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $initialUnits;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("initialMarginRequired")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $initialMarginRequired;
 
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("currentUnits")
-     * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $currentUnits;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("realizedPL")
-     * @Serializer\Type("Brick\Money\Money")
      */
-    private $realizedProfitLoss;
+    private $realizedPl;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("unrealizedPL")
-     * @Serializer\Type("Brick\Money\Money")
      */
-    private $unrealizedProfitLoss;
+    private $unrealizedPl;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("averageClosePrice")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $averageClosePrice;
 
     /**
-     * @var Money|null
+     * @var array|null
      *
      * @Serializer\SerializedName("closingTransactionIDs")
-     * @Serializer\Type("array<integer>")
      */
     private $closingTransactionIds;
 
@@ -114,7 +105,6 @@ class Trade
      * @var TakeProfitOrder|null
      *
      * @Serializer\SerializedName("takeProfitOrder")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Order\TakeProfitOrder")
      */
     private $takeProfitOrder;
 
@@ -122,7 +112,6 @@ class Trade
      * @var StopLossOrder|null
      *
      * @Serializer\SerializedName("stopLossOrder")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Order\StopLossOrder")
      */
     private $stopLossOrder;
 
@@ -130,7 +119,6 @@ class Trade
      * @var TrailingStopLossOrder|null
      *
      * @Serializer\SerializedName("trailingStopLossOrder")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Order\TrailingStopLossOrder")
      */
     private $trailingStopLossOrder;
 
@@ -175,7 +163,7 @@ class Trade
     }
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getInitialUnits(): ?BigDecimal
     {
@@ -183,7 +171,7 @@ class Trade
     }
 
     /**
-     * @param BigDecimal|null $initialUnits
+     * @param \Brick\Math\BigDecimal|null $initialUnits
      *
      * @return Trade
      */
@@ -195,7 +183,7 @@ class Trade
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getInitialMarginRequired(): ?Money
     {
@@ -203,7 +191,7 @@ class Trade
     }
 
     /**
-     * @param Money|null $initialMarginRequired
+     * @param \Brick\Money\Money|null $initialMarginRequired
      *
      * @return Trade
      */
@@ -215,7 +203,7 @@ class Trade
     }
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getCurrentUnits(): ?BigDecimal
     {
@@ -223,7 +211,7 @@ class Trade
     }
 
     /**
-     * @param BigDecimal|null $currentUnits
+     * @param \Brick\Math\BigDecimal|null $currentUnits
      *
      * @return Trade
      */
@@ -235,47 +223,47 @@ class Trade
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
-    public function getRealizedProfitLoss(): ?Money
+    public function getRealizedPl(): ?Money
     {
-        return $this->realizedProfitLoss;
+        return $this->realizedPl;
     }
 
     /**
-     * @param Money|null $realizedProfitLoss
+     * @param \Brick\Money\Money|null $realizedPl
      *
      * @return Trade
      */
-    public function setRealizedProfitLoss(?Money $realizedProfitLoss): self
+    public function setRealizedPl(?Money $realizedPl): self
     {
-        $this->realizedProfitLoss = $realizedProfitLoss;
+        $this->realizedPl = $realizedPl;
 
         return $this;
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
-    public function getUnrealizedProfitLoss(): ?Money
+    public function getUnrealizedPl(): ?Money
     {
-        return $this->unrealizedProfitLoss;
+        return $this->unrealizedPl;
     }
 
     /**
-     * @param Money|null $unrealizedProfitLoss
+     * @param \Brick\Money\Money|null $unrealizedPl
      *
      * @return Trade
      */
-    public function setUnrealizedProfitLoss(?Money $unrealizedProfitLoss): self
+    public function setUnrealizedPl(?Money $unrealizedPl): self
     {
-        $this->unrealizedProfitLoss = $unrealizedProfitLoss;
+        $this->unrealizedPl = $unrealizedPl;
 
         return $this;
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getAverageClosePrice(): ?Money
     {
@@ -283,7 +271,7 @@ class Trade
     }
 
     /**
-     * @param Money|null $averageClosePrice
+     * @param \Brick\Money\Money|null $averageClosePrice
      *
      * @return Trade
      */
@@ -295,19 +283,19 @@ class Trade
     }
 
     /**
-     * @return Money|null
+     * @return array|null
      */
-    public function getClosingTransactionIds(): ?Money
+    public function getClosingTransactionIds(): ?array
     {
         return $this->closingTransactionIds;
     }
 
     /**
-     * @param Money|null $closingTransactionIds
+     * @param array|null $closingTransactionIds
      *
      * @return Trade
      */
-    public function setClosingTransactionIds(?Money $closingTransactionIds): self
+    public function setClosingTransactionIds(?array $closingTransactionIds): self
     {
         $this->closingTransactionIds = $closingTransactionIds;
 

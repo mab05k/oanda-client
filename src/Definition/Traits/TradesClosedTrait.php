@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Traits;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Transaction\Trade\TradeClosed;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait TradesClosedTrait.
@@ -20,17 +20,16 @@ use Mab05k\OandaClient\Definition\Transaction\Trade\TradeClosed;
 trait TradesClosedTrait
 {
     /**
-     * @var array|TradeClosed[]
+     * @var \Mab05k\OandaClient\Definition\Transaction\Trade\TradeClosed[]
      *
      * @Serializer\SerializedName("tradesClosed")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Transaction\Trade\TradeClosed>")
      */
-    private $tradesClosed;
+    private $tradesClosed = [];
 
     /**
      * @return TradeClosed[]|array
      */
-    public function getTradesClosed()
+    public function getTradesClosed(): ?array
     {
         return $this->tradesClosed;
     }

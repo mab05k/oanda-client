@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Traits;
 
 use Brick\Money\Money;
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait BalanceTrait.
@@ -20,15 +20,14 @@ use JMS\Serializer\Annotation as Serializer;
 trait BalanceTrait
 {
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("balance")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $balance;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getBalance(): ?Money
     {
@@ -36,7 +35,7 @@ trait BalanceTrait
     }
 
     /**
-     * @param Money|null $balance
+     * @param \Brick\Money\Money|null $balance
      *
      * @return $this
      */

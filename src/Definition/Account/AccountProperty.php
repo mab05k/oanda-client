@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Account;
 
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class AccountProperty.
@@ -22,7 +22,6 @@ class AccountProperty
      * @var string|null
      *
      * @Serializer\SerializedName("id")
-     * @Serializer\Type("string")
      */
     private $id;
 
@@ -30,7 +29,6 @@ class AccountProperty
      * @var int|null
      *
      * @Serializer\SerializedName("mt4AccountID")
-     * @Serializer\Type("integer")
      */
     private $mt4AccountId;
 
@@ -38,7 +36,6 @@ class AccountProperty
      * @var array
      *
      * @Serializer\SerializedName("tags")
-     * @Serializer\Type("array<string>")
      */
     private $tags = [];
 

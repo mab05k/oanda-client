@@ -11,10 +11,10 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Traits;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Order\Order;
 use Mab05k\OandaClient\Definition\Position\Position;
 use Mab05k\OandaClient\Definition\Trade\TradeSummary;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait AccountOpenSummaryTrait.
@@ -22,31 +22,28 @@ use Mab05k\OandaClient\Definition\Trade\TradeSummary;
 trait AccountOpenSummaryTrait
 {
     /**
-     * @var array|TradeSummary[]
+     * @var \Mab05k\OandaClient\Definition\Trade\TradeSummary[]
      *
      * @Serializer\SerializedName("trades")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Trade\TradeSummary>")
      */
     private $trades = [];
 
     /**
-     * @var array|Position[]
+     * @var \Mab05k\OandaClient\Definition\Position\Position[]
      *
      * @Serializer\SerializedName("positions")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Position\Position>")
      */
     private $positions = [];
 
     /**
-     * @var array|Order[]
+     * @var \Mab05k\OandaClient\Definition\Order\Order[]
      *
      * @Serializer\SerializedName("orders")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Order\Order>")
      */
     private $orders = [];
 
     /**
-     * @return array|TradeSummary[]
+     * @return TradeSummary[]
      */
     public function getTrades()
     {
@@ -54,7 +51,7 @@ trait AccountOpenSummaryTrait
     }
 
     /**
-     * @param array|TradeSummary[] $trades
+     * @param TradeSummary[] $trades
      *
      * @return AccountOpenSummaryTrait
      */
@@ -66,7 +63,7 @@ trait AccountOpenSummaryTrait
     }
 
     /**
-     * @return array|Position[]
+     * @return Position[]
      */
     public function getPositions()
     {
@@ -74,7 +71,7 @@ trait AccountOpenSummaryTrait
     }
 
     /**
-     * @param array|Position[] $positions
+     * @param Position[] $positions
      *
      * @return AccountOpenSummaryTrait
      */
@@ -86,7 +83,7 @@ trait AccountOpenSummaryTrait
     }
 
     /**
-     * @return array|Order[]
+     * @return Order[]
      */
     public function getOrders()
     {
@@ -94,7 +91,7 @@ trait AccountOpenSummaryTrait
     }
 
     /**
-     * @param array|Order[] $orders
+     * @param Order[] $orders
      *
      * @return AccountOpenSummaryTrait
      */

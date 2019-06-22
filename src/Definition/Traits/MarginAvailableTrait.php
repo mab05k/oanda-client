@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Traits;
 
 use Brick\Money\Money;
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait MarginAvailableTrait.
@@ -20,15 +20,14 @@ use JMS\Serializer\Annotation as Serializer;
 trait MarginAvailableTrait
 {
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("marginAvailable")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $marginAvailable;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getMarginAvailable(): ?Money
     {
@@ -36,7 +35,7 @@ trait MarginAvailableTrait
     }
 
     /**
-     * @param Money|null $marginAvailable
+     * @param \Brick\Money\Money|null $marginAvailable
      *
      * @return $this
      */

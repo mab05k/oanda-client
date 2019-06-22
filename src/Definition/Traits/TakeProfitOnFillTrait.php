@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Traits;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Transaction\Detail\TakeProfitDetail;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait TakeProfitOnFillTrait.
@@ -25,7 +25,6 @@ trait TakeProfitOnFillTrait
      * @var TakeProfitDetail|null
      *
      * @Serializer\SerializedName("takeProfitOnFill")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Detail\TakeProfitDetail")
      */
     private $takeProfitOnFill;
 

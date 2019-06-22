@@ -11,10 +11,10 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Response\Order;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\LastTransactionIdTrait;
 use Mab05k\OandaClient\Definition\Traits\RelatedTransactionIdsTrait;
 use Mab05k\OandaClient\Definition\Transaction\Order\OrderClientExtensionsModifyTransaction;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class OrderClientExtensionsResponse.
@@ -25,10 +25,9 @@ class OrderClientExtensionsResponse
     use RelatedTransactionIdsTrait;
 
     /**
-     * @var OrderClientExtensionsModifyTransaction|null
+     * @var \Mab05k\OandaClient\Definition\Transaction\Order\OrderClientExtensionsModifyTransaction|null
      *
      * @Serializer\SerializedName("orderClientExtensionsModifyTransaction")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\OrderClientExtensionsModifyTransaction")
      */
     private $orderClientExtensionsModifyTransaction;
 

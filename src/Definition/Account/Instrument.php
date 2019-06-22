@@ -13,8 +13,8 @@ namespace Mab05k\OandaClient\Definition\Account;
 
 use Brick\Math\BigDecimal;
 use Brick\Money\Money;
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\TypeTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class Instrument.
@@ -29,7 +29,6 @@ class Instrument
      * @var string|null
      *
      * @Serializer\SerializedName("name")
-     * @Serializer\Type("string")
      */
     private $name;
 
@@ -37,7 +36,6 @@ class Instrument
      * @var string|null
      *
      * @Serializer\SerializedName("displayName")
-     * @Serializer\Type("string")
      */
     private $displayName;
 
@@ -45,7 +43,6 @@ class Instrument
      * @var int|null
      *
      * @Serializer\SerializedName("pipLocation")
-     * @Serializer\Type("int")
      */
     private $pipLocation;
 
@@ -53,7 +50,6 @@ class Instrument
      * @var int|null
      *
      * @Serializer\SerializedName("displayPrecision")
-     * @Serializer\Type("int")
      */
     private $displayPrecision;
 
@@ -61,55 +57,48 @@ class Instrument
      * @var int|null
      *
      * @Serializer\SerializedName("tradeUnitsPrecision")
-     * @Serializer\Type("int")
      */
     private $tradeUnitsPrecision;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("minimumTradeSize")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $minimumTradeSize;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("maximumTrailingStopDistance")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $maximumTrailingStopDistance;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("minimumTrailingStopDistance")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $minimumTrailingStopDistance;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("maximumPositionSize")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $maximumPositionSize;
 
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("maximumOrderUnits")
-     * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $maximumOrderUnits;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("marginRate")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $marginRate;
 
@@ -117,7 +106,6 @@ class Instrument
      * @var InstrumentCommission|null
      *
      * @Serializer\SerializedName("commission")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Account\InstrumentCommission")
      */
     private $commission;
 
@@ -222,7 +210,7 @@ class Instrument
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getMinimumTradeSize(): ?Money
     {
@@ -230,7 +218,7 @@ class Instrument
     }
 
     /**
-     * @param Money|null $minimumTradeSize
+     * @param \Brick\Money\Money|null $minimumTradeSize
      *
      * @return Instrument
      */
@@ -242,7 +230,7 @@ class Instrument
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getMaximumTrailingStopDistance(): ?Money
     {
@@ -250,7 +238,7 @@ class Instrument
     }
 
     /**
-     * @param Money|null $maximumTrailingStopDistance
+     * @param \Brick\Money\Money|null $maximumTrailingStopDistance
      *
      * @return Instrument
      */
@@ -262,7 +250,7 @@ class Instrument
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getMinimumTrailingStopDistance(): ?Money
     {
@@ -270,7 +258,7 @@ class Instrument
     }
 
     /**
-     * @param Money|null $minimumTrailingStopDistance
+     * @param \Brick\Money\Money|null $minimumTrailingStopDistance
      *
      * @return Instrument
      */
@@ -282,7 +270,7 @@ class Instrument
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getMaximumPositionSize(): ?Money
     {
@@ -290,7 +278,7 @@ class Instrument
     }
 
     /**
-     * @param Money|null $maximumPositionSize
+     * @param \Brick\Money\Money|null $maximumPositionSize
      *
      * @return Instrument
      */
@@ -302,7 +290,7 @@ class Instrument
     }
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getMaximumOrderUnits(): ?BigDecimal
     {
@@ -310,7 +298,7 @@ class Instrument
     }
 
     /**
-     * @param BigDecimal|null $maximumOrderUnits
+     * @param \Brick\Math\BigDecimal|null $maximumOrderUnits
      *
      * @return Instrument
      */
@@ -322,7 +310,7 @@ class Instrument
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getMarginRate(): ?Money
     {
@@ -330,7 +318,7 @@ class Instrument
     }
 
     /**
-     * @param Money|null $marginRate
+     * @param \Brick\Money\Money|null $marginRate
      *
      * @return Instrument
      */

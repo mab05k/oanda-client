@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Traits;
 
 use Brick\Money\Money;
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait GuaranteedExecutionFeesTrait.
@@ -20,15 +20,14 @@ use JMS\Serializer\Annotation as Serializer;
 trait GuaranteedExecutionFeesTrait
 {
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("guaranteedExecutionFees")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $guaranteedExecutionFees;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getGuaranteedExecutionFees(): ?Money
     {
@@ -36,7 +35,7 @@ trait GuaranteedExecutionFeesTrait
     }
 
     /**
-     * @param Money|null $guaranteedExecutionFees
+     * @param \Brick\Money\Money|null $guaranteedExecutionFees
      *
      * @return $this
      */

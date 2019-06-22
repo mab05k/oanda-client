@@ -11,9 +11,9 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Response\Account;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Account\Account;
 use Mab05k\OandaClient\Definition\Traits\LastTransactionIdTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class AccountEnvelope.
@@ -26,7 +26,6 @@ class AccountResponse
      * @var Account|null
      *
      * @Serializer\SerializedName("account")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Account\Account")
      */
     private $account;
 

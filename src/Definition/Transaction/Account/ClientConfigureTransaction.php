@@ -12,10 +12,10 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Transaction\Account;
 
 use Brick\Math\BigDecimal;
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\AliasTrait;
 use Mab05k\OandaClient\Definition\Traits\OrderTransactionTrait;
 use Mab05k\OandaClient\Definition\Traits\TypeTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class ClientConfigureTransaction.
@@ -27,15 +27,14 @@ class ClientConfigureTransaction
     use AliasTrait;
 
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("marginRate")
-     * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $marginRate;
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getMarginRate(): ?BigDecimal
     {
@@ -43,7 +42,7 @@ class ClientConfigureTransaction
     }
 
     /**
-     * @param BigDecimal|null $marginRate
+     * @param \Brick\Math\BigDecimal|null $marginRate
      *
      * @return ClientConfigureTransaction
      */

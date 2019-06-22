@@ -12,39 +12,36 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Pricing;
 
 use Brick\Money\Money;
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Traits\CurrencyTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 class HomeConversion
 {
     use CurrencyTrait;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("accountGain")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $accountGain;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("accountLoss")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $accountLoss;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("positionValue")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $positionValue;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getAccountGain(): ?Money
     {
@@ -52,7 +49,7 @@ class HomeConversion
     }
 
     /**
-     * @param Money|null $accountGain
+     * @param \Brick\Money\Money|null $accountGain
      *
      * @return HomeConversion
      */
@@ -64,7 +61,7 @@ class HomeConversion
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getAccountLoss(): ?Money
     {
@@ -72,7 +69,7 @@ class HomeConversion
     }
 
     /**
-     * @param Money|null $accountLoss
+     * @param \Brick\Money\Money|null $accountLoss
      *
      * @return HomeConversion
      */
@@ -84,7 +81,7 @@ class HomeConversion
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getPositionValue(): ?Money
     {
@@ -92,7 +89,7 @@ class HomeConversion
     }
 
     /**
-     * @param Money|null $positionValue
+     * @param \Brick\Money\Money|null $positionValue
      *
      * @return HomeConversion
      */

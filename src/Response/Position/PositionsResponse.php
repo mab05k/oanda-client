@@ -11,9 +11,9 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Response\Position;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Position\Position;
 use Mab05k\OandaClient\Definition\Traits\LastTransactionIdTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class Positions.
@@ -23,15 +23,14 @@ class PositionsResponse
     use LastTransactionIdTrait;
 
     /**
-     * @var array|Position[]|null
+     * @var Position[]|null
      *
      * @Serializer\SerializedName("positions")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Position\Position>")
      */
     private $positions;
 
     /**
-     * @return array|Position[]|null
+     * @return Position[]|null
      */
     public function getPositions()
     {
@@ -39,7 +38,7 @@ class PositionsResponse
     }
 
     /**
-     * @param array|Position[]|null $positions
+     * @param Position[]|null $positions
      *
      * @return PositionsResponse
      */

@@ -13,7 +13,7 @@ namespace Mab05k\OandaClient\Definition\Traits;
 
 use Brick\Math\BigDecimal;
 use Brick\Money\Money;
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait MarginCloseoutTrait.
@@ -21,63 +21,56 @@ use JMS\Serializer\Annotation as Serializer;
 trait MarginCloseoutTrait
 {
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("marginCloseoutUnrealizedPL")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $marginCloseoutUnrealizedPl;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("marginCloseoutNAV")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $marginCloseoutNav;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("marginCloseoutMarginUsed")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $marginCloseoutMarginUsed;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("marginCloseoutPositionValue")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $marginCloseoutPositionValue;
 
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("marginCloseoutPercent")
-     * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $marginCloseoutPercent;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("marginCallMarginUsed")
-     * @Serializer\Type("Brick\Money\Money")
      */
     private $marginCallMarginUsed;
 
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("marginCallPercent")
-     * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $marginCallPercent;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getMarginCloseoutUnrealizedPl(): ?Money
     {
@@ -85,7 +78,7 @@ trait MarginCloseoutTrait
     }
 
     /**
-     * @param Money|null $marginCloseoutUnrealizedPl
+     * @param \Brick\Money\Money|null $marginCloseoutUnrealizedPl
      *
      * @return $this
      */
@@ -97,7 +90,7 @@ trait MarginCloseoutTrait
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getMarginCloseoutNav(): ?Money
     {
@@ -105,7 +98,7 @@ trait MarginCloseoutTrait
     }
 
     /**
-     * @param Money|null $marginCloseoutNav
+     * @param \Brick\Money\Money|null $marginCloseoutNav
      *
      * @return $this
      */
@@ -117,7 +110,7 @@ trait MarginCloseoutTrait
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getMarginCloseoutMarginUsed(): ?Money
     {
@@ -125,7 +118,7 @@ trait MarginCloseoutTrait
     }
 
     /**
-     * @param Money|null $marginCloseoutMarginUsed
+     * @param \Brick\Money\Money|null $marginCloseoutMarginUsed
      *
      * @return $this
      */
@@ -137,7 +130,7 @@ trait MarginCloseoutTrait
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getMarginCloseoutPositionValue(): ?Money
     {
@@ -145,7 +138,7 @@ trait MarginCloseoutTrait
     }
 
     /**
-     * @param Money|null $marginCloseoutPositionValue
+     * @param \Brick\Money\Money|null $marginCloseoutPositionValue
      *
      * @return $this
      */
@@ -157,7 +150,7 @@ trait MarginCloseoutTrait
     }
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getMarginCloseoutPercent(): ?BigDecimal
     {
@@ -165,7 +158,7 @@ trait MarginCloseoutTrait
     }
 
     /**
-     * @param BigDecimal|null $marginCloseoutPercent
+     * @param \Brick\Math\BigDecimal|null $marginCloseoutPercent
      *
      * @return $this
      */
@@ -177,7 +170,7 @@ trait MarginCloseoutTrait
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getMarginCallMarginUsed(): ?Money
     {
@@ -185,7 +178,7 @@ trait MarginCloseoutTrait
     }
 
     /**
-     * @param Money|null $marginCallMarginUsed
+     * @param \Brick\Money\Money|null $marginCallMarginUsed
      *
      * @return $this
      */
@@ -197,7 +190,7 @@ trait MarginCloseoutTrait
     }
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getMarginCallPercent(): ?BigDecimal
     {
@@ -205,7 +198,7 @@ trait MarginCloseoutTrait
     }
 
     /**
-     * @param BigDecimal|null $marginCallPercent
+     * @param \Brick\Math\BigDecimal|null $marginCallPercent
      *
      * @return $this
      */

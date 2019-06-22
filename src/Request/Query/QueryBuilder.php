@@ -19,7 +19,7 @@ use Mab05k\OandaClient\Exception\QueryBuilderException;
 class QueryBuilder
 {
     /**
-     * @var array|QueryParameterInterface[]
+     * @var QueryParameterInterface[]
      */
     protected $query;
 

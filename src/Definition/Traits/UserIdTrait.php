@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Traits;
 
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait UserIdTrait.
@@ -22,7 +22,6 @@ trait UserIdTrait
      * @var int|null
      *
      * @Serializer\SerializedName("userID")
-     * @Serializer\Type("integer")
      */
     private $userId;
 }

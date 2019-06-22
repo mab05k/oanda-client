@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Traits;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderTradeClose;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait TradeCloseTrait.
@@ -20,10 +20,9 @@ use Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderTradeClose;
 trait TradeCloseTrait
 {
     /**
-     * @var MarketOrderTradeClose|null
+     * @var \Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderTradeClose|null
      *
      * @Serializer\SerializedName("tradeClose")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderTradeClose")
      */
     private $tradeClose;
 

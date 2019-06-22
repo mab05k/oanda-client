@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Traits;
 
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Trait LastTransactionIdTrait.
@@ -19,27 +19,26 @@ use JMS\Serializer\Annotation as Serializer;
 trait LastTransactionIdTrait
 {
     /**
-     * @var int|null
+     * @var string|null
      *
      * @Serializer\SerializedName("lastTransactionID")
-     * @Serializer\Type("integer")
      */
     private $lastTransactionId;
 
     /**
-     * @return int|null
+     * @return string|null
      */
-    public function getLastTransactionId(): ?int
+    public function getLastTransactionId(): ?string
     {
         return $this->lastTransactionId;
     }
 
     /**
-     * @param int|null $lastTransactionId
+     * @param string|null $lastTransactionId
      *
      * @return $this
      */
-    public function setLastTransactionId(?int $lastTransactionId)
+    public function setLastTransactionId(?string $lastTransactionId)
     {
         $this->lastTransactionId = $lastTransactionId;
 

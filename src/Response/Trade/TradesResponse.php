@@ -11,9 +11,9 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Response\Trade;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Trade\Trade;
 use Mab05k\OandaClient\Definition\Traits\LastTransactionIdTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class TradesResponse.
@@ -23,15 +23,14 @@ class TradesResponse
     use LastTransactionIdTrait;
 
     /**
-     * @var array|Trade[]|null
+     * @var Trade[]|null
      *
      * @Serializer\SerializedName("trades")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Trade\Trade>")
      */
     private $trades;
 
     /**
-     * @return array|Trade[]|null
+     * @return Trade[]|null
      */
     public function getTrades()
     {
@@ -39,7 +38,7 @@ class TradesResponse
     }
 
     /**
-     * @param array|Trade[]|null $trades
+     * @param Trade[]|null $trades
      *
      * @return TradesResponse
      */

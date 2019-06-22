@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Traits;
 
 use Brick\Money\Money;
-use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class ProfitLossTrait.
@@ -20,85 +20,82 @@ use JMS\Serializer\Annotation as Serializer;
 trait ProfitLossTrait
 {
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("pl")
-     * @Serializer\Type("Brick\Money\Money")
      */
-    private $profitLoss;
+    private $pl;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("unrealizedPL")
-     * @Serializer\Type("Brick\Money\Money")
      */
-    private $unrealizedProfitLoss;
+    private $unrealizedPl;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("resettablePL")
-     * @Serializer\Type("Brick\Money\Money")
      */
-    private $resettableProfitLoss;
+    private $resettablePl;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
-    public function getProfitLoss(): ?Money
+    public function getPl(): ?Money
     {
-        return $this->profitLoss;
+        return $this->pl;
     }
 
     /**
-     * @param Money|null $profitLoss
+     * @param \Brick\Money\Money|null $pl
      *
      * @return $this
      */
-    public function setProfitLoss(?Money $profitLoss)
+    public function setPl(?Money $pl)
     {
-        $this->profitLoss = $profitLoss;
+        $this->pl = $pl;
 
         return $this;
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
-    public function getUnrealizedProfitLoss(): ?Money
+    public function getUnrealizedPl(): ?Money
     {
-        return $this->unrealizedProfitLoss;
+        return $this->unrealizedPl;
     }
 
     /**
-     * @param Money|null $unrealizedProfitLoss
+     * @param \Brick\Money\Money|null $unrealizedPl
      *
      * @return $this
      */
-    public function setUnrealizedProfitLoss(?Money $unrealizedProfitLoss)
+    public function setUnrealizedPl(?Money $unrealizedPl)
     {
-        $this->unrealizedProfitLoss = $unrealizedProfitLoss;
+        $this->unrealizedPl = $unrealizedPl;
 
         return $this;
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
-    public function getResettableProfitLoss(): ?Money
+    public function getResettablePl(): ?Money
     {
-        return $this->resettableProfitLoss;
+        return $this->resettablePl;
     }
 
     /**
-     * @param Money|null $resettableProfitLoss
+     * @param \Brick\Money\Money|null $resettablePl
      *
      * @return $this
      */
-    public function setResettableProfitLoss(?Money $resettableProfitLoss)
+    public function setResettablePl(?Money $resettablePl)
     {
-        $this->resettableProfitLoss = $resettableProfitLoss;
+        $this->resettablePl = $resettablePl;
 
         return $this;
     }

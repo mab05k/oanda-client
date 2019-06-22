@@ -13,7 +13,6 @@ namespace Mab05k\OandaClient\Tests\Unit\Client;
 
 use Http\Message\MessageFactory;
 use Http\Message\UriFactory;
-use JMS\Serializer\SerializerInterface;
 use Mab05k\OandaClient\Account\AccountDiscriminator;
 use Mab05k\OandaClient\Client\AbstractOandaClient;
 use Mab05k\OandaClient\Tests\Fixtures\DummyClient;
@@ -26,6 +25,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 use Psr\Http\Message\UriInterface;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 /**
  * Class AbstractOandaClientTest.

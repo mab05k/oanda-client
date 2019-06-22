@@ -11,9 +11,9 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Response\Trade;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Trade\Trade;
 use Mab05k\OandaClient\Definition\Traits\LastTransactionIdTrait;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class TradeResponse.
@@ -26,7 +26,6 @@ class TradeResponse
      * @var Trade|null
      *
      * @Serializer\SerializedName("trade")
-     * @Serializer\Type("Mab05k\OandaClient\Definition\Trade\Trade")
      */
     private $trade;
 

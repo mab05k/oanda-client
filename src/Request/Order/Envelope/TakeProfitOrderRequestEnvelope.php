@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Request\Order\Envelope;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Request\Order\TakeProfitOrderRequest;
+use Symfony\Component\Serializer\Annotation as Serializer;
 
 /**
  * Class TakeProfitOrderRequest.
@@ -23,7 +23,6 @@ class TakeProfitOrderRequestEnvelope implements OrderInterface
      * @var TakeProfitOrderRequest|null
      *
      * @Serializer\SerializedName("order")
-     * @Serializer\Type("Mab05k\OandaClient\Request\Order\TakeProfitOrderRequest")
      */
     private $order;
 

@@ -11,7 +11,6 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Definition\Account;
 
-use JMS\Serializer\Annotation as Serializer;
 use Mab05k\OandaClient\Definition\Order\Order;
 use Mab05k\OandaClient\Definition\Position\Position;
 use Mab05k\OandaClient\Definition\Trade\Trade;
@@ -23,79 +22,52 @@ use Mab05k\OandaClient\Definition\Transaction\Transaction;
 class AccountChanges
 {
     /**
-     * @var array|Order[]
-     *
-     * @Serializer\SerializedName("ordersCreated")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Order\Order>")
+     * @var Order[]
      */
     private $ordersCreated = [];
 
     /**
-     * @var array|Order[]
-     *
-     * @Serializer\SerializedName("ordersCancelled")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Order\Order>")
+     * @var Order[]
      */
     private $ordersCancelled = [];
 
     /**
-     * @var array|Order[]
-     *
-     * @Serializer\SerializedName("ordersFilled")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Order\Order>")
+     * @var Order[]
      */
     private $ordersFilled = [];
 
     /**
-     * @var array|Order[]
-     *
-     * @Serializer\SerializedName("ordersTriggered")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Order\Order>")
+     * @var Order[]
      */
     private $ordersTriggered = [];
 
     /**
-     * @var array|Trade[]
-     *
-     * @Serializer\SerializedName("tradesOpened")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Trade\Trade>")
+     * @var Trade[]
      */
     private $tradesOpened = [];
 
     /**
-     * @var array|Trade[]
-     *
-     * @Serializer\SerializedName("tradesReduced")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Trade\Trade>")
+     * @var Trade[]
      */
     private $tradesReduced = [];
 
     /**
-     * @var array|Trade[]
-     *
-     * @Serializer\SerializedName("tradesClosed")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Trade\Trade>")
+     * @var Trade[]
      */
     private $tradesClosed = [];
 
     /**
-     * @var array|Position[]
-     *
-     * @Serializer\SerializedName("positions")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Position\Position>")
+     * @var Position[]
      */
     private $positions = [];
 
     /**
-     * @var array|Transaction[]
-     *
-     * @Serializer\SerializedName("transactions")
-     * @Serializer\Type("array<Mab05k\OandaClient\Definition\Transaction\Transaction>")
+     * @var Transaction[]
      */
     private $transactions = [];
 
     /**
-     * @return array|Order[]
+     * @return Order[]
      */
     public function getOrdersCreated()
     {
@@ -103,7 +75,7 @@ class AccountChanges
     }
 
     /**
-     * @param array|Order[] $ordersCreated
+     * @param Order[] $ordersCreated
      *
      * @return AccountChanges
      */
@@ -115,7 +87,7 @@ class AccountChanges
     }
 
     /**
-     * @return array|Order[]
+     * @return Order[]
      */
     public function getOrdersCancelled()
     {
@@ -123,7 +95,7 @@ class AccountChanges
     }
 
     /**
-     * @param array|Order[] $ordersCancelled
+     * @param Order[] $ordersCancelled
      *
      * @return AccountChanges
      */
@@ -135,7 +107,7 @@ class AccountChanges
     }
 
     /**
-     * @return array|Order[]
+     * @return Order[]
      */
     public function getOrdersFilled()
     {
@@ -143,7 +115,7 @@ class AccountChanges
     }
 
     /**
-     * @param array|Order[] $ordersFilled
+     * @param Order[] $ordersFilled
      *
      * @return AccountChanges
      */
@@ -155,7 +127,7 @@ class AccountChanges
     }
 
     /**
-     * @return array|Order[]
+     * @return Order[]
      */
     public function getOrdersTriggered()
     {
@@ -163,7 +135,7 @@ class AccountChanges
     }
 
     /**
-     * @param array|Order[] $ordersTriggered
+     * @param Order[] $ordersTriggered
      *
      * @return AccountChanges
      */
@@ -175,7 +147,7 @@ class AccountChanges
     }
 
     /**
-     * @return array|Trade[]
+     * @return Trade[]
      */
     public function getTradesOpened()
     {
@@ -183,7 +155,7 @@ class AccountChanges
     }
 
     /**
-     * @param array|Trade[] $tradesOpened
+     * @param Trade[] $tradesOpened
      *
      * @return AccountChanges
      */
@@ -195,7 +167,7 @@ class AccountChanges
     }
 
     /**
-     * @return array|Trade[]
+     * @return Trade[]
      */
     public function getTradesReduced()
     {
@@ -203,7 +175,7 @@ class AccountChanges
     }
 
     /**
-     * @param array|Trade[] $tradesReduced
+     * @param Trade[] $tradesReduced
      *
      * @return AccountChanges
      */
@@ -215,7 +187,7 @@ class AccountChanges
     }
 
     /**
-     * @return array|Trade[]
+     * @return Trade[]
      */
     public function getTradesClosed()
     {
@@ -223,7 +195,7 @@ class AccountChanges
     }
 
     /**
-     * @param array|Trade[] $tradesClosed
+     * @param Trade[] $tradesClosed
      *
      * @return AccountChanges
      */
@@ -235,7 +207,7 @@ class AccountChanges
     }
 
     /**
-     * @return array|Position[]
+     * @return Position[]
      */
     public function getPositions()
     {
@@ -243,7 +215,7 @@ class AccountChanges
     }
 
     /**
-     * @param array|Position[] $positions
+     * @param Position[] $positions
      *
      * @return AccountChanges
      */
@@ -255,7 +227,7 @@ class AccountChanges
     }
 
     /**
-     * @return array|Transaction[]
+     * @return Transaction[]
      */
     public function getTransactions()
     {
@@ -263,7 +235,7 @@ class AccountChanges
     }
 
     /**
-     * @param array|Transaction[] $transactions
+     * @param Transaction[] $transactions
      *
      * @return AccountChanges
      */
