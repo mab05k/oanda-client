@@ -120,9 +120,9 @@ class QueryBuilder
         foreach ($this->query as $index => $item) {
             if ($item instanceof $queryParameter) {
                 array_splice($this->query, $index, 1);
-            }
 
-            return $this;
+                return $this;
+            }
         }
 
         return $this;
