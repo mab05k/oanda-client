@@ -12,7 +12,4 @@ declare(strict_types=1);
 include __DIR__.'/../vendor/autoload.php';
 
 // Autoload JMS Serializer annotations for testing!
-\Doctrine\Common\Annotations\AnnotationRegistry::registerAutoloadNamespace(
-    'JMS\Serializer\Annotation',
-    __DIR__.'/../vendor/jms/serializer/src'
-);
+\Doctrine\Common\Annotations\AnnotationRegistry::registerLoader('class_exists');

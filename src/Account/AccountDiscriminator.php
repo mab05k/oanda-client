@@ -68,10 +68,7 @@ class AccountDiscriminator
             }
         }
 
-        throw new ConfigurationException(
-            sprintf('No Account found for Account %s', $accountIdentifier),
-            1002
-        );
+        throw new ConfigurationException(sprintf('No Account found for Account %s', $accountIdentifier), 1002);
     }
 
     /**

@@ -8,9 +8,9 @@
     "ext-json": "*",
     "brick/math": "^0.8.4",
     "brick/money": "^0.4.1",
-    "jms/serializer-bundle": "^2.3",
+    "jms/serializer-bundle": "^3.5",
     "php-http/guzzle6-adapter": "^2.0",
-    "php-http/httplug-bundle": "^1.14"
+    "php-http/httplug-bundle": "^1.7"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.14",

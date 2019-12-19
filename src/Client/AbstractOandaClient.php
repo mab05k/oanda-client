@@ -250,10 +250,7 @@ class AbstractOandaClient
             $contents = $response->getBody()->getContents();
             $result = $this->serializer->deserialize($contents, $deserializationType, 'json');
             if (!$result instanceof $deserializationType) {
-                throw new ResponseDeserializationException(
-                    sprintf('Deserialization Resulted in an incorrect object instance. Expected %s, got %s', $deserializationType, \get_class($result)),
-                    2002
-                );
+                throw new ResponseDeserializationException(sprintf('Deserialization Resulted in an incorrect object instance. Expected %s, got %s', $deserializationType, \get_class($result)), 2002);
             }
 
             return $result;
@@ -264,11 +261,7 @@ class AbstractOandaClient
                     'exception' => $throwable->getMessage(),
                 ]);
             }
-            throw new ResponseDeserializationException(
-                sprintf('Deserialization of %s failed: %s', $deserializationType, $throwable->getMessage()),
-                2001,
-                $throwable
-            );
+            throw new ResponseDeserializationException(sprintf('Deserialization of %s failed: %s', $deserializationType, $throwable->getMessage()), 2001, $throwable);
         }
     }
 }
