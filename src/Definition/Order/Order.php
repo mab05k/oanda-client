@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Definition\Order;
 
 use JMS\Serializer\Annotation as Serializer;
+use Mab05k\OandaClient\Definition\Traits\CancelledOrderTrait;
 use Mab05k\OandaClient\Definition\Traits\ClientExtensionsTrait;
 use Mab05k\OandaClient\Definition\Traits\CreateTimeTrait;
 use Mab05k\OandaClient\Definition\Traits\FilledOrderTrait;
@@ -38,6 +39,7 @@ class Order
     use TradeIdTrait;
     use StateTrait;
     use ClientExtensionsTrait;
+    use CancelledOrderTrait;
     use TypeTrait;
     use InstrumentTrait;
     use UnitTrait;
