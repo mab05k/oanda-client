@@ -6,6 +6,8 @@ This API is designed with flexibility in mind, and supports using multiple Oanda
 ## Contributing
 If you want to help contribute, please visit the [Contributing](CONTRIBUTING.md) documentation.
 
+See the [Changelog](CHANGELOG.md) for recent changes.
+
 ## Endpoints
 * [Account](http://developer.oanda.com/rest-live-v20/account-ep/)
 * [Instrument](http://developer.oanda.com/rest-live-v20/instrument-ep/)
