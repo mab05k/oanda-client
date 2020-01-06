@@ -32,7 +32,7 @@ trait CancelledOrderTrait
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("cancelledTime")
-     * @Serializer\Type("string")
+     * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $cancelledTime;
 
