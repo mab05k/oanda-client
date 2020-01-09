@@ -11,7 +11,10 @@
     "realizedPL": "0.0000",
     "financing": "0.0000",
     "unrealizedPL": "-0.0040",
-    "marginUsed": "113.3900"
+    "marginUsed": "113.3900",
+    "closingTransactionIDs": [
+      "1"
+    ]
   },
   "lastTransactionID": "1"
 }

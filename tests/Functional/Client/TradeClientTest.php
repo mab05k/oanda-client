@@ -113,6 +113,7 @@ class TradeClientTest extends AbstractClientTest
         $this->assertInstanceOf(Trade::class, $trade);
         $this->assertInstanceOf(\DateTime::class, $trade->getOpenTime());
         $this->assertEquals(1, $trade->getId());
+        $this->assertEquals(1, $trade->getClosingTransactionIds()[0]);
         $this->assertEquals(Instruments::EUR_USD, $trade->getInstrument());
         $this->assertEquals(State::OPEN, $trade->getState());
         $this->assertEquals(BrickMoneyHelper::create(1.13387), $trade->getPrice());

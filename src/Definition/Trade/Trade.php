@@ -103,7 +103,7 @@ class Trade
     private $averageClosePrice;
 
     /**
-     * @var Money|null
+     * @var array|null
      *
      * @Serializer\SerializedName("closingTransactionIDs")
      * @Serializer\Type("array<integer>")
@@ -295,19 +295,19 @@ class Trade
     }
 
     /**
-     * @return Money|null
+     * @return array|null
      */
-    public function getClosingTransactionIds(): ?Money
+    public function getClosingTransactionIds(): ?array
     {
         return $this->closingTransactionIds;
     }
 
     /**
-     * @param Money|null $closingTransactionIds
+     * @param array|null $closingTransactionIds
      *
      * @return Trade
      */
-    public function setClosingTransactionIds(?Money $closingTransactionIds): self
+    public function setClosingTransactionIds(?array $closingTransactionIds): self
     {
         $this->closingTransactionIds = $closingTransactionIds;
 
