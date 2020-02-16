@@ -20,7 +20,7 @@ use JMS\Serializer\Annotation as Serializer;
 trait PositionValueTrait
 {
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("positionValue")
      * @Serializer\Type("Brick\Money\Money")
@@ -28,7 +28,7 @@ trait PositionValueTrait
     private $positionValue;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getPositionValue(): ?Money
     {
@@ -36,7 +36,7 @@ trait PositionValueTrait
     }
 
     /**
-     * @param Money|null $positionValue
+     * @param \Brick\Money\Money|null $positionValue
      *
      * @return $this
      */

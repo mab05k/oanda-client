@@ -20,7 +20,7 @@ use JMS\Serializer\Annotation as Serializer;
 trait GuaranteedExecutionFeesTrait
 {
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("guaranteedExecutionFees")
      * @Serializer\Type("Brick\Money\Money")
@@ -28,7 +28,7 @@ trait GuaranteedExecutionFeesTrait
     private $guaranteedExecutionFees;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getGuaranteedExecutionFees(): ?Money
     {
@@ -36,7 +36,7 @@ trait GuaranteedExecutionFeesTrait
     }
 
     /**
-     * @param Money|null $guaranteedExecutionFees
+     * @param \Brick\Money\Money|null $guaranteedExecutionFees
      *
      * @return $this
      */

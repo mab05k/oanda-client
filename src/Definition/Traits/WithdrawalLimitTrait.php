@@ -20,7 +20,7 @@ use JMS\Serializer\Annotation as Serializer;
 trait WithdrawalLimitTrait
 {
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("withdrawalLimit")
      * @Serializer\Type("Brick\Money\Money")
@@ -28,7 +28,7 @@ trait WithdrawalLimitTrait
     private $withdrawalLimit;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getWithdrawalLimit(): ?Money
     {
@@ -36,7 +36,7 @@ trait WithdrawalLimitTrait
     }
 
     /**
-     * @param Money|null $withdrawalLimit
+     * @param \Brick\Money\Money|null $withdrawalLimit
      *
      * @return $this
      */

@@ -20,7 +20,7 @@ use Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderTradeClose;
 trait TradeCloseTrait
 {
     /**
-     * @var MarketOrderTradeClose|null
+     * @var \Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderTradeClose|null
      *
      * @Serializer\SerializedName("tradeClose")
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderTradeClose")
@@ -28,7 +28,7 @@ trait TradeCloseTrait
     private $tradeClose;
 
     /**
-     * @return MarketOrderTradeClose|null
+     * @return \Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderTradeClose|null
      */
     public function getTradeClose(): ?MarketOrderTradeClose
     {
@@ -36,7 +36,7 @@ trait TradeCloseTrait
     }
 
     /**
-     * @param MarketOrderTradeClose|null $tradeClose
+     * @param \Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderTradeClose|null $tradeClose
      *
      * @return $this
      */

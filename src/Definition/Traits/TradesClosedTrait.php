@@ -20,7 +20,7 @@ use Mab05k\OandaClient\Definition\Transaction\Trade\TradeClosed;
 trait TradesClosedTrait
 {
     /**
-     * @var array|TradeClosed[]
+     * @var array|\Mab05k\OandaClient\Definition\Transaction\Trade\TradeClosed[]
      *
      * @Serializer\SerializedName("tradesClosed")
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Transaction\Trade\TradeClosed>")
@@ -28,7 +28,7 @@ trait TradesClosedTrait
     private $tradesClosed;
 
     /**
-     * @return TradeClosed[]|array
+     * @return \Mab05k\OandaClient\Definition\Transaction\Trade\TradeClosed[]|array
      */
     public function getTradesClosed()
     {
@@ -36,7 +36,7 @@ trait TradesClosedTrait
     }
 
     /**
-     * @param TradeClosed[]|array $tradesClosed
+     * @param \Mab05k\OandaClient\Definition\Transaction\Trade\TradeClosed[]|array $tradesClosed
      *
      * @return TradesClosedTrait
      */

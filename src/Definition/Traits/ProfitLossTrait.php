@@ -20,7 +20,7 @@ use JMS\Serializer\Annotation as Serializer;
 trait ProfitLossTrait
 {
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("pl")
      * @Serializer\Type("Brick\Money\Money")
@@ -28,7 +28,7 @@ trait ProfitLossTrait
     private $profitLoss;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("unrealizedPL")
      * @Serializer\Type("Brick\Money\Money")
@@ -36,7 +36,7 @@ trait ProfitLossTrait
     private $unrealizedProfitLoss;
 
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("resettablePL")
      * @Serializer\Type("Brick\Money\Money")
@@ -44,7 +44,7 @@ trait ProfitLossTrait
     private $resettableProfitLoss;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getProfitLoss(): ?Money
     {
@@ -52,7 +52,7 @@ trait ProfitLossTrait
     }
 
     /**
-     * @param Money|null $profitLoss
+     * @param \Brick\Money\Money|null $profitLoss
      *
      * @return $this
      */
@@ -64,7 +64,7 @@ trait ProfitLossTrait
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getUnrealizedProfitLoss(): ?Money
     {
@@ -72,7 +72,7 @@ trait ProfitLossTrait
     }
 
     /**
-     * @param Money|null $unrealizedProfitLoss
+     * @param \Brick\Money\Money|null $unrealizedProfitLoss
      *
      * @return $this
      */
@@ -84,7 +84,7 @@ trait ProfitLossTrait
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getResettableProfitLoss(): ?Money
     {
@@ -92,7 +92,7 @@ trait ProfitLossTrait
     }
 
     /**
-     * @param Money|null $resettableProfitLoss
+     * @param \Brick\Money\Money|null $resettableProfitLoss
      *
      * @return $this
      */

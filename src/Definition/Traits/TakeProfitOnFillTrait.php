@@ -22,7 +22,7 @@ use Mab05k\OandaClient\Definition\Transaction\Detail\TakeProfitDetail;
 trait TakeProfitOnFillTrait
 {
     /**
-     * @var TakeProfitDetail|null
+     * @var \Mab05k\OandaClient\Definition\Transaction\Detail\TakeProfitDetail|null
      *
      * @Serializer\SerializedName("takeProfitOnFill")
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Detail\TakeProfitDetail")
@@ -30,7 +30,7 @@ trait TakeProfitOnFillTrait
     private $takeProfitOnFill;
 
     /**
-     * @return TakeProfitDetail|null
+     * @return \Mab05k\OandaClient\Definition\Transaction\Detail\TakeProfitDetail|null
      */
     public function getTakeProfitOnFill(): ?TakeProfitDetail
     {
@@ -38,7 +38,7 @@ trait TakeProfitOnFillTrait
     }
 
     /**
-     * @param TakeProfitDetail|null $takeProfitOnFill
+     * @param \Mab05k\OandaClient\Definition\Transaction\Detail\TakeProfitDetail|null $takeProfitOnFill
      *
      * @return $this
      */

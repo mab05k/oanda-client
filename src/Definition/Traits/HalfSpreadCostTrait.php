@@ -20,7 +20,7 @@ use JMS\Serializer\Annotation as Serializer;
 trait HalfSpreadCostTrait
 {
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("halfSpreadCost")
      * @Serializer\Type("Brick\Money\Money")
@@ -28,7 +28,7 @@ trait HalfSpreadCostTrait
     private $halfSpreadCost;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getHalfSpreadCost(): ?Money
     {
@@ -36,7 +36,7 @@ trait HalfSpreadCostTrait
     }
 
     /**
-     * @param Money|null $halfSpreadCost
+     * @param \Brick\Money\Money|null $halfSpreadCost
      *
      * @return $this
      */

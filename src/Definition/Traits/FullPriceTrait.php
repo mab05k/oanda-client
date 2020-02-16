@@ -21,7 +21,7 @@ use Mab05k\OandaClient\Definition\Transaction\Order\FullPrice;
 trait FullPriceTrait
 {
     /**
-     * @var FullPrice|null
+     * @var \Mab05k\OandaClient\Definition\Transaction\Order\FullPrice|null
      *
      * @Serializer\SerializedName("fullPrice")
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\FullPrice")
@@ -29,7 +29,7 @@ trait FullPriceTrait
     private $fullPrice;
 
     /**
-     * @return FullPrice|null
+     * @return \Mab05k\OandaClient\Definition\Transaction\Order\FullPrice|null
      */
     public function getFullPrice(): ?FullPrice
     {
@@ -37,7 +37,7 @@ trait FullPriceTrait
     }
 
     /**
-     * @param FullPrice|null $fullPrice
+     * @param \Mab05k\OandaClient\Definition\Transaction\Order\FullPrice|null $fullPrice
      *
      * @return $this
      */
@@ -49,7 +49,7 @@ trait FullPriceTrait
     }
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getSpread(): ?Money
     {

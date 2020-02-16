@@ -19,7 +19,7 @@ use Brick\Money\Money;
 trait AccountMarginTrait
 {
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("marginRate")
      * @Serializer\Type("Brick\Money\Money")
@@ -51,7 +51,7 @@ trait AccountMarginTrait
     private $lastMarginCallExtensionTime;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getMarginRate(): ?Money
     {
@@ -59,7 +59,7 @@ trait AccountMarginTrait
     }
 
     /**
-     * @param Money|null $marginRate
+     * @param \Brick\Money\Money|null $marginRate
      *
      * @return $this
      */
