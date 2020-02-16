@@ -20,7 +20,7 @@ use JMS\Serializer\Annotation as Serializer;
 trait MarginUsedTrait
 {
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("marginUsed")
      * @Serializer\Type("Brick\Money\Money")
@@ -28,7 +28,7 @@ trait MarginUsedTrait
     private $marginUsed;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getMarginUsed(): ?Money
     {
@@ -36,7 +36,7 @@ trait MarginUsedTrait
     }
 
     /**
-     * @param Money|null $marginUsed
+     * @param \Brick\Money\Money|null $marginUsed
      *
      * @return $this
      */

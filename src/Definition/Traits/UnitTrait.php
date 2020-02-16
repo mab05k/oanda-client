@@ -20,7 +20,7 @@ use JMS\Serializer\Annotation as Serializer;
 trait UnitTrait
 {
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("units")
      * @Serializer\Type("Brick\Math\BigDecimal")
@@ -28,7 +28,7 @@ trait UnitTrait
     private $units;
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getUnits(): ?BigDecimal
     {
@@ -36,7 +36,7 @@ trait UnitTrait
     }
 
     /**
-     * @param BigDecimal|null $units
+     * @param \Brick\Math\BigDecimal|null $units
      *
      * @return $this
      */

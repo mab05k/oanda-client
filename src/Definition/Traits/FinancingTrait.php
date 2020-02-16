@@ -20,7 +20,7 @@ use JMS\Serializer\Annotation as Serializer;
 trait FinancingTrait
 {
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("financing")
      * @Serializer\Type("Brick\Money\Money")
@@ -28,7 +28,7 @@ trait FinancingTrait
     private $financing;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getFinancing(): ?Money
     {
@@ -36,7 +36,7 @@ trait FinancingTrait
     }
 
     /**
-     * @param Money|null $financing
+     * @param \Brick\Money\Money|null $financing
      *
      * @return $this
      */

@@ -22,7 +22,7 @@ use Mab05k\OandaClient\Definition\Transaction\Detail\TrailingStopLossDetail;
 trait TrailingStopLossOnFillTrait
 {
     /**
-     * @var TrailingStopLossDetail|null
+     * @var \Mab05k\OandaClient\Definition\Transaction\Detail\TrailingStopLossDetail|null
      *
      * @Serializer\SerializedName("trailingStopLossOnFill")
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Detail\TrailingStopLossDetail")
@@ -30,7 +30,7 @@ trait TrailingStopLossOnFillTrait
     private $trailingStopLossOnFill;
 
     /**
-     * @return TrailingStopLossDetail|null
+     * @return \Mab05k\OandaClient\Definition\Transaction\Detail\TrailingStopLossDetail|null
      */
     public function getTrailingStopLossOnFill(): ?TrailingStopLossDetail
     {
@@ -38,7 +38,7 @@ trait TrailingStopLossOnFillTrait
     }
 
     /**
-     * @param TrailingStopLossDetail|null $trailingStopLossOnFill
+     * @param \Mab05k\OandaClient\Definition\Transaction\Detail\TrailingStopLossDetail|null $trailingStopLossOnFill
      *
      * @return $this
      */

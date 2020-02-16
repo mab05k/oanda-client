@@ -22,7 +22,7 @@ use JMS\Serializer\Annotation as Serializer;
 trait DistanceTrait
 {
     /**
-     * @var BigDecimal|null
+     * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("distance")
      * @Serializer\Type("Brick\Math\BigDecimal")
@@ -30,7 +30,7 @@ trait DistanceTrait
     private $distance;
 
     /**
-     * @return BigDecimal|null
+     * @return \Brick\Math\BigDecimal|null
      */
     public function getDistance(): ?BigDecimal
     {
@@ -38,7 +38,7 @@ trait DistanceTrait
     }
 
     /**
-     * @param BigDecimal|null $distance
+     * @param \Brick\Math\BigDecimal|null $distance
      *
      * @return $this
      */

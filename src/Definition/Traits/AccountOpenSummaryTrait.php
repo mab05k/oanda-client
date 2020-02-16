@@ -22,7 +22,7 @@ use Mab05k\OandaClient\Definition\Trade\TradeSummary;
 trait AccountOpenSummaryTrait
 {
     /**
-     * @var array|TradeSummary[]
+     * @var array|\Mab05k\OandaClient\Definition\Trade\TradeSummary[]
      *
      * @Serializer\SerializedName("trades")
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Trade\TradeSummary>")
@@ -30,7 +30,7 @@ trait AccountOpenSummaryTrait
     private $trades = [];
 
     /**
-     * @var array|Position[]
+     * @var array|\Mab05k\OandaClient\Definition\Position\Position[]
      *
      * @Serializer\SerializedName("positions")
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Position\Position>")
@@ -38,7 +38,7 @@ trait AccountOpenSummaryTrait
     private $positions = [];
 
     /**
-     * @var array|Order[]
+     * @var array|\Mab05k\OandaClient\Definition\Order\Order[]
      *
      * @Serializer\SerializedName("orders")
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Order\Order>")

@@ -20,7 +20,7 @@ use JMS\Serializer\Annotation as Serializer;
 trait CommissionTrait
 {
     /**
-     * @var Money|null
+     * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("commission")
      * @Serializer\Type("Brick\Money\Money")
@@ -28,7 +28,7 @@ trait CommissionTrait
     private $commission;
 
     /**
-     * @return Money|null
+     * @return \Brick\Money\Money|null
      */
     public function getCommission(): ?Money
     {
@@ -36,7 +36,7 @@ trait CommissionTrait
     }
 
     /**
-     * @param Money|null $commission
+     * @param \Brick\Money\Money|null $commission
      *
      * @return $this
      */

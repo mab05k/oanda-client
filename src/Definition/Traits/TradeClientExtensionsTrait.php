@@ -22,7 +22,7 @@ use Mab05k\OandaClient\Definition\Transaction\ClientExtension\ClientExtension;
 trait TradeClientExtensionsTrait
 {
     /**
-     * @var ClientExtension|null
+     * @var \Mab05k\OandaClient\Definition\Transaction\ClientExtension\ClientExtension|null
      *
      * @Serializer\SerializedName("tradeClientExtensions")
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\ClientExtension\ClientExtension")
@@ -30,7 +30,7 @@ trait TradeClientExtensionsTrait
     private $tradeClientExtensions;
 
     /**
-     * @return ClientExtension|null
+     * @return \Mab05k\OandaClient\Definition\Transaction\ClientExtension\ClientExtension|null
      */
     public function getTradeClientExtensions()
     {
@@ -38,7 +38,7 @@ trait TradeClientExtensionsTrait
     }
 
     /**
-     * @param ClientExtension $tradeClientExtensions
+     * @param \Mab05k\OandaClient\Definition\Transaction\ClientExtension\ClientExtension $tradeClientExtensions
      *
      * @return $this
      */

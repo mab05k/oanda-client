@@ -20,7 +20,7 @@ use Mab05k\OandaClient\Definition\Transaction\Trade\TradeOpened;
 trait TradeOpenedTrait
 {
     /**
-     * @var TradeOpened|null
+     * @var \Mab05k\OandaClient\Definition\Transaction\Trade\TradeOpened|null
      *
      * @Serializer\SerializedName("tradeOpened")
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Trade\TradeOpened")
@@ -28,7 +28,7 @@ trait TradeOpenedTrait
     private $tradeOpened;
 
     /**
-     * @return TradeOpened|null
+     * @return \Mab05k\OandaClient\Definition\Transaction\Trade\TradeOpened|null
      */
     public function getTradeOpened(): ?TradeOpened
     {
@@ -36,7 +36,7 @@ trait TradeOpenedTrait
     }
 
     /**
-     * @param TradeOpened|null $tradeOpened
+     * @param \Mab05k\OandaClient\Definition\Transaction\Trade\TradeOpened|null $tradeOpened
      *
      * @return $this
      */
