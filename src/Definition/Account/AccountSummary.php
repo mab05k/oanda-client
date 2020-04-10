@@ -72,14 +72,6 @@ class AccountSummary
     private $hedgingEnabled;
 
     /**
-     * @var \DateTime|null
-     *
-     * @Serializer\SerializedName("resettablePLTime")
-     * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
-     */
-    private $resettablePlTime;
-
-    /**
      * @return string|null
      */
     public function getId(): ?string
@@ -115,26 +107,6 @@ class AccountSummary
     public function setHedgingEnabled(?bool $hedgingEnabled): self
     {
         $this->hedgingEnabled = $hedgingEnabled;
-
-        return $this;
-    }
-
-    /**
-     * @return \DateTime|null
-     */
-    public function getResettablePlTime(): ?\DateTime
-    {
-        return $this->resettablePlTime;
-    }
-
-    /**
-     * @param \DateTime|null $resettablePlTime
-     *
-     * @return AccountSummary
-     */
-    public function setResettablePlTime(?\DateTime $resettablePlTime): self
-    {
-        $this->resettablePlTime = $resettablePlTime;
 
         return $this;
     }

@@ -92,7 +92,6 @@ class AccountClientTest extends AbstractClientTest
         $this->assertEquals(0, $account->getPendingOrderCount());
         $this->assertEquals(25.0000, $account->getProfitLoss()->getAmount()->toFloat());
         $this->assertEquals(25.0000, $account->getResettableProfitLoss()->getAmount()->toFloat());
-        $this->assertInstanceOf(\DateTime::class, $account->getResettablePlTime());
         $this->assertEquals(0.0000, $account->getFinancing()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $account->getCommission()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $account->getGuaranteedExecutionFees()->getAmount()->toFloat());
@@ -177,7 +176,6 @@ class AccountClientTest extends AbstractClientTest
         $this->assertEquals(0, $account->getPendingOrderCount());
         $this->assertEquals(0.0000, $account->getProfitLoss()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $account->getResettableProfitLoss()->getAmount()->toFloat());
-        $this->assertInstanceOf(\DateTime::class, $account->getResettablePlTime());
         $this->assertEquals(0.0000, $account->getFinancing()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $account->getCommission()->getAmount()->toFloat());
         $this->assertEquals(0.0000, $account->getGuaranteedExecutionFees()->getAmount()->toFloat());
