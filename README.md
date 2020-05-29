@@ -93,6 +93,7 @@ in the [Multiple Accounts](src/Bridge/Symfony/Bundle/Resources/doc/usage/multipl
 ## Usage
 * [Multiple Accounts](src/Bridge/Symfony/Bundle/Resources/doc/usage/multiple_accounts.md)
 * [Exceptions](src/Bridge/Symfony/Bundle/Resources/doc/usage/exceptions.md)
+* [Stream Endpoints](src/Bridge/Symfony/Bundle/Resources/doc/usage/stream_endpoints.md)
 
 Use Dependency Injection to inject the Clients into your Service
 
@@ -132,3 +133,4 @@ class OandaAccountService
 * [PricingClient](src/Client/PricingClient.php)
 * [TradeClient](src/Client/TradeClient.php)
 * [TransactionClient](src/Client/TransactionClient.php)
+* [StreamClient](src/Client/StreamClient.php)

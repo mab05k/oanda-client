@@ -12,10 +12,9 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Tests\Functional\Client;
 
 use Mab05k\OandaClient\Client\StreamClient;
-use Mab05k\OandaClient\Definition\Pricing\Price;
-use Mab05k\OandaClient\Definition\Transaction\Transaction;
 use Mab05k\OandaClient\Request\Query\Pricing\Instruments;
 use Mab05k\OandaClient\Request\Query\QueryBuilderFactory;
+use Psr\Http\Message\StreamInterface;
 
 /**
  * Class StreamClientTest.
@@ -48,7 +47,7 @@ class StreamClientTest extends AbstractClientTest
             ->set(Instruments::class, [Instruments::EUR_USD]);
 
         $result = $this->SUT->pricingStream($pricingStreamOptions);
-        $this->assertInstanceOf(Price::class, $result);
+        $this->assertInstanceOf(StreamInterface::class, $result);
     }
 
     public function testTransactionStream()
@@ -56,6 +55,6 @@ class StreamClientTest extends AbstractClientTest
         $this->createMockResponse(200, 'transaction/transaction.json');
 
         $result = $this->SUT->transactionStream();
-        $this->assertInstanceOf(Transaction::class, $result);
+        $this->assertInstanceOf(StreamInterface::class, $result);
     }
 }

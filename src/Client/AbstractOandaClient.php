@@ -37,7 +37,7 @@ class AbstractOandaClient
     /**
      * @var ClientInterface
      */
-    private $client;
+    protected $client;
 
     /**
      * @var MessageFactory
@@ -196,7 +196,7 @@ class AbstractOandaClient
      * @param ResponseInterface $response
      * @param int               $expectedStatusCode
      */
-    private function validateResponseCode(
+    protected function validateResponseCode(
         ResponseInterface $response,
         int $expectedStatusCode
     ) {

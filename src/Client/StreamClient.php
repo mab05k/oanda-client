@@ -14,6 +14,8 @@ namespace Mab05k\OandaClient\Client;
 use Mab05k\OandaClient\Definition\Pricing\Price;
 use Mab05k\OandaClient\Definition\Transaction\Transaction;
 use Mab05k\OandaClient\Request\Query\QueryBuilder;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\StreamInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -24,8 +26,7 @@ class StreamClient extends AbstractOandaClient
     /**
      * @param QueryBuilder $queryBuilder
      *
-     * @throws \Http\Client\Exception
-     * @throws \Throwable
+     * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * Get a stream of Account Prices starting from when the request is made.
      * This pricing stream does not include every single price created for the Account,
@@ -40,9 +41,9 @@ class StreamClient extends AbstractOandaClient
      * prices depending on their alignment.
      * Note: This endpoint is served by the streaming URLs.
      *
-     * @return Price|null
+     * @return StreamInterface
      */
-    public function pricingStream(QueryBuilder $queryBuilder): ?Price
+    public function pricingStream(QueryBuilder $queryBuilder): StreamInterface
     {
         $request = $this->createRequest(
             Request::METHOD_GET,
@@ -55,15 +56,14 @@ class StreamClient extends AbstractOandaClient
     }
 
     /**
-     * @throws \Http\Client\Exception
-     * @throws \Throwable
+     * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * Get a stream of Transactions for an Account starting from when the request is made.
      * Note: This endpoint is served by the streaming URLs.
      *
-     * @return Transaction|null
+     * @return StreamInterface
      */
-    public function transactionStream(): ?Transaction
+    public function transactionStream(): StreamInterface
     {
         $request = $this->createRequest(
             Request::METHOD_GET,
@@ -71,5 +71,22 @@ class StreamClient extends AbstractOandaClient
         );
 
         return $this->sendRequest($request, Transaction::class, 200);
+    }
+
+    /**
+     * @param RequestInterface $request
+     * @param string           $deserializationType
+     * @param int              $expectedStatusCode
+     *
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     *
+     * @return StreamInterface
+     */
+    public function sendRequest(RequestInterface $request, string $deserializationType, int $expectedStatusCode): StreamInterface
+    {
+        $response = $this->client->sendRequest($request);
+        $this->validateResponseCode($response, 200);
+
+        return $response->getBody();
     }
 }
