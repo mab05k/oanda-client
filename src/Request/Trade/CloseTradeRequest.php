@@ -24,6 +24,7 @@ class CloseTradeRequest
      * @var string|null
      *
      * @Serializer\SerializedName("units")
+     *
      * @Serializer\Type("string")
      */
     private $units;

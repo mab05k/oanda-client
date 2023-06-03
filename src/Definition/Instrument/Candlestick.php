@@ -32,6 +32,7 @@ class Candlestick
      * @var bool|null
      *
      * @Serializer\SerializedName("complete")
+     *
      * @Serializer\Type("boolean")
      */
     private $complete;
@@ -40,6 +41,7 @@ class Candlestick
      * @var int|null
      *
      * @Serializer\SerializedName("volume")
+     *
      * @Serializer\Type("integer")
      */
     private $volume;
@@ -48,7 +50,9 @@ class Candlestick
      * @var Bid|null
      *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Pricing\Price\Bid")
+     *
      * @Serializer\SerializedName("bid")
+     *
      * @Serializer\Groups("bid")
      */
     private $bid;
@@ -57,7 +61,9 @@ class Candlestick
      * @var Ask|null
      *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Pricing\Price\Ask")
+     *
      * @Serializer\SerializedName("ask")
+     *
      * @Serializer\Groups("ask")
      */
     private $ask;
@@ -66,7 +72,9 @@ class Candlestick
      * @var Mid|null
      *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Pricing\Price\Mid")
+     *
      * @Serializer\SerializedName("mid")
+     *
      * @Serializer\Groups("mid")
      */
     private $mid;

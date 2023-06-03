@@ -23,6 +23,7 @@ class ClosePositionRequest
      * @var string|null
      *
      * @Serializer\SerializedName("longUnits")
+     *
      * @Serializer\Type("string")
      */
     private $longUnits;
@@ -31,6 +32,7 @@ class ClosePositionRequest
      * @var ClientExtension|null
      *
      * @Serializer\SerializedName("longClientExtensions")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\ClientExtension\ClientExtension")
      */
     private $longClientExtensions;
@@ -39,6 +41,7 @@ class ClosePositionRequest
      * @var string|null
      *
      * @Serializer\SerializedName("shortUnits")
+     *
      * @Serializer\Type("string")
      */
     private $shortUnits;
@@ -47,6 +50,7 @@ class ClosePositionRequest
      * @var ClientExtension|null
      *
      * @Serializer\SerializedName("shortClientExtensions")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\ClientExtension\ClientExtension")
      */
     private $shortClientExtensions;

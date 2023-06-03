@@ -22,6 +22,7 @@ trait TimeInForceTrait
      * @var string|null
      *
      * @Serializer\SerializedName("timeInForce")
+     *
      * @Serializer\Type("string")
      */
     protected $timeInForce;

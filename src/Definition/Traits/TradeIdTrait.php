@@ -24,6 +24,7 @@ trait TradeIdTrait
      * @var int|null
      *
      * @Serializer\SerializedName("tradeID")
+     *
      * @Serializer\Type("string")
      */
     private $tradeId;
@@ -37,7 +38,7 @@ trait TradeIdTrait
             return null;
         }
 
-        return (int) ($this->tradeId);
+        return (int) $this->tradeId;
     }
 
     /**

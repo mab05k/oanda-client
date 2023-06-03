@@ -16,8 +16,8 @@ namespace Mab05k\OandaClient\Definition\Constant;
  */
 final class OrderPositionFill
 {
-    const OPEN_ONLY = 'OPEN_ONLY';
-    const REDUCE_FIRST = 'REDUCE_FIRST';
-    const REDUCE_ONLY = 'REDUCE_ONLY';
-    const DEFAULT = 'DEFAULT';
+    public const OPEN_ONLY = 'OPEN_ONLY';
+    public const REDUCE_FIRST = 'REDUCE_FIRST';
+    public const REDUCE_ONLY = 'REDUCE_ONLY';
+    public const DEFAULT = 'DEFAULT';
 }

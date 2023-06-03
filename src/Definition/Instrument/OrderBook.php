@@ -24,6 +24,7 @@ class OrderBook
      * @var Book|null
      *
      * @Serializer\SerializedName("orderBook")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Instrument\Book")
      */
     private $orderBook;

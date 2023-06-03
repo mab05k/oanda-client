@@ -12,4 +12,5 @@ declare(strict_types=1);
 include __DIR__.'/../vendor/autoload.php';
 
 // Autoload JMS Serializer annotations for testing!
-\Doctrine\Common\Annotations\AnnotationRegistry::registerLoader('class_exists');
+// \Doctrine\Common\Annotations\AnnotationRegistry::registerLoader('class_exists');
+// Phake\Annotation\MockInitializer::setDefaultReader(new Phake\Annotation\LegacyReader());

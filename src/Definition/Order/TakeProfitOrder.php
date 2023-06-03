@@ -27,11 +27,11 @@ use Mab05k\OandaClient\Request\Order\TakeProfitOrderRequest;
  */
 class TakeProfitOrder extends TakeProfitOrderRequest
 {
-    use IdTrait;
-    use CreateTimeTrait;
-    use StateTrait;
-    use FilledOrderTrait;
-    use TradeStatusIdTrait;
     use CancelledOrderTrait;
+    use CreateTimeTrait;
+    use FilledOrderTrait;
+    use IdTrait;
     use ReplacedOrderTrait;
+    use StateTrait;
+    use TradeStatusIdTrait;
 }

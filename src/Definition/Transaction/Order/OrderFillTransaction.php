@@ -34,25 +34,26 @@ use Mab05k\OandaClient\Definition\Traits\UnitTrait;
  */
 class OrderFillTransaction implements OrderTransactionInterface
 {
-    use TypeTrait;
-    use InstrumentTrait;
-    use UnitTrait;
-    use PriceTrait;
-    use OrderTransactionTrait;
-    use ReasonTrait;
-    use TransactionOrderIdTrait;
-    use FullPriceTrait;
-    use TradeOpenedTrait;
-    use HalfSpreadCostTrait;
-    use FinancingTrait;
     use CommissionTrait;
-    use TradesClosedTrait;
+    use FinancingTrait;
+    use FullPriceTrait;
+    use HalfSpreadCostTrait;
+    use InstrumentTrait;
+    use OrderTransactionTrait;
+    use PriceTrait;
     use ProfitLossTrait;
+    use ReasonTrait;
+    use TradeOpenedTrait;
+    use TradesClosedTrait;
+    use TransactionOrderIdTrait;
+    use TypeTrait;
+    use UnitTrait;
 
     /**
      * @var Money|null
      *
      * @Serializer\SerializedName("accountBalance")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $accountBalance;
@@ -61,6 +62,7 @@ class OrderFillTransaction implements OrderTransactionInterface
      * @var BigDecimal|null
      *
      * @Serializer\SerializedName("gainQuoteHomeConversionFactor")
+     *
      * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $gainQuoteHomeConversionFactor;
@@ -69,6 +71,7 @@ class OrderFillTransaction implements OrderTransactionInterface
      * @var BigDecimal|null
      *
      * @Serializer\SerializedName("lossQuoteHomeConversionFactor")
+     *
      * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $lossQuoteHomeConversionFactor;
@@ -77,6 +80,7 @@ class OrderFillTransaction implements OrderTransactionInterface
      * @var Money|null
      *
      * @Serializer\SerializedName("guaranteedExecutionFee")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $guaranteedExecutionFee;
@@ -85,6 +89,7 @@ class OrderFillTransaction implements OrderTransactionInterface
      * @var BigDecimal|null
      *
      * @Serializer\SerializedName("requestedUnits")
+     *
      * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $requestedUnits;
@@ -93,6 +98,7 @@ class OrderFillTransaction implements OrderTransactionInterface
      * @var Money|null
      *
      * @Serializer\SerializedName("fullVWAP")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $fullVWap;

@@ -20,7 +20,7 @@ use Mab05k\OandaClient\Definition\Traits\PriceBoundTrait;
  */
 class MarketOrderRequest extends AbstractOrderRequest
 {
-    use PositionFillTrait;
     use ClientExtensionsTrait;
+    use PositionFillTrait;
     use PriceBoundTrait;
 }

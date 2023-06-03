@@ -24,6 +24,7 @@ trait ReplacedOrderTrait
      * @var string|null
      *
      * @Serializer\SerializedName("replacesOrderID")
+     *
      * @Serializer\Type("string")
      */
     private $replacesOrderId;
@@ -32,6 +33,7 @@ trait ReplacedOrderTrait
      * @var string|null
      *
      * @Serializer\SerializedName("replacedByOrderID")
+     *
      * @Serializer\Type("string")
      */
     private $replacedByOrderId;

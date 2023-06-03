@@ -22,6 +22,7 @@ trait AliasTrait
      * @var string|null
      *
      * @Serializer\SerializedName("alias")
+     *
      * @Serializer\Type("string")
      */
     private $alias;

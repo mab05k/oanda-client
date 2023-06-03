@@ -30,8 +30,8 @@ class PositionRequestFactory
     public static function closePositionRequest(
         string $longUnits,
         string $shortUnits = null,
-        ?ClientExtension $longClientExtensions = null,
-        ?ClientExtension $shortClientExtensions = null
+        ClientExtension $longClientExtensions = null,
+        ClientExtension $shortClientExtensions = null
     ): ClosePositionRequest {
         return (new ClosePositionRequest())
             ->setLongUnits($longUnits)

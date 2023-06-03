@@ -28,6 +28,7 @@ class Book
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("time")
+     *
      * @Serializer\Type("DateTime<'Y-m-d\TH:i:s\Z'>")
      */
     private $time;
@@ -36,6 +37,7 @@ class Book
      * @var Money|null
      *
      * @Serializer\SerializedName("bucketWidth")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $bucketWidth;
@@ -44,6 +46,7 @@ class Book
      * @var array|BookBucket[]|null
      *
      * @Serializer\SerializedName("buckets")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Instrument\BookBucket>")
      */
     private $buckets;

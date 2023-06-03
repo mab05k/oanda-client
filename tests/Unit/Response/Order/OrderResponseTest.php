@@ -22,7 +22,7 @@ class OrderResponseTest extends TestCase
      */
     private $SUT;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->SUT = new OrderResponse();
     }

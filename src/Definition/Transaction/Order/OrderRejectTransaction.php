@@ -31,18 +31,18 @@ use Mab05k\OandaClient\Definition\Traits\UnitTrait;
  */
 class OrderRejectTransaction implements OrderTransactionInterface
 {
-    use TypeTrait;
-    use UnitTrait;
-    use PriceTrait;
-    use PriceBoundTrait;
-    use InstrumentTrait;
-    use TimeInForceTrait;
-    use PositionFillTrait;
     use ClientExtensionsTrait;
+    use InstrumentTrait;
     use OrderTransactionTrait;
+    use PartialFillTrait;
+    use PositionFillTrait;
+    use PriceBoundTrait;
+    use PriceTrait;
     use ReasonTrait;
+    use RejectReasonTrait;
+    use TimeInForceTrait;
     use TradeCloseTrait;
     use TriggerConditionTrait;
-    use PartialFillTrait;
-    use RejectReasonTrait;
+    use TypeTrait;
+    use UnitTrait;
 }

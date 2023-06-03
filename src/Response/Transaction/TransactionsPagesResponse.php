@@ -27,6 +27,7 @@ class TransactionsPagesResponse
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("from")
+     *
      * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $from;
@@ -35,6 +36,7 @@ class TransactionsPagesResponse
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("to")
+     *
      * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $to;
@@ -43,6 +45,7 @@ class TransactionsPagesResponse
      * @var int|null
      *
      * @Serializer\SerializedName("pageSize")
+     *
      * @Serializer\Type("integer")
      */
     private $pageSize;
@@ -51,6 +54,7 @@ class TransactionsPagesResponse
      * @var int|null
      *
      * @Serializer\SerializedName("count")
+     *
      * @Serializer\Type("integer")
      */
     private $count;
@@ -59,6 +63,7 @@ class TransactionsPagesResponse
      * @var array|null
      *
      * @Serializer\SerializedName("pages")
+     *
      * @Serializer\Type("array<string>")
      */
     private $pages;

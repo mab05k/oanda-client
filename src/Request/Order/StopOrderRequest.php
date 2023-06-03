@@ -23,10 +23,10 @@ use Mab05k\OandaClient\Definition\Traits\TriggerConditionTrait;
  */
 class StopOrderRequest extends AbstractOrderRequest
 {
-    use PriceTrait;
-    use PriceBoundTrait;
+    use ClientExtensionsTrait;
     use GoodUntilDateTrait;
     use PositionFillTrait;
+    use PriceBoundTrait;
+    use PriceTrait;
     use TriggerConditionTrait;
-    use ClientExtensionsTrait;
 }

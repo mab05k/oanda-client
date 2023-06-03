@@ -28,6 +28,7 @@ class OrderClientExtensionsResponse
      * @var OrderClientExtensionsModifyTransaction|null
      *
      * @Serializer\SerializedName("orderClientExtensionsModifyTransaction")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\OrderClientExtensionsModifyTransaction")
      */
     private $orderClientExtensionsModifyTransaction;

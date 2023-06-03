@@ -26,6 +26,7 @@ class TradesResponse
      * @var array|Trade[]|null
      *
      * @Serializer\SerializedName("trades")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Trade\Trade>")
      */
     private $trades;

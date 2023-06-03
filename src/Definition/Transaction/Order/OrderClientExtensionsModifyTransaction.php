@@ -23,13 +23,14 @@ use Mab05k\OandaClient\Definition\Transaction\ClientExtension\ClientExtension;
 class OrderClientExtensionsModifyTransaction
 {
     use OrderTransactionTrait;
-    use TypeTrait;
     use TransactionOrderIdTrait;
+    use TypeTrait;
 
     /**
      * @var ClientExtension|null
      *
      * @Serializer\SerializedName("clientExtensionsModify")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\ClientExtension\ClientExtension")
      */
     private $clientExtensionsModify;
@@ -38,6 +39,7 @@ class OrderClientExtensionsModifyTransaction
      * @var ClientExtension|null
      *
      * @Serializer\SerializedName("tradeClientExtensionsModify")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\ClientExtension\ClientExtension")
      */
     private $tradeClientExtensionsModify;

@@ -25,6 +25,7 @@ trait ClientExtensionsTrait
      * @var \Mab05k\OandaClient\Definition\Transaction\ClientExtension\ClientExtension|null
      *
      * @Serializer\SerializedName("clientExtensions")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\ClientExtension\ClientExtension")
      */
     protected $clientExtensions;

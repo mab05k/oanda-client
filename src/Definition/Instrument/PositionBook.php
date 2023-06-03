@@ -24,6 +24,7 @@ class PositionBook
      * @var Book|null
      *
      * @Serializer\SerializedName("positionBook")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Instrument\Book")
      */
     private $positionBook;

@@ -24,6 +24,7 @@ trait ClientTradeIdTrait
      * @var string|null
      *
      * @Serializer\SerializedName("clientTradeID")
+     *
      * @Serializer\Type("string")
      */
     protected $clientTradeId;

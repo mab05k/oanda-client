@@ -25,16 +25,17 @@ use Mab05k\OandaClient\Definition\Traits\TimeInForceTrait;
  */
 class StopLossDetail
 {
-    use TimeInForceTrait;
-    use PriceTrait;
-    use GoodUntilDateTrait;
     use ClientExtensionsTrait;
     use DistanceTrait;
+    use GoodUntilDateTrait;
+    use PriceTrait;
+    use TimeInForceTrait;
 
     /**
      * @var bool|null
      *
      * @Serializer\SerializedName("guaranteed")
+     *
      * @Serializer\Type("boolean")
      */
     private $guaranteed;

@@ -19,6 +19,7 @@ trait InstrumentTrait
      * @var string|null
      *
      * @Serializer\SerializedName("instrument")
+     *
      * @Serializer\Type("string")
      */
     private $instrument;

@@ -23,13 +23,14 @@ use Mab05k\OandaClient\Definition\Transaction\Order\OrderFillTransaction;
  */
 class ClosePositionResponse
 {
-    use RelatedTransactionIdsTrait;
     use LastTransactionIdTrait;
+    use RelatedTransactionIdsTrait;
 
     /**
      * @var MarketOrderTransaction|null
      *
      * @Serializer\SerializedName("longOrderCreateTransaction")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\MarketOrderTransaction")
      */
     private $longOrderCreateTransaction;
@@ -38,6 +39,7 @@ class ClosePositionResponse
      * @var OrderFillTransaction|null
      *
      * @Serializer\SerializedName("longOrderFillTransaction")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\OrderFillTransaction")
      */
     private $longOrderFillTransaction;
@@ -46,6 +48,7 @@ class ClosePositionResponse
      * @var OrderCancelTransaction|null
      *
      * @Serializer\SerializedName("longOrderCancelTransaction")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\OrderCancelTransaction")
      */
     private $longOrderCancelTransaction;
@@ -54,6 +57,7 @@ class ClosePositionResponse
      * @var MarketOrderTransaction|null
      *
      * @Serializer\SerializedName("shortOrderCreateTransaction")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\MarketOrderTransaction")
      */
     private $shortOrderCreateTransaction;
@@ -62,6 +66,7 @@ class ClosePositionResponse
      * @var OrderFillTransaction|null
      *
      * @Serializer\SerializedName("shortOrderFillTransaction")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\OrderFillTransaction")
      */
     private $shortOrderFillTransaction;
@@ -70,6 +75,7 @@ class ClosePositionResponse
      * @var OrderCancelTransaction|null
      *
      * @Serializer\SerializedName("shortOrderCancelTransaction")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\OrderCancelTransaction")
      */
     private $shortOrderCancelTransaction;

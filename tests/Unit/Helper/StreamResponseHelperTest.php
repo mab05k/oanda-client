@@ -12,19 +12,16 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Tests\Unit\Helper;
 
 use Mab05k\OandaClient\Helper\StreamResponseHelper;
+use Phake\Mock;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\StreamInterface;
 
 class StreamResponseHelperTest extends TestCase
 {
-    /**
-     * @Mock
-     *
-     * @var StreamInterface
-     */
+    #[Mock(StreamInterface::class)]
     private $stream;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         \Phake::initAnnotations($this);
     }
@@ -39,10 +36,10 @@ class StreamResponseHelperTest extends TestCase
         \Phake::when($this->stream)->read(1)
             ->thenReturn('a')
             ->thenReturn('b')
-            ->thenReturn(PHP_EOL);
+            ->thenReturn(\PHP_EOL);
 
         $result = StreamResponseHelper::readLine($this->stream);
 
-        $this->assertEquals('ab'.PHP_EOL, $result);
+        $this->assertEquals('ab'.\PHP_EOL, $result);
     }
 }

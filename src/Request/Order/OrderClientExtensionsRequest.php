@@ -23,6 +23,7 @@ class OrderClientExtensionsRequest
      * @var ClientExtension|null
      *
      * @Serializer\SerializedName("clientExtensions")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\ClientExtension\ClientExtension")
      */
     private $clientExtensions;
@@ -31,6 +32,7 @@ class OrderClientExtensionsRequest
      * @var ClientExtension|null
      *
      * @Serializer\SerializedName("tradeClientExtensions")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\ClientExtension\ClientExtension")
      */
     private $tradeClientExtensions;

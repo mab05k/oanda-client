@@ -23,6 +23,7 @@ trait GuaranteedExecutionFeesTrait
      * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("guaranteedExecutionFees")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $guaranteedExecutionFees;

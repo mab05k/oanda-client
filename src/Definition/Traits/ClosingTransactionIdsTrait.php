@@ -22,6 +22,7 @@ trait ClosingTransactionIdsTrait
      * @var array
      *
      * @Serializer\SerializedName("closingTransactionIDs")
+     *
      * @Serializer\Type("array<integer>")
      */
     private $closingTransactionIDs = [];

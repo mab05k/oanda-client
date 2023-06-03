@@ -22,6 +22,7 @@ trait StateTrait
      * @var string|null
      *
      * @Serializer\SerializedName("state")
+     *
      * @Serializer\Type("string")
      */
     private $state;

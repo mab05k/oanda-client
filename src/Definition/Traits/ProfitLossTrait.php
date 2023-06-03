@@ -23,6 +23,7 @@ trait ProfitLossTrait
      * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("pl")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $profitLoss;
@@ -31,6 +32,7 @@ trait ProfitLossTrait
      * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("unrealizedPL")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $unrealizedProfitLoss;
@@ -39,6 +41,7 @@ trait ProfitLossTrait
      * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("resettablePL")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $resettableProfitLoss;

@@ -22,13 +22,14 @@ use Mab05k\OandaClient\Definition\Traits\TradeIdTrait;
  */
 class MarketOrderTradeClose
 {
-    use TradeIdTrait;
     use ClientTradeIdTrait;
+    use TradeIdTrait;
 
     /**
      * @var string|null
      *
      * @Serializer\SerializedName("units")
+     *
      * @Serializer\Type("string")
      */
     private $units;

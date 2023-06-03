@@ -21,8 +21,8 @@ use Mab05k\OandaClient\Definition\Traits\TradeIdTrait;
  */
 class MarketOrderDelayedTradeClose
 {
-    use TradeIdTrait;
     use ClientTradeIdTrait;
+    use TradeIdTrait;
 
     /**
      * @var string|null

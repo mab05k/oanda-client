@@ -26,6 +26,7 @@ class OrdersResponse
      * @var array|Order[]|null
      *
      * @Serializer\SerializedName("orders")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Order\Order>")
      */
     private $orders;

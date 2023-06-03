@@ -36,29 +36,30 @@ use Mab05k\OandaClient\Definition\Traits\WithdrawalLimitTrait;
  */
 class AccountSummary
 {
-    use AliasTrait;
-    use CurrencyTrait;
-    use BalanceTrait;
     use AccountCreatedTrait;
-    use GuaranteedStopLossOrderModeTrait;
-    use ProfitLossTrait;
-    use FinancingTrait;
-    use CommissionTrait;
-    use GuaranteedExecutionFeesTrait;
     use AccountMarginTrait;
     use AccountOpenStatusTrait;
+    use AliasTrait;
+    use BalanceTrait;
+    use CommissionTrait;
+    use CurrencyTrait;
+    use FinancingTrait;
+    use GuaranteedExecutionFeesTrait;
+    use GuaranteedStopLossOrderModeTrait;
     use LastTransactionIdTrait;
-    use MarginUsedTrait;
     use MarginAvailableTrait;
     use MarginCloseoutTrait;
+    use MarginUsedTrait;
     use NavTrait;
     use PositionValueTrait;
+    use ProfitLossTrait;
     use WithdrawalLimitTrait;
 
     /**
      * @var string|null
      *
      * @Serializer\SerializedName("id")
+     *
      * @Serializer\Type("string")
      */
     private $id;
@@ -67,6 +68,7 @@ class AccountSummary
      * @var bool|null
      *
      * @Serializer\SerializedName("hedgingEnabled")
+     *
      * @Serializer\Type("boolean")
      */
     private $hedgingEnabled;

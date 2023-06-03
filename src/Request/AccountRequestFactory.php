@@ -26,8 +26,8 @@ class AccountRequestFactory
      * @return Configuration
      */
     public static function configuration(
-        ?string $alias = null,
-        ?BigDecimal $marginRate = null
+        string $alias = null,
+        BigDecimal $marginRate = null
     ): Configuration {
         return (new Configuration())
             ->setMarginRate($marginRate)

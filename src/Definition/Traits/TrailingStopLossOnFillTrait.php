@@ -25,6 +25,7 @@ trait TrailingStopLossOnFillTrait
      * @var \Mab05k\OandaClient\Definition\Transaction\Detail\TrailingStopLossDetail|null
      *
      * @Serializer\SerializedName("trailingStopLossOnFill")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Detail\TrailingStopLossDetail")
      */
     private $trailingStopLossOnFill;

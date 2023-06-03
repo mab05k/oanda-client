@@ -23,6 +23,7 @@ class HomeConversion
      * @var Money|null
      *
      * @Serializer\SerializedName("accountGain")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $accountGain;
@@ -31,6 +32,7 @@ class HomeConversion
      * @var Money|null
      *
      * @Serializer\SerializedName("accountLoss")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $accountLoss;
@@ -39,6 +41,7 @@ class HomeConversion
      * @var Money|null
      *
      * @Serializer\SerializedName("positionValue")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $positionValue;

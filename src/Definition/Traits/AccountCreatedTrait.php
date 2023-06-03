@@ -20,6 +20,7 @@ trait AccountCreatedTrait
      * @var int|null
      *
      * @Serializer\SerializedName("createdByUserID")
+     *
      * @Serializer\Type("integer")
      */
     private $createdByUserId;
@@ -28,6 +29,7 @@ trait AccountCreatedTrait
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("createdTime")
+     *
      * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $createdTime;

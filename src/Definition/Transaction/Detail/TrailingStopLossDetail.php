@@ -21,8 +21,8 @@ use Mab05k\OandaClient\Definition\Traits\TimeInForceTrait;
  */
 class TrailingStopLossDetail
 {
-    use DistanceTrait;
-    use TimeInForceTrait;
-    use GoodUntilDateTrait;
     use ClientExtensionsTrait;
+    use DistanceTrait;
+    use GoodUntilDateTrait;
+    use TimeInForceTrait;
 }

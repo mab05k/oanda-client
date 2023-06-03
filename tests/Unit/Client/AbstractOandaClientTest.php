@@ -11,19 +11,19 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Tests\Unit\Client;
 
-use Http\Message\MessageFactory;
-use Http\Message\UriFactory;
 use JMS\Serializer\SerializerInterface;
 use Mab05k\OandaClient\Account\AccountDiscriminator;
 use Mab05k\OandaClient\Client\AbstractOandaClient;
 use Mab05k\OandaClient\Tests\Fixtures\DummyClient;
 use Mab05k\OandaClient\Tests\Fixtures\DummyResponse;
-use Phake;
+use Phake\Mock;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
+use Psr\Http\Message\UriFactoryInterface;
 use Psr\Http\Message\UriInterface;
 use Psr\Log\LoggerInterface;
 
@@ -32,83 +32,41 @@ use Psr\Log\LoggerInterface;
  */
 class AbstractOandaClientTest extends TestCase
 {
-    /**
-     * @var AbstractOandaClient
-     */
-    private $SUT;
-    /**
-     * @Mock
-     *
-     * @var AccountDiscriminator
-     */
-    protected $accountDiscriminator;
+    private AbstractOandaClient $SUT;
 
-    /**
-     * @Mock
-     *
-     * @var ClientInterface
-     */
-    protected $client;
+    #[Mock(AccountDiscriminator::class)]
+    protected AccountDiscriminator $accountDiscriminator;
 
-    /**
-     * @Mock
-     *
-     * @var LoggerInterface
-     */
-    protected $logger;
+    #[Mock(ClientInterface::class)]
+    protected ClientInterface $client;
 
-    /**
-     * @Mock
-     *
-     * @var SerializerInterface
-     */
-    protected $serializer;
+    #[Mock(LoggerInterface::class)]
+    protected LoggerInterface $logger;
 
-    /**
-     * @Mock
-     *
-     * @var MessageFactory
-     */
-    protected $guzzleMessageFactory;
+    #[Mock(SerializerInterface::class)]
+    protected SerializerInterface $serializer;
 
-    /**
-     * @Mock
-     *
-     * @var UriFactory
-     */
-    protected $guzzleUriFactory;
+    #[Mock(ResponseFactoryInterface::class)]
+    protected ResponseFactoryInterface $guzzleMessageFactory;
 
-    /**
-     * @Mock
-     *
-     * @var RequestInterface
-     */
-    protected $request;
+    #[Mock(UriFactoryInterface::class)]
+    protected UriFactoryInterface $guzzleUriFactory;
 
-    /**
-     * @Mock
-     *
-     * @var ResponseInterface
-     */
-    protected $response;
+    #[Mock(RequestInterface::class)]
+    protected RequestInterface $request;
 
-    /**
-     * @Mock
-     *
-     * @var StreamInterface
-     */
-    protected $stream;
+    #[Mock(ResponseInterface::class)]
+    protected ResponseInterface $response;
 
-    /**
-     * @Mock
-     *
-     * @var UriInterface
-     */
-    protected $uri;
+    #[Mock(StreamInterface::class)]
+    protected StreamInterface $stream;
 
-    public function setUp()
+    #[Mock(UriInterface::class)]
+    protected UriInterface $uri;
+
+    protected function setUp(): void
     {
-        Phake::initAnnotations($this);
+        \Phake::initAnnotations($this);
 
         $this->SUT = new DummyClient(
             $this->accountDiscriminator,
@@ -119,13 +77,13 @@ class AbstractOandaClientTest extends TestCase
             $this->logger
         );
 
-        Phake::when($this->client)
-            ->sendRequest(Phake::anyParameters())
+        \Phake::when($this->client)
+            ->sendRequest(\Phake::anyParameters())
             ->thenReturn($this->response);
-        Phake::when($this->response)
+        \Phake::when($this->response)
             ->getBody()
             ->thenReturn($this->stream);
-        Phake::when($this->request)
+        \Phake::when($this->request)
             ->getUri()
             ->thenReturn($this->uri);
     }
@@ -138,15 +96,15 @@ class AbstractOandaClientTest extends TestCase
     {
         $this->expectException(\Mab05k\OandaClient\Exception\ResponseDeserializationException::class);
 
-        Phake::when($this->response)
+        \Phake::when($this->response)
             ->getStatusCode()
             ->thenReturn(200);
-        Phake::when($this->stream)
+        \Phake::when($this->stream)
             ->getContents()
             ->thenReturn(json_encode(['fail' => 1]));
         $this->assertNull($this->SUT->sendRequest($this->request, DummyResponse::class, 200));
-        Phake::verify($this->logger, Phake::times(1))
-            ->critical(Phake::anyParameters());
+        \Phake::verify($this->logger, \Phake::times(1))
+            ->critical(\Phake::anyParameters());
     }
 
     /**
@@ -157,15 +115,15 @@ class AbstractOandaClientTest extends TestCase
     {
         $this->expectException(\Mab05k\OandaClient\Exception\ResponseDeserializationException::class);
 
-        Phake::when($this->response)
+        \Phake::when($this->response)
             ->getStatusCode()
             ->thenReturn(200);
-        Phake::when($this->serializer)
-            ->deserialize(Phake::anyParameters())
+        \Phake::when($this->serializer)
+            ->deserialize(\Phake::anyParameters())
             ->thenThrow(new \Exception());
         $this->assertNull($this->SUT->sendRequest($this->request, DummyResponse::class, 200));
-        Phake::verify($this->logger, Phake::times(1))
-            ->critical(Phake::anyParameters());
+        \Phake::verify($this->logger, \Phake::times(1))
+            ->critical(\Phake::anyParameters());
     }
 
     /**
@@ -176,12 +134,12 @@ class AbstractOandaClientTest extends TestCase
     {
         $this->expectException(\Exception::class);
 
-        Phake::when($this->client)
-            ->sendRequest(Phake::anyParameters())
+        \Phake::when($this->client)
+            ->sendRequest(\Phake::anyParameters())
             ->thenThrow(new \Exception());
 
         $this->assertNull($this->SUT->sendRequest($this->request, DummyResponse::class, 200));
-        Phake::verify($this->logger, Phake::times(1))
-            ->critical(Phake::anyParameters());
+        \Phake::verify($this->logger, \Phake::times(1))
+            ->critical(\Phake::anyParameters());
     }
 }

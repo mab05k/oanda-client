@@ -24,6 +24,7 @@ trait PositionFillTrait
      * @var string|null
      *
      * @Serializer\SerializedName("positionFill")
+     *
      * @Serializer\Type("string")
      */
     private $positionFill;

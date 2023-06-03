@@ -34,27 +34,28 @@ use Mab05k\OandaClient\Definition\Traits\UnitTrait;
  */
 class Order
 {
-    use IdTrait;
-    use CreateTimeTrait;
-    use TradeIdTrait;
-    use StateTrait;
-    use ClientExtensionsTrait;
     use CancelledOrderTrait;
-    use TypeTrait;
-    use InstrumentTrait;
-    use UnitTrait;
-    use TimeInForceTrait;
-    use PositionFillTrait;
+    use ClientExtensionsTrait;
+    use CreateTimeTrait;
     use FilledOrderTrait;
-    use PriceTrait;
+    use IdTrait;
+    use InstrumentTrait;
     use PartialFillTrait;
-    use TriggerConditionTrait;
+    use PositionFillTrait;
+    use PriceTrait;
+    use StateTrait;
+    use TimeInForceTrait;
+    use TradeIdTrait;
     use TradeStatusIdTrait;
+    use TriggerConditionTrait;
+    use TypeTrait;
+    use UnitTrait;
 
     /**
      * @var bool|null
      *
      * @Serializer\SerializedName("guaranteed")
+     *
      * @Serializer\Type("boolean")
      */
     private $guaranteed;

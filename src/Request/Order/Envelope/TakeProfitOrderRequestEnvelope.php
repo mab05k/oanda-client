@@ -23,6 +23,7 @@ class TakeProfitOrderRequestEnvelope implements OrderInterface
      * @var TakeProfitOrderRequest|null
      *
      * @Serializer\SerializedName("order")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Request\Order\TakeProfitOrderRequest")
      */
     private $order;

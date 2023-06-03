@@ -22,6 +22,7 @@ trait CreateTimeTrait
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("createTime")
+     *
      * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $createTime;

@@ -22,6 +22,7 @@ trait UserIdTrait
      * @var int|null
      *
      * @Serializer\SerializedName("userID")
+     *
      * @Serializer\Type("integer")
      */
     private $userId;

@@ -22,6 +22,7 @@ trait AccountMarginTrait
      * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("marginRate")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $marginRate;
@@ -30,6 +31,7 @@ trait AccountMarginTrait
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("marginCallEnterTime")
+     *
      * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $marginCallEnterTime;
@@ -38,6 +40,7 @@ trait AccountMarginTrait
      * @var int|null
      *
      * @Serializer\SerializedName("marginCallExtensionCount")
+     *
      * @Serializer\Type("integer")
      */
     private $marginCallExtensionCount;
@@ -46,6 +49,7 @@ trait AccountMarginTrait
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("lastMarginCallExtensionTime")
+     *
      * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $lastMarginCallExtensionTime;

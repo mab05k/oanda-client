@@ -22,6 +22,7 @@ trait GuaranteedStopLossOrderModeTrait
      * @var string|null
      *
      * @Serializer\SerializedName("guaranteedStopLossOrderMode")
+     *
      * @Serializer\Type("string")
      */
     private $guaranteedStopLossOrderMode;

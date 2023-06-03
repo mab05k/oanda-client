@@ -28,6 +28,7 @@ class BookBucket
      * @var BigDecimal|null
      *
      * @Serializer\SerializedName("longCountPercent")
+     *
      * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $longCountPercent;
@@ -36,6 +37,7 @@ class BookBucket
      * @var BigDecimal|null
      *
      * @Serializer\SerializedName("shortCountPercent")
+     *
      * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $shortCountPercent;

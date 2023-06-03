@@ -47,9 +47,9 @@ class BrickMoneyHandler implements SubscribingHandlerInterface
 
     /**
      * @param JsonSerializationVisitor $visitor
-     * @param $money
-     * @param array   $type
-     * @param Context $context
+     * @param                          $money
+     * @param array                    $type
+     * @param Context                  $context
      *
      * @throws \Exception
      *
@@ -66,9 +66,9 @@ class BrickMoneyHandler implements SubscribingHandlerInterface
 
     /**
      * @param JsonDeserializationVisitor $visitor
-     * @param $money
-     * @param array   $type
-     * @param Context $context
+     * @param                            $money
+     * @param array                      $type
+     * @param Context                    $context
      *
      * @return Money
      */

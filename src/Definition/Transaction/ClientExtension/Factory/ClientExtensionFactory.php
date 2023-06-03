@@ -31,9 +31,9 @@ class ClientExtensionFactory
      * @return ClientExtension
      */
     public static function create(
-        ?string $id = null,
-        ?string $tag = null,
-        ?string $comment = null
+        string $id = null,
+        string $tag = null,
+        string $comment = null
     ): ClientExtension {
         return self::init()
             ->setId($id)

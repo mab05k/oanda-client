@@ -22,6 +22,7 @@ trait LastTransactionIdTrait
      * @var int|null
      *
      * @Serializer\SerializedName("lastTransactionID")
+     *
      * @Serializer\Type("integer")
      */
     private $lastTransactionId;

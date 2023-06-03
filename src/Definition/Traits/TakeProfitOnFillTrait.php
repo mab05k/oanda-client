@@ -25,6 +25,7 @@ trait TakeProfitOnFillTrait
      * @var \Mab05k\OandaClient\Definition\Transaction\Detail\TakeProfitDetail|null
      *
      * @Serializer\SerializedName("takeProfitOnFill")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Detail\TakeProfitDetail")
      */
     private $takeProfitOnFill;

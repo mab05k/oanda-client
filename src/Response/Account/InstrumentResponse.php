@@ -26,6 +26,7 @@ class InstrumentResponse
      * @var array|Instrument[]
      *
      * @Serializer\SerializedName("instruments")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Account\Instrument>")
      */
     private $instruments = [];

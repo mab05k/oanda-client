@@ -22,7 +22,7 @@ class StreamResponseHelper
      *
      * @return string
      */
-    public static function readLine(StreamInterface $stream, $maxLength = 4069, $eol = PHP_EOL)
+    public static function readLine(StreamInterface $stream, $maxLength = 4069, $eol = \PHP_EOL)
     {
         $buffer = '';
         $size = 0;

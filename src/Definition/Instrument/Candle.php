@@ -27,6 +27,7 @@ class Candle
      * @var string|null
      *
      * @Serializer\SerializedName("granularity")
+     *
      * @Serializer\Type("string")
      */
     private $granularity;
@@ -35,6 +36,7 @@ class Candle
      * @var array|Candlestick[]|null
      *
      * @Serializer\SerializedName("candles")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Instrument\Candlestick>")
      */
     private $candlesticks;

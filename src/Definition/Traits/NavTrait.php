@@ -20,6 +20,7 @@ trait NavTrait
      * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("NAV")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $nav;

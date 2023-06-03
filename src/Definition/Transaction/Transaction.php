@@ -36,28 +36,29 @@ use Mab05k\OandaClient\Definition\Traits\UnitTrait;
  */
 class Transaction
 {
-    use IdTrait;
-    use TypeTrait;
-    use UnitTrait;
-    use InstrumentTrait;
-    use TransactionOrderIdTrait;
-    use PriceTrait;
-    use ProfitLossTrait;
-    use TradeOpenedTrait;
+    use FinancingTrait;
     use FullPriceTrait;
     use HalfSpreadCostTrait;
-    use TradesClosedTrait;
-    use TimeTrait;
-    use RejectReasonTrait;
-    use ReasonTrait;
-    use TimeInForceTrait;
-    use FinancingTrait;
+    use IdTrait;
+    use InstrumentTrait;
     use PositionFillTrait;
+    use PriceTrait;
+    use ProfitLossTrait;
+    use ReasonTrait;
+    use RejectReasonTrait;
+    use TimeInForceTrait;
+    use TimeTrait;
+    use TradeOpenedTrait;
+    use TradesClosedTrait;
+    use TransactionOrderIdTrait;
+    use TypeTrait;
+    use UnitTrait;
 
     /**
      * @var Money|null
      *
      * @Serializer\SerializedName("accountBalance")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $accountBalance;
@@ -66,6 +67,7 @@ class Transaction
      * @var string|null
      *
      * @Serializer\SerializedName("accountFinancingMode")
+     *
      * @Serializer\Type("string")
      */
     private $accountFinancingMode;
@@ -74,6 +76,7 @@ class Transaction
      * @var int|null
      *
      * @Serializer\SerializedName("divisionID")
+     *
      * @Serializer\Type("integer")
      */
     private $divisionId;
@@ -82,6 +85,7 @@ class Transaction
      * @var int|null
      *
      * @Serializer\SerializedName("siteID")
+     *
      * @Serializer\Type("integer")
      */
     private $siteId;
@@ -90,6 +94,7 @@ class Transaction
      * @var int|null
      *
      * @Serializer\SerializedName("accountUserID")
+     *
      * @Serializer\Type("integer")
      */
     private $accountUserId;
@@ -98,6 +103,7 @@ class Transaction
      * @var int|null
      *
      * @Serializer\SerializedName("accountNumber")
+     *
      * @Serializer\Type("integer")
      */
     private $accountNumber;
@@ -106,6 +112,7 @@ class Transaction
      * string|null.
      *
      * @Serializer\SerializedName("homeCurrency")
+     *
      * @Serializer\Type("string")
      */
     private $homeCurrency;
@@ -114,6 +121,7 @@ class Transaction
      * @var int|null
      *
      * @Serializer\SerializedName("userID")
+     *
      * @Serializer\Type("integer")
      */
     private $userId;
@@ -122,6 +130,7 @@ class Transaction
      * @var string|null
      *
      * @Serializer\SerializedName("accountID")
+     *
      * @Serializer\Type("string")
      */
     private $accountId;
@@ -130,6 +139,7 @@ class Transaction
      * @var int|null
      *
      * @Serializer\SerializedName("batchID")
+     *
      * @Serializer\Type("integer")
      */
     private $batchId;
@@ -138,6 +148,7 @@ class Transaction
      * @var string|null
      *
      * @Serializer\SerializedName("requestID")
+     *
      * @Serializer\Type("string")
      */
     private $requestId;

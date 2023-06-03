@@ -27,18 +27,19 @@ use Mab05k\OandaClient\Request\Order\StopLossOrderRequest;
  */
 class StopLossOrder extends StopLossOrderRequest
 {
-    use IdTrait;
-    use CreateTimeTrait;
-    use StateTrait;
-    use FilledOrderTrait;
-    use TradeStatusIdTrait;
     use CancelledOrderTrait;
+    use CreateTimeTrait;
+    use FilledOrderTrait;
+    use IdTrait;
     use ReplacedOrderTrait;
+    use StateTrait;
+    use TradeStatusIdTrait;
 
     /**
      * @var BigDecimal|null
      *
      * @Serializer\SerializedName("guaranteedExecutionPremium")
+     *
      * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $guaranteedExecutionPremium;

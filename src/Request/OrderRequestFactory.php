@@ -61,12 +61,12 @@ class OrderRequestFactory
         BigDecimal $units,
         string $timeInForce = TimeInForce::FOK,
         string $positionFill = OrderPositionFill::DEFAULT,
-        ?ClientExtension $clientExtension = null,
-        ?Money $priceBound = null,
-        ?TakeProfitDetail $takeProfitOnFill = null,
-        ?StopLossDetail $stopLossOnFill = null,
-        ?TrailingStopLossDetail $trailingStopLossOnFill = null,
-        ?ClientExtension $tradeClientExtensions = null
+        ClientExtension $clientExtension = null,
+        Money $priceBound = null,
+        TakeProfitDetail $takeProfitOnFill = null,
+        StopLossDetail $stopLossOnFill = null,
+        TrailingStopLossDetail $trailingStopLossOnFill = null,
+        ClientExtension $tradeClientExtensions = null
     ): MarketOrderRequestEnvelope {
         $marketOrderRequestEnvelope = new MarketOrderRequestEnvelope();
         $marketOrderRequest = (new MarketOrderRequest())
@@ -109,12 +109,12 @@ class OrderRequestFactory
         string $timeInForce = TimeInForce::GTC,
         string $positionFill = OrderPositionFill::DEFAULT,
         string $triggerCondition = OrderTriggerCondition::DEFAULT,
-        ?ClientExtension $clientExtension = null,
-        ?\DateTime $gtdTime = null,
-        ?TakeProfitDetail $takeProfitOnFill = null,
-        ?StopLossDetail $stopLossOnFill = null,
-        ?TrailingStopLossDetail $trailingStopLossOnFill = null,
-        ?ClientExtension $tradeClientExtensions = null
+        ClientExtension $clientExtension = null,
+        \DateTime $gtdTime = null,
+        TakeProfitDetail $takeProfitOnFill = null,
+        StopLossDetail $stopLossOnFill = null,
+        TrailingStopLossDetail $trailingStopLossOnFill = null,
+        ClientExtension $tradeClientExtensions = null
     ): LimitOrderRequestEnvelope {
         $limitOrderRequestEnvelope = new LimitOrderRequestEnvelope();
         $limitOrderRequest = (new LimitOrderRequest())
@@ -159,13 +159,13 @@ class OrderRequestFactory
         string $timeInForce = TimeInForce::GTC,
         string $positionFill = OrderPositionFill::DEFAULT,
         string $triggerCondition = OrderTriggerCondition::DEFAULT,
-        ?Money $priceBound = null,
-        ?ClientExtension $clientExtension = null,
-        ?\DateTime $gtdTime = null,
-        ?TakeProfitDetail $takeProfitOnFill = null,
-        ?StopLossDetail $stopLossOnFill = null,
-        ?TrailingStopLossDetail $trailingStopLossOnFill = null,
-        ?ClientExtension $tradeClientExtensions = null
+        Money $priceBound = null,
+        ClientExtension $clientExtension = null,
+        \DateTime $gtdTime = null,
+        TakeProfitDetail $takeProfitOnFill = null,
+        StopLossDetail $stopLossOnFill = null,
+        TrailingStopLossDetail $trailingStopLossOnFill = null,
+        ClientExtension $tradeClientExtensions = null
     ): MarketIfTouchedOrderRequestEnvelope {
         $marketIfTouchedOrderRequestEnvelope = new MarketIfTouchedOrderRequestEnvelope();
         $marketIfTouchedOrderRequest = (new MarketIfTouchedOrderRequest())
@@ -203,10 +203,10 @@ class OrderRequestFactory
     public static function stopLossOrderRequest(
         int $tradeId,
         Money $price,
-        ?BigDecimal $distance = null,
-        ?string $clientTradeId = null,
-        ?ClientExtension $clientExtension = null,
-        ?\DateTime $gtdTime = null,
+        BigDecimal $distance = null,
+        string $clientTradeId = null,
+        ClientExtension $clientExtension = null,
+        \DateTime $gtdTime = null,
         string $timeInForce = TimeInForce::GTC,
         string $triggerCondition = OrderTriggerCondition::DEFAULT,
         bool $guaranteed = false
@@ -251,13 +251,13 @@ class OrderRequestFactory
         string $timeInForce = TimeInForce::GTC,
         string $positionFill = OrderPositionFill::DEFAULT,
         string $triggerCondition = OrderTriggerCondition::DEFAULT,
-        ?Money $priceBound = null,
-        ?\DateTime $gtdTime = null,
-        ?ClientExtension $clientExtension = null,
-        ?TakeProfitDetail $takeProfitOnFill = null,
-        ?StopLossDetail $stopLossOnFill = null,
-        ?TrailingStopLossDetail $trailingStopLossOnFill = null,
-        ?ClientExtension $tradeClientExtensions = null
+        Money $priceBound = null,
+        \DateTime $gtdTime = null,
+        ClientExtension $clientExtension = null,
+        TakeProfitDetail $takeProfitOnFill = null,
+        StopLossDetail $stopLossOnFill = null,
+        TrailingStopLossDetail $trailingStopLossOnFill = null,
+        ClientExtension $tradeClientExtensions = null
     ): StopOrderRequestEnvelope {
         $stopOrderRequestEnvelope = new StopOrderRequestEnvelope();
         $stopOrderRequest = (new StopOrderRequest())
@@ -293,7 +293,7 @@ class OrderRequestFactory
     public static function takeProfitOrderRequest(
         int $tradeId,
         Money $price,
-        ?string $clientTradeId = null,
+        string $clientTradeId = null,
         string $timeInForce = TimeInForce::GTC,
         string $triggerCondition = OrderTriggerCondition::DEFAULT,
         ClientExtension $clientExtension = null,
@@ -327,7 +327,7 @@ class OrderRequestFactory
     public static function trailingStopLossOrderRequest(
         int $tradeId,
         BigDecimal $distance,
-        ?string $clientTradeId = null,
+        string $clientTradeId = null,
         string $timeInForce = TimeInForce::GTC,
         string $triggerCondition = OrderTriggerCondition::DEFAULT,
         ClientExtension $clientExtension = null,

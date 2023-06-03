@@ -21,7 +21,7 @@ use Brick\Money\Money;
 class BrickMoneyHelper
 {
     /**
-     * @param $amount
+     * @param     $amount
      * @param int $precision
      *
      * @return Money

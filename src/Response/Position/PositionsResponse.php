@@ -26,6 +26,7 @@ class PositionsResponse
      * @var array|Position[]|null
      *
      * @Serializer\SerializedName("positions")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Position\Position>")
      */
     private $positions;

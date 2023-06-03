@@ -27,6 +27,7 @@ class StopLossOrderRequest extends AbstractTradeOrderRequest
      * @var bool|null
      *
      * @Serializer\SerializedName("guaranteed")
+     *
      * @Serializer\Type("boolean")
      */
     private $guaranteed;

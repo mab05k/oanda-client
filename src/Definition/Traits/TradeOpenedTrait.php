@@ -23,6 +23,7 @@ trait TradeOpenedTrait
      * @var \Mab05k\OandaClient\Definition\Transaction\Trade\TradeOpened|null
      *
      * @Serializer\SerializedName("tradeOpened")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Trade\TradeOpened")
      */
     private $tradeOpened;

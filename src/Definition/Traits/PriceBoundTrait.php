@@ -25,6 +25,7 @@ trait PriceBoundTrait
      * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("priceBound")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $priceBound;

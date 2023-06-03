@@ -24,14 +24,15 @@ use Mab05k\OandaClient\Exception\PriceBucketNotFoundException;
  */
 class Price
 {
-    use TypeTrait;
     use InstrumentTrait;
     use TimeTrait;
+    use TypeTrait;
 
     /**
      * @var array|PriceBucket[]|null
      *
      * @Serializer\SerializedName("bids")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Pricing\PriceBucket>")
      */
     private $bids;
@@ -40,6 +41,7 @@ class Price
      * @var array|PriceBucket[]|null
      *
      * @Serializer\SerializedName("asks")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Pricing\PriceBucket>")
      */
     private $asks;
@@ -48,6 +50,7 @@ class Price
      * @var Money|null
      *
      * @Serializer\SerializedName("closeoutBid")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $closeoutBid;
@@ -56,6 +59,7 @@ class Price
      * @var Money|null
      *
      * @Serializer\SerializedName("closeoutAsk")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $closeoutAsk;
@@ -64,6 +68,7 @@ class Price
      * @var bool|null
      *
      * @Serializer\SerializedName("tradeable")
+     *
      * @Serializer\Type("boolean")
      */
     private $tradeable;
@@ -72,6 +77,7 @@ class Price
      * @var string|null
      *
      * @Serializer\SerializedName("status")
+     *
      * @Serializer\Type("string")
      */
     private $status;
@@ -80,6 +86,7 @@ class Price
      * @var UnitsAvailable|null
      *
      * @Serializer\SerializedName("unitsAvailable")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Pricing\Price\UnitsAvailable")
      */
     private $unitsAvailable;

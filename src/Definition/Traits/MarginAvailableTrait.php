@@ -23,6 +23,7 @@ trait MarginAvailableTrait
      * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("marginAvailable")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $marginAvailable;

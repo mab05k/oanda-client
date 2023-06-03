@@ -23,6 +23,7 @@ trait HalfSpreadCostTrait
      * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("halfSpreadCost")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $halfSpreadCost;

@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Client;
 
+use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Message\MessageFactory;
 use Http\Message\UriFactory;
 use JMS\Serializer\SerializerInterface;
@@ -20,7 +21,10 @@ use Mab05k\OandaClient\Exception\InvalidStatusCodeException;
 use Mab05k\OandaClient\Exception\ResponseDeserializationException;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\StreamFactoryInterface;
+use Psr\Http\Message\UriFactoryInterface;
 use Psr\Http\Message\UriInterface;
 use Psr\Log\LoggerInterface;
 
@@ -50,6 +54,11 @@ class AbstractOandaClient
     private $uriFactory;
 
     /**
+     * @var StreamFactoryInterface
+     */
+    private $streamFactory;
+
+    /**
      * @var SerializerInterface
      */
     private $serializer;
@@ -67,27 +76,28 @@ class AbstractOandaClient
     /**
      * AbstractOandaClient constructor.
      *
-     * @param AccountDiscriminator $accountDiscriminator
-     * @param ClientInterface      $client
-     * @param MessageFactory       $mesasageFactory
-     * @param UriFactory           $uriFactory
-     * @param SerializerInterface  $serializer
-     * @param LoggerInterface|null $logger
+     * @param AccountDiscriminator     $accountDiscriminator
+     * @param ClientInterface          $client
+     * @param ResponseFactoryInterface $messageFactory
+     * @param UriFactoryInterface      $uriFactory
+     * @param SerializerInterface      $serializer
+     * @param LoggerInterface|null     $logger
      */
     public function __construct(
         AccountDiscriminator $accountDiscriminator,
         ClientInterface $client,
-        MessageFactory $mesasageFactory,
-        UriFactory $uriFactory,
+        ResponseFactoryInterface $messageFactory,
+        UriFactoryInterface $uriFactory,
         SerializerInterface $serializer,
         LoggerInterface $logger = null
     ) {
         $this->accountDiscriminator = $accountDiscriminator;
         $this->client = $client;
-        $this->messageFactory = $mesasageFactory;
+        $this->messageFactory = $messageFactory;
         $this->uriFactory = $uriFactory;
         $this->serializer = $serializer;
         $this->logger = $logger;
+        $this->streamFactory = Psr17FactoryDiscovery::findStreamFactory();
     }
 
     /**
@@ -148,7 +158,7 @@ class AbstractOandaClient
                 ]);
             }
             throw $ex;
-        } catch (\Throwable | \Http\Client\Exception $ex) {
+        } catch (\Throwable|\Http\Client\Exception $ex) {
             if ($this->logger instanceof LoggerInterface) {
                 $this->logger->critical('Unexpected Request Exception.', [
                     'deserializationType' => $deserializationType,
@@ -180,16 +190,21 @@ class AbstractOandaClient
         array $headers = []
     ): RequestInterface {
         $uri = $this->createUri($path, $queryParameters);
+        $request = $this->messageFactory->createRequest($method, $uri);
         if (null !== $body) {
             $body = $this->serializer->serialize($body, 'json');
+            $request = $request->withBody($this->streamFactory->createStream($body));
         }
 
-        return $this->messageFactory->createRequest(
-            $method,
-            $uri,
-            $this->addAuthHeader($headers),
-            $body
-        );
+        foreach ($headers as $header => $value) {
+            $request = $request->withHeader($header, $value);
+        }
+
+        if (!$request->hasHeader('Authorization')) {
+            $request = $request->withHeader('Authorization', sprintf('Bearer %s', $this->getAccount()->getSecret()));
+        }
+
+        return $request;
     }
 
     /**
@@ -199,7 +214,7 @@ class AbstractOandaClient
     protected function validateResponseCode(
         ResponseInterface $response,
         int $expectedStatusCode
-    ) {
+    ): void {
         if ($expectedStatusCode !== $response->getStatusCode()) {
             $this->logger->warning(sprintf('Invalid status code. Expected %d, got %d', $expectedStatusCode, $response->getStatusCode()));
         }
@@ -221,20 +236,6 @@ class AbstractOandaClient
     }
 
     /**
-     * @param array $headers
-     *
-     * @return array
-     */
-    private function addAuthHeader(array $headers): array
-    {
-        if (!isset($headers['Authorization'])) {
-            $headers['Authorization'] = sprintf('Bearer %s', $this->getAccount()->getSecret());
-        }
-
-        return $headers;
-    }
-
-    /**
      * @param ResponseInterface $response
      * @param string            $deserializationType
      *
@@ -250,7 +251,7 @@ class AbstractOandaClient
             $contents = $response->getBody()->getContents();
             $result = $this->serializer->deserialize($contents, $deserializationType, 'json');
             if (!$result instanceof $deserializationType) {
-                throw new ResponseDeserializationException(sprintf('Deserialization Resulted in an incorrect object instance. Expected %s, got %s', $deserializationType, \get_class($result)), 2002);
+                throw new ResponseDeserializationException(sprintf('Deserialization Resulted in an incorrect object instance. Expected %s, got %s', $deserializationType, $result::class), 2002);
             }
 
             return $result;

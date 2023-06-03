@@ -22,6 +22,7 @@ trait ReasonTrait
      * @var string|null
      *
      * @Serializer\SerializedName("reason")
+     *
      * @Serializer\Type("string")
      */
     private $reason;

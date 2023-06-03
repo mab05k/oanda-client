@@ -25,6 +25,7 @@ trait StopLossOnFillTrait
      * @var \Mab05k\OandaClient\Definition\Transaction\Detail\StopLossDetail|null
      *
      * @Serializer\SerializedName("stopLossOnFill")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Detail\StopLossDetail")
      */
     private $stopLossOnFill;

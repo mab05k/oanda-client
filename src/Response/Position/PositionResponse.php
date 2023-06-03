@@ -23,6 +23,7 @@ class PositionResponse
      * @var Position|null
      *
      * @Serializer\SerializedName("position")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Position\Position")
      */
     private $position;

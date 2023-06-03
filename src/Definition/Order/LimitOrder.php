@@ -29,15 +29,15 @@ use Mab05k\OandaClient\Request\Order\LimitOrderRequest;
  */
 class LimitOrder extends LimitOrderRequest
 {
-    use IdTrait;
-    use CreateTimeTrait;
-    use StateTrait;
-    use TakeProfitOnFillTrait;
-    use StopLossOnFillTrait;
-    use TrailingStopLossOnFillTrait;
-    use TradeClientExtensionsTrait;
-    use FilledOrderTrait;
-    use TradeStatusIdTrait;
     use CancelledOrderTrait;
+    use CreateTimeTrait;
+    use FilledOrderTrait;
+    use IdTrait;
     use ReplacedOrderTrait;
+    use StateTrait;
+    use StopLossOnFillTrait;
+    use TakeProfitOnFillTrait;
+    use TradeClientExtensionsTrait;
+    use TradeStatusIdTrait;
+    use TrailingStopLossOnFillTrait;
 }

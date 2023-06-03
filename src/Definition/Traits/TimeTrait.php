@@ -20,6 +20,7 @@ trait TimeTrait
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("time")
+     *
      * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $time;

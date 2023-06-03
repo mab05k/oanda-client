@@ -24,6 +24,7 @@ trait FullPriceTrait
      * @var \Mab05k\OandaClient\Definition\Transaction\Order\FullPrice|null
      *
      * @Serializer\SerializedName("fullPrice")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Order\FullPrice")
      */
     private $fullPrice;

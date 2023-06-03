@@ -46,7 +46,7 @@ class QueryBuilder
 
         foreach ($queryParameters as $queryParameter) {
             if (!$queryParameter instanceof QueryParameterInterface) {
-                throw new QueryBuilderException(sprintf('Invalid Query Parameter passed to Query Builder: %s', \get_class($queryParameter)));
+                throw new QueryBuilderException(sprintf('Invalid Query Parameter passed to Query Builder: %s', $queryParameter::class));
             }
             $this->query[] = $queryParameter;
         }
@@ -54,7 +54,7 @@ class QueryBuilder
 
     /**
      * @param string $queryParameter
-     * @param $value
+     * @param        $value
      *
      * @throws QueryBuilderException
      * @throws \ReflectionException
@@ -87,7 +87,7 @@ class QueryBuilder
 
     /**
      * @param string $queryParameter
-     * @param $value
+     * @param        $value
      *
      * @throws QueryBuilderException
      * @throws \ReflectionException

@@ -31,24 +31,25 @@ use Mab05k\OandaClient\Definition\Traits\UnitTrait;
  */
 class OrderCreateTransaction implements OrderTransactionInterface
 {
+    use ClientExtensionsTrait;
+    use InstrumentTrait;
+    use OrderTransactionTrait;
+    use PositionFillTrait;
+    use PriceBoundTrait;
+    use PriceTrait;
+    use ReasonTrait;
+    use TimeInForceTrait;
+    use TradeCloseTrait;
     use TradeIdTrait;
+    use TriggerConditionTrait;
     use TypeTrait;
     use UnitTrait;
-    use PriceTrait;
-    use PriceBoundTrait;
-    use InstrumentTrait;
-    use TimeInForceTrait;
-    use PositionFillTrait;
-    use ClientExtensionsTrait;
-    use OrderTransactionTrait;
-    use ReasonTrait;
-    use TradeCloseTrait;
-    use TriggerConditionTrait;
 
     /**
      * @var bool|null
      *
      * @Serializer\SerializedName("guaranteed")
+     *
      * @Serializer\Type("boolean")
      */
     private $guaranteed;
