@@ -24,10 +24,10 @@ use Mab05k\OandaClient\Request\Order\StopOrderRequest;
  */
 class StopOrder extends StopOrderRequest
 {
-    use IdTrait;
-    use CreateTimeTrait;
-    use StateTrait;
-    use FilledOrderTrait;
-    use TradeStatusIdTrait;
     use CancelledOrderTrait;
+    use CreateTimeTrait;
+    use FilledOrderTrait;
+    use IdTrait;
+    use StateTrait;
+    use TradeStatusIdTrait;
 }

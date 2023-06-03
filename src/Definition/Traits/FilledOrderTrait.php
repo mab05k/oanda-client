@@ -24,6 +24,7 @@ trait FilledOrderTrait
      * @var string|null
      *
      * @Serializer\SerializedName("fillingTransactionID")
+     *
      * @Serializer\Type("string")
      */
     private $fillingTransactionId;
@@ -32,6 +33,7 @@ trait FilledOrderTrait
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("filledTime")
+     *
      * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $filledTime;

@@ -22,6 +22,7 @@ class AccountCollection
      * @var array|AccountProperty[]
      *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Account\AccountProperty>")
+     *
      * @Serializer\SerializedName("accounts")
      */
     private $accounts;

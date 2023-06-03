@@ -32,6 +32,7 @@ abstract class AbstractPrice
      * @var Money
      *
      * @Serializer\SerializedName("o")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $open;
@@ -40,6 +41,7 @@ abstract class AbstractPrice
      * @var Money
      *
      * @Serializer\SerializedName("h")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $high;
@@ -48,6 +50,7 @@ abstract class AbstractPrice
      * @var Money
      *
      * @Serializer\SerializedName("l")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $low;
@@ -56,6 +59,7 @@ abstract class AbstractPrice
      * @var Money
      *
      * @Serializer\SerializedName("c")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $close;
@@ -64,6 +68,7 @@ abstract class AbstractPrice
      * @return string
      *
      * @Serializer\VirtualProperty
+     *
      * @Serializer\SerializedName("objectType")
      */
     abstract public function getType(): string;

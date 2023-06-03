@@ -23,6 +23,7 @@ trait TradeCloseTrait
      * @var \Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderTradeClose|null
      *
      * @Serializer\SerializedName("tradeClose")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderTradeClose")
      */
     private $tradeClose;

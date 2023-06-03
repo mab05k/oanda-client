@@ -23,6 +23,7 @@ trait UnitTrait
      * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("units")
+     *
      * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $units;

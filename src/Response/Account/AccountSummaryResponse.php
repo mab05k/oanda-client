@@ -26,6 +26,7 @@ class AccountSummaryResponse
      * @var AccountSummary|null
      *
      * @Serializer\SerializedName("account")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Account\AccountSummary")
      */
     private $account;

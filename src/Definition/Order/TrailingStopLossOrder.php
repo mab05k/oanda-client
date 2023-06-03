@@ -26,18 +26,19 @@ use Mab05k\OandaClient\Request\Order\TrailingStopLossOrderRequest;
  */
 class TrailingStopLossOrder extends TrailingStopLossOrderRequest
 {
-    use IdTrait;
-    use CreateTimeTrait;
-    use StateTrait;
-    use FilledOrderTrait;
-    use TradeStatusIdTrait;
     use CancelledOrderTrait;
+    use CreateTimeTrait;
+    use FilledOrderTrait;
+    use IdTrait;
     use ReplacedOrderTrait;
+    use StateTrait;
+    use TradeStatusIdTrait;
 
     /**
      * @var Money|null
      *
      * @Serializer\SerializedName("trailingStopValue")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $trailingStopValue;

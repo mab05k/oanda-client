@@ -22,14 +22,15 @@ use Mab05k\OandaClient\Definition\Traits\TypeTrait;
  */
 class ClientConfigureTransaction
 {
+    use AliasTrait;
     use OrderTransactionTrait;
     use TypeTrait;
-    use AliasTrait;
 
     /**
      * @var BigDecimal|null
      *
      * @Serializer\SerializedName("marginRate")
+     *
      * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $marginRate;

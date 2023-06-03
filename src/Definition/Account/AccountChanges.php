@@ -26,6 +26,7 @@ class AccountChanges
      * @var array|Order[]
      *
      * @Serializer\SerializedName("ordersCreated")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Order\Order>")
      */
     private $ordersCreated = [];
@@ -34,6 +35,7 @@ class AccountChanges
      * @var array|Order[]
      *
      * @Serializer\SerializedName("ordersCancelled")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Order\Order>")
      */
     private $ordersCancelled = [];
@@ -42,6 +44,7 @@ class AccountChanges
      * @var array|Order[]
      *
      * @Serializer\SerializedName("ordersFilled")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Order\Order>")
      */
     private $ordersFilled = [];
@@ -50,6 +53,7 @@ class AccountChanges
      * @var array|Order[]
      *
      * @Serializer\SerializedName("ordersTriggered")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Order\Order>")
      */
     private $ordersTriggered = [];
@@ -58,6 +62,7 @@ class AccountChanges
      * @var array|Trade[]
      *
      * @Serializer\SerializedName("tradesOpened")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Trade\Trade>")
      */
     private $tradesOpened = [];
@@ -66,6 +71,7 @@ class AccountChanges
      * @var array|Trade[]
      *
      * @Serializer\SerializedName("tradesReduced")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Trade\Trade>")
      */
     private $tradesReduced = [];
@@ -74,6 +80,7 @@ class AccountChanges
      * @var array|Trade[]
      *
      * @Serializer\SerializedName("tradesClosed")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Trade\Trade>")
      */
     private $tradesClosed = [];
@@ -82,6 +89,7 @@ class AccountChanges
      * @var array|Position[]
      *
      * @Serializer\SerializedName("positions")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Position\Position>")
      */
     private $positions = [];
@@ -90,6 +98,7 @@ class AccountChanges
      * @var array|Transaction[]
      *
      * @Serializer\SerializedName("transactions")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Transaction\Transaction>")
      */
     private $transactions = [];

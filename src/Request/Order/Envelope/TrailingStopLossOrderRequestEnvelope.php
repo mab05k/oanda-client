@@ -23,6 +23,7 @@ class TrailingStopLossOrderRequestEnvelope implements OrderInterface
      * @var TrailingStopLossOrderRequest
      *
      * @Serializer\SerializedName("order")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Request\Order\TrailingStopLossOrderRequest")
      */
     private $order;

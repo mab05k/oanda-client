@@ -12,7 +12,6 @@ declare(strict_types=1);
 namespace Mab05k\OandaClient\Tests\Fixtures;
 
 use Mab05k\OandaClient\Client\AbstractOandaClient;
-use Mab05k\OandaClient\DTO\Definition\Account\AccountCollection;
 
 /**
  * Class DummyClient.

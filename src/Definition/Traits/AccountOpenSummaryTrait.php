@@ -25,6 +25,7 @@ trait AccountOpenSummaryTrait
      * @var array|\Mab05k\OandaClient\Definition\Trade\TradeSummary[]
      *
      * @Serializer\SerializedName("trades")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Trade\TradeSummary>")
      */
     private $trades = [];
@@ -33,6 +34,7 @@ trait AccountOpenSummaryTrait
      * @var array|\Mab05k\OandaClient\Definition\Position\Position[]
      *
      * @Serializer\SerializedName("positions")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Position\Position>")
      */
     private $positions = [];
@@ -41,6 +43,7 @@ trait AccountOpenSummaryTrait
      * @var array|\Mab05k\OandaClient\Definition\Order\Order[]
      *
      * @Serializer\SerializedName("orders")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Order\Order>")
      */
     private $orders = [];

@@ -23,8 +23,8 @@ use Mab05k\OandaClient\Definition\Traits\TimeInForceTrait;
  */
 class TakeProfitDetail
 {
-    use TimeInForceTrait;
-    use PriceTrait;
-    use GoodUntilDateTrait;
     use ClientExtensionsTrait;
+    use GoodUntilDateTrait;
+    use PriceTrait;
+    use TimeInForceTrait;
 }

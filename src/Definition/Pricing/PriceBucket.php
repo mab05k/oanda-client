@@ -26,6 +26,7 @@ class PriceBucket
      * @var BigDecimal|null
      *
      * @Serializer\SerializedName("liquidity")
+     *
      * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $liquidity;

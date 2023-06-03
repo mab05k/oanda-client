@@ -16,9 +16,9 @@ namespace Mab05k\OandaClient\Definition\Constant;
  */
 final class OrderTriggerCondition
 {
-    const DEFAULT = 'DEFAULT';
-    const INVERSE = 'INVERSE';
-    const BID = 'BID';
-    const ASK = 'ASK';
-    const MID = 'MID';
+    public const DEFAULT = 'DEFAULT';
+    public const INVERSE = 'INVERSE';
+    public const BID = 'BID';
+    public const ASK = 'ASK';
+    public const MID = 'MID';
 }

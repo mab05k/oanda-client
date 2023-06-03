@@ -26,6 +26,7 @@ class Configuration
      * @var BigDecimal|null
      *
      * @Serializer\SerializedName("marginRate")
+     *
      * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $marginRate;

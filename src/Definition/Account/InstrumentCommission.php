@@ -27,6 +27,7 @@ class InstrumentCommission
      * @var BigDecimal|null
      *
      * @Serializer\SerializedName("unitsTraded")
+     *
      * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $unitsTraded;
@@ -35,6 +36,7 @@ class InstrumentCommission
      * @var Money|null
      *
      * @Serializer\SerializedName("minimumCommission")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $minimumCommission;

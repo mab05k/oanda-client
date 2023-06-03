@@ -25,6 +25,7 @@ class TransactionItem
      * @var Transaction|null
      *
      * @Serializer\SerializedName("transaction")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Transaction")
      */
     private $transaction;

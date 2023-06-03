@@ -23,6 +23,7 @@ trait PriceTrait
      * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("price")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $price;

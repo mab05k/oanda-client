@@ -26,6 +26,7 @@ class TradeResponse
      * @var Trade|null
      *
      * @Serializer\SerializedName("trade")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Trade\Trade")
      */
     private $trade;

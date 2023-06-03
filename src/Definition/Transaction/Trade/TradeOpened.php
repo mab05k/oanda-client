@@ -24,16 +24,17 @@ use Mab05k\OandaClient\Definition\Traits\UnitTrait;
  */
 class TradeOpened
 {
+    use ClientExtensionsTrait;
+    use HalfSpreadCostTrait;
     use PriceTrait;
     use TradeIdTrait;
     use UnitTrait;
-    use HalfSpreadCostTrait;
-    use ClientExtensionsTrait;
 
     /**
      * @var Money|null
      *
      * @Serializer\SerializedName("initialMarginRequired")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $initialMarginRequired;
@@ -42,6 +43,7 @@ class TradeOpened
      * @var Money|null
      *
      * @Serializer\SerializedName("guaranteedExecutionFee")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $guaranteedExecutionFee;

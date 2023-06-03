@@ -28,20 +28,21 @@ use Mab05k\OandaClient\Definition\Traits\StateTrait;
  */
 class TradeSummary
 {
-    use IdTrait;
-    use InstrumentTrait;
-    use PriceTrait;
-    use StateTrait;
-    use ProfitLossTrait;
-    use MarginUsedTrait;
+    use ClientExtensionsTrait;
     use ClosingTransactionIdsTrait;
     use FinancingTrait;
-    use ClientExtensionsTrait;
+    use IdTrait;
+    use InstrumentTrait;
+    use MarginUsedTrait;
+    use PriceTrait;
+    use ProfitLossTrait;
+    use StateTrait;
 
     /**
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("openTime")
+     *
      * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $openTime;
@@ -50,6 +51,7 @@ class TradeSummary
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("closeTime")
+     *
      * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $closeTime;
@@ -58,6 +60,7 @@ class TradeSummary
      * @var BigDecimal|null
      *
      * @Serializer\SerializedName("initialUnits")
+     *
      * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $initialUnits;
@@ -66,6 +69,7 @@ class TradeSummary
      * @var BigDecimal|null
      *
      * @Serializer\SerializedName("initialMarginRequired")
+     *
      * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $initialMarginRequired;
@@ -74,6 +78,7 @@ class TradeSummary
      * @var BigDecimal|null
      *
      * @Serializer\SerializedName("currentUnits")
+     *
      * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $currentUnits;
@@ -82,6 +87,7 @@ class TradeSummary
      * @var BigDecimal|null
      *
      * @Serializer\SerializedName("averageClosePrice")
+     *
      * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $averageClosePrice;
@@ -90,6 +96,7 @@ class TradeSummary
      * @var int|null
      *
      * @Serializer\SerializedName("takeProfitOrderId")
+     *
      * @Serializer\Type("integer")
      */
     private $takeProfitOrderId;
@@ -98,6 +105,7 @@ class TradeSummary
      * @var int|null
      *
      * @Serializer\SerializedName("stopLossOrderId")
+     *
      * @Serializer\Type("integer")
      */
     private $stopLossOrderId;
@@ -106,6 +114,7 @@ class TradeSummary
      * @var int|null
      *
      * @Serializer\SerializedName("trailingStopLossOrderId")
+     *
      * @Serializer\Type("integer")
      */
     private $trailingStopLossOrderId;

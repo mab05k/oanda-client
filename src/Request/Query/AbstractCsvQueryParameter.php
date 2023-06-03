@@ -21,7 +21,7 @@ abstract class AbstractCsvQueryParameter extends AbstractQueryParameter implemen
      *
      * @param array|null $value
      */
-    public function __construct(?array $value = null)
+    public function __construct(array $value = null)
     {
         if (null === $value) {
             parent::__construct(null);

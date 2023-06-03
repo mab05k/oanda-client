@@ -11,8 +11,9 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Tests\Functional\Client;
 
+use Http\Discovery\Psr17Factory;
+use Http\Factory\Guzzle\UriFactory;
 use Http\Message\MessageFactory\GuzzleMessageFactory;
-use Http\Message\StreamFactory\GuzzleStreamFactory;
 use Http\Message\UriFactory\GuzzleUriFactory;
 use Http\Mock\Client;
 use JMS\Serializer\Handler\HandlerRegistry;
@@ -75,7 +76,7 @@ abstract class AbstractClientTest extends WebTestCase
         ],
     ];
 
-    public function setUp()
+    protected function setUp(): void
     {
         $client = static::createClient();
         $this->mockClient = $client->getContainer()->get('httplug.client.mock');
@@ -89,8 +90,8 @@ abstract class AbstractClientTest extends WebTestCase
             ->build();
         $this->logger = \Phake::mock(LoggerInterface::class); // Logger('test');
 
-        $this->guzzleMessageFactory = new GuzzleMessageFactory();
-        $this->guzzleUriFactory = new GuzzleUriFactory();
+        $this->guzzleMessageFactory = new Psr17Factory();
+        $this->guzzleUriFactory = new UriFactory();
     }
 
     /**
@@ -101,7 +102,7 @@ abstract class AbstractClientTest extends WebTestCase
     {
         $response = $this->createMock(ResponseInterface::class);
         $responseFile = file_get_contents(__DIR__.'/../../Fixtures/response/'.$filepath);
-        $stream = (new GuzzleStreamFactory())->createStream($responseFile);
+        $stream = (new Psr17Factory())->createStream($responseFile);
         $response->method('getBody')->willReturn($stream);
         $response->method('getStatusCode')->willReturn($statusCode);
         $this->mockClient->addResponse($response);

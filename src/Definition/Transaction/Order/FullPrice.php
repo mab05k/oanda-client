@@ -27,6 +27,7 @@ class FullPrice
      * @var Money|null
      *
      * @Serializer\SerializedName("closeoutBid")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $closeoutBid;
@@ -35,6 +36,7 @@ class FullPrice
      * @var Money|null
      *
      * @Serializer\SerializedName("closeoutAsk")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $closeoutAsk;
@@ -43,6 +45,7 @@ class FullPrice
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("timestamp")
+     *
      * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $timestamp;
@@ -51,6 +54,7 @@ class FullPrice
      * @var array|null
      *
      * @Serializer\SerializedName("bids")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Pricing\PriceBucket>")
      */
     private $bids;
@@ -59,6 +63,7 @@ class FullPrice
      * @var array|null
      *
      * @Serializer\SerializedName("asks")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Pricing\PriceBucket>")
      */
     private $asks;

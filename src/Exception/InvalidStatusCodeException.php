@@ -11,8 +11,6 @@ declare(strict_types=1);
 
 namespace Mab05k\OandaClient\Exception;
 
-use Throwable;
-
 /**
  * Class InvalidStatusCodeException.
  */
@@ -31,18 +29,18 @@ class InvalidStatusCodeException extends \Exception
     /**
      * InvalidStatusCodeException constructor.
      *
-     * @param int            $expectedStatusCode
-     * @param int            $receivedStatusCode
-     * @param string         $message
-     * @param int            $code
-     * @param Throwable|null $previous
+     * @param int             $expectedStatusCode
+     * @param int             $receivedStatusCode
+     * @param string          $message
+     * @param int             $code
+     * @param \Throwable|null $previous
      */
     public function __construct(
         int $expectedStatusCode,
         int $receivedStatusCode,
         string $message = '',
         int $code = 0,
-        Throwable $previous = null
+        \Throwable $previous = null
     ) {
         $this->expectedStatusCode = $expectedStatusCode;
         $this->receivedStatusCode = $receivedStatusCode;

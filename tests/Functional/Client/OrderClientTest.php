@@ -46,7 +46,7 @@ class OrderClientTest extends AbstractClientTest
      */
     private $SUT;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

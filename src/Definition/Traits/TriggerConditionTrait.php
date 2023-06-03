@@ -24,6 +24,7 @@ trait TriggerConditionTrait
      * @var string|null
      *
      * @Serializer\SerializedName("triggerCondition")
+     *
      * @Serializer\Type("string")
      */
     private $triggerCondition;

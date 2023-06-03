@@ -30,15 +30,15 @@ use Mab05k\OandaClient\Definition\Traits\WithdrawalLimitTrait;
 class AccountState
 {
     use AccountOpenSummaryTrait;
-    use ProfitLossTrait;
-    use NavTrait;
-    use MarginUsedTrait;
-    use MarginCloseoutTrait;
-    use MarginAvailableTrait;
-    use PositionValueTrait;
-    use WithdrawalLimitTrait;
     use BalanceTrait;
     use CommissionTrait;
-    use GuaranteedExecutionFeesTrait;
     use FinancingTrait;
+    use GuaranteedExecutionFeesTrait;
+    use MarginAvailableTrait;
+    use MarginCloseoutTrait;
+    use MarginUsedTrait;
+    use NavTrait;
+    use PositionValueTrait;
+    use ProfitLossTrait;
+    use WithdrawalLimitTrait;
 }

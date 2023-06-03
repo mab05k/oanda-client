@@ -23,15 +23,16 @@ use Mab05k\OandaClient\Definition\Traits\UnitTrait;
  */
 class PositionSide
 {
-    use ProfitLossTrait;
     use FinancingTrait;
     use GuaranteedExecutionFeesTrait;
+    use ProfitLossTrait;
     use UnitTrait;
 
     /**
      * @var Money|null
      *
      * @Serializer\SerializedName("averagePrice")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $averagePrice;
@@ -40,6 +41,7 @@ class PositionSide
      * @var array|null
      *
      * @Serializer\SerializedName("tradeIDs")
+     *
      * @Serializer\Type("array<string>")
      */
     private $tradeIds;

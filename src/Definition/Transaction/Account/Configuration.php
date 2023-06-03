@@ -22,6 +22,7 @@ class Configuration
      * @var ClientConfigureTransaction|null
      *
      * @Serializer\SerializedName("clientConfigureTransaction")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\Account\ClientConfigureTransaction")
      */
     private $clientConfigureTransaction;

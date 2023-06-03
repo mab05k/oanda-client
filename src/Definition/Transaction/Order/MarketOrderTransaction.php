@@ -25,15 +25,16 @@ use Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderPositionClo
  */
 class MarketOrderTransaction extends OrderCreateTransaction
 {
-    use TakeProfitOnFillTrait;
     use StopLossOnFillTrait;
-    use TrailingStopLossOnFillTrait;
+    use TakeProfitOnFillTrait;
     use TradeClientExtensionsTrait;
+    use TrailingStopLossOnFillTrait;
 
     /**
      * @var MarketOrderPositionCloseout|null
      *
      * @Serializer\SerializedName("longPositionCloseout")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderPositionCloseout")
      */
     private $longPositionCloseout;
@@ -42,6 +43,7 @@ class MarketOrderTransaction extends OrderCreateTransaction
      * @var MarketOrderPositionCloseout|null
      *
      * @Serializer\SerializedName("shortPositionCloseout")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderPositionCloseout")
      */
     private $shortPositionCloseout;
@@ -50,6 +52,7 @@ class MarketOrderTransaction extends OrderCreateTransaction
      * @var MarketOrderMarginCloseout|null
      *
      * @Serializer\SerializedName("marginCloseout")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderMarginCloseout")
      */
     private $marginCloseout;
@@ -58,6 +61,7 @@ class MarketOrderTransaction extends OrderCreateTransaction
      * @var MarketOrderDelayedTradeClose|null
      *
      * @Serializer\SerializedName("delayedTradeClose")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderDelayedTradeClose")
      */
     private $delayedTradeClose;

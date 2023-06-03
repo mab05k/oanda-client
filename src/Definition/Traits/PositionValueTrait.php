@@ -23,6 +23,7 @@ trait PositionValueTrait
      * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("positionValue")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $positionValue;

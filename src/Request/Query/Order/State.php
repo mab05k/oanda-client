@@ -21,9 +21,9 @@ class State extends AbstractQueryParameter implements QueryParameterInterface
 {
     public const KEY = 'state';
 
-    const PENDING = 'PENDING';
-    const FILLED = 'FILLED';
-    const TRIGGERED = 'TRIGGERED';
-    const CANCELLED = 'CANCELLED';
-    const ALL = 'ALL';
+    public const PENDING = 'PENDING';
+    public const FILLED = 'FILLED';
+    public const TRIGGERED = 'TRIGGERED';
+    public const CANCELLED = 'CANCELLED';
+    public const ALL = 'ALL';
 }

@@ -24,6 +24,7 @@ trait MarginCloseoutTrait
      * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("marginCloseoutUnrealizedPL")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $marginCloseoutUnrealizedPl;
@@ -32,6 +33,7 @@ trait MarginCloseoutTrait
      * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("marginCloseoutNAV")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $marginCloseoutNav;
@@ -40,6 +42,7 @@ trait MarginCloseoutTrait
      * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("marginCloseoutMarginUsed")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $marginCloseoutMarginUsed;
@@ -48,6 +51,7 @@ trait MarginCloseoutTrait
      * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("marginCloseoutPositionValue")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $marginCloseoutPositionValue;
@@ -56,6 +60,7 @@ trait MarginCloseoutTrait
      * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("marginCloseoutPercent")
+     *
      * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $marginCloseoutPercent;
@@ -64,6 +69,7 @@ trait MarginCloseoutTrait
      * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("marginCallMarginUsed")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $marginCallMarginUsed;
@@ -72,6 +78,7 @@ trait MarginCloseoutTrait
      * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("marginCallPercent")
+     *
      * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $marginCallPercent;

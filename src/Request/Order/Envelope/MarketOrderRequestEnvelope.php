@@ -23,6 +23,7 @@ class MarketOrderRequestEnvelope implements OrderInterface
      * @var MarketOrderRequest|null
      *
      * @Serializer\SerializedName("order")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Request\Order\MarketOrderRequest")
      */
     private $order;

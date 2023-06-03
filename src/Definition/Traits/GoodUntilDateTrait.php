@@ -24,6 +24,7 @@ trait GoodUntilDateTrait
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("gtdTime")
+     *
      * @Serializer\Type("DateTime")
      */
     private $gtdTime;

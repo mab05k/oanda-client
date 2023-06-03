@@ -24,6 +24,7 @@ class MarketOrderMarginCloseout
      * @var string|null
      *
      * @Serializer\SerializedName("reason")
+     *
      * @Serializer\Type("string")
      */
     private $reason;

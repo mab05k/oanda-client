@@ -23,6 +23,7 @@ trait FinancingTrait
      * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("financing")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $financing;

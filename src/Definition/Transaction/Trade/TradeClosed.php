@@ -24,16 +24,17 @@ use Mab05k\OandaClient\Definition\Traits\UnitTrait;
  */
 class TradeClosed
 {
+    use FinancingTrait;
+    use HalfSpreadCostTrait;
+    use PriceTrait;
     use TradeIdTrait;
     use UnitTrait;
-    use PriceTrait;
-    use HalfSpreadCostTrait;
-    use FinancingTrait;
 
     /**
      * @var Money|null
      *
      * @Serializer\SerializedName("realizedPL")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $realizedPl;
@@ -42,6 +43,7 @@ class TradeClosed
      * @var Money|null
      *
      * @Serializer\SerializedName("guaranteedExecutionFee")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $guaranteedExecutionFee;

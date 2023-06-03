@@ -23,6 +23,7 @@ class UnitAvailable
      * @var BigDecimal|null
      *
      * @Serializer\SerializedName("long")
+     *
      * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $long;
@@ -31,6 +32,7 @@ class UnitAvailable
      * @var BigDecimal|null
      *
      * @Serializer\SerializedName("long")
+     *
      * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $short;

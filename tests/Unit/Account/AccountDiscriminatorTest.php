@@ -14,7 +14,6 @@ namespace Mab05k\OandaClient\Tests\Unit\Account;
 use Mab05k\OandaClient\Account\Account;
 use Mab05k\OandaClient\Account\AccountDiscriminator;
 use Mab05k\OandaClient\Bridge\Symfony\Bundle\DependencyInjection\Configuration;
-use Phake;
 use PHPUnit\Framework\TestCase;
 
 class AccountDiscriminatorTest extends TestCase
@@ -24,7 +23,7 @@ class AccountDiscriminatorTest extends TestCase
      */
     private $SUT;
 
-    private $accounts = [
+    private static $accounts = [
         [
             Configuration::ACCOUNT_NAME => 'account_1',
             Configuration::ACCOUNT_ID => 'id_1',
@@ -37,11 +36,11 @@ class AccountDiscriminatorTest extends TestCase
         ],
     ];
 
-    public function setUp()
+    protected function setUp(): void
     {
-        Phake::initAnnotations($this);
+        \Phake::initAnnotations($this);
 
-        $this->SUT = new AccountDiscriminator($this->accounts);
+        $this->SUT = new AccountDiscriminator(self::$accounts);
     }
 
     public function testConstruct()
@@ -85,15 +84,15 @@ class AccountDiscriminatorTest extends TestCase
     {
         $account = $this->SUT->getDefaultAccount();
         $this->assertInstanceOf(Account::class, $account);
-        $this->assertEquals($this->accounts[0][Configuration::ACCOUNT_NAME], $account->getName());
-        $this->assertEquals($this->accounts[0][Configuration::ACCOUNT_ID], $account->getId());
-        $this->assertEquals($this->accounts[0][Configuration::ACCOUNT_SECRET], $account->getSecret());
+        $this->assertEquals(self::$accounts[0][Configuration::ACCOUNT_NAME], $account->getName());
+        $this->assertEquals(self::$accounts[0][Configuration::ACCOUNT_ID], $account->getId());
+        $this->assertEquals(self::$accounts[0][Configuration::ACCOUNT_SECRET], $account->getSecret());
     }
 
     public function testGetDefaultAccountSecret()
     {
         $secret = $this->SUT->getDefaultAccountSecret();
-        $this->assertEquals($this->accounts[0][Configuration::ACCOUNT_SECRET], $secret);
+        $this->assertEquals(self::$accounts[0][Configuration::ACCOUNT_SECRET], $secret);
     }
 
     /**
@@ -112,9 +111,9 @@ class AccountDiscriminatorTest extends TestCase
     /**
      * @return array
      */
-    public function accountDataProvider(): array
+    public static function accountDataProvider(): array
     {
-        return [$this->accounts];
+        return [self::$accounts];
     }
 
     /**

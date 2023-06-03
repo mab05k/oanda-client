@@ -23,6 +23,7 @@ trait WithdrawalLimitTrait
      * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("withdrawalLimit")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $withdrawalLimit;

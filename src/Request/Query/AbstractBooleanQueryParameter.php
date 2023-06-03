@@ -21,7 +21,7 @@ abstract class AbstractBooleanQueryParameter extends AbstractQueryParameter impl
      *
      * @param bool $value
      */
-    public function __construct(?bool $value = null)
+    public function __construct(bool $value = null)
     {
         if (null === $value) {
             parent::__construct(null);

@@ -22,6 +22,7 @@ trait RejectReasonTrait
      * @var string|null
      *
      * @Serializer\SerializedName("rejectReason")
+     *
      * @Serializer\Type("string")
      */
     private $rejectReason;

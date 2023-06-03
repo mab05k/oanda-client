@@ -25,12 +25,12 @@ use Mab05k\OandaClient\Definition\Traits\TypeTrait;
  */
 class AbstractTradeOrderRequest
 {
-    use TypeTrait;
-    use TradeIdTrait;
+    use ClientExtensionsTrait;
     use ClientTradeIdTrait;
+    use GoodUntilDateTrait;
     use PriceTrait;
     use TimeInForceTrait;
-    use GoodUntilDateTrait;
+    use TradeIdTrait;
     use TriggerConditionTrait;
-    use ClientExtensionsTrait;
+    use TypeTrait;
 }

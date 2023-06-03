@@ -22,6 +22,7 @@ trait OrderTransactionTrait
      * @var int|null
      *
      * @Serializer\SerializedName("id")
+     *
      * @Serializer\Type("integer")
      */
     private $id;
@@ -30,6 +31,7 @@ trait OrderTransactionTrait
      * @var int|null
      *
      * @Serializer\SerializedName("userID")
+     *
      * @Serializer\Type("integer")
      */
     private $userId;
@@ -38,6 +40,7 @@ trait OrderTransactionTrait
      * @var string|null
      *
      * @Serializer\SerializedName("accountID")
+     *
      * @Serializer\Type("string")
      */
     private $accountId;
@@ -46,6 +49,7 @@ trait OrderTransactionTrait
      * @var int|null
      *
      * @Serializer\SerializedName("batchID")
+     *
      * @Serializer\Type("integer")
      */
     private $batchId;
@@ -54,6 +58,7 @@ trait OrderTransactionTrait
      * @var string|null
      *
      * @Serializer\SerializedName("requestID")
+     *
      * @Serializer\Type("string")
      */
     private $requestId;
@@ -62,6 +67,7 @@ trait OrderTransactionTrait
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("time")
+     *
      * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $time;

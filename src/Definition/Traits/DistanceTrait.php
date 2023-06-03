@@ -25,6 +25,7 @@ trait DistanceTrait
      * @var \Brick\Math\BigDecimal|null
      *
      * @Serializer\SerializedName("distance")
+     *
      * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $distance;

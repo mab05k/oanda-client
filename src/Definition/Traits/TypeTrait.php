@@ -24,6 +24,7 @@ trait TypeTrait
      * @var string|null
      *
      * @Serializer\SerializedName("type")
+     *
      * @Serializer\Type("string")
      */
     private $type;

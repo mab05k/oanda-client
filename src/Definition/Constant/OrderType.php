@@ -16,15 +16,15 @@ namespace Mab05k\OandaClient\Definition\Constant;
  */
 final class OrderType
 {
-    const MARKET = 'MARKET';
-    const LIMIT = 'LIMIT';
-    const STOP = 'STOP';
-    const MARKET_IF_TOUCHED = 'MARKET_IF_TOUCHED';
-    const TAKE_PROFIT = 'TAKE_PROFIT';
-    const STOP_LOSS = 'STOP_LOSS';
-    const TRAILING_STOP_LOSS = 'TRAILING_STOP_LOSS';
-    const ORDER_CANCEL = 'ORDER_CANCEL';
-    const MARKET_ORDER_REJECT = 'MARKET_ORDER_REJECT';
-    const ORDER_FILL = 'ORDER_FILL';
-    const MARKET_ORDER = 'MARKET_ORDER';
+    public const MARKET = 'MARKET';
+    public const LIMIT = 'LIMIT';
+    public const STOP = 'STOP';
+    public const MARKET_IF_TOUCHED = 'MARKET_IF_TOUCHED';
+    public const TAKE_PROFIT = 'TAKE_PROFIT';
+    public const STOP_LOSS = 'STOP_LOSS';
+    public const TRAILING_STOP_LOSS = 'TRAILING_STOP_LOSS';
+    public const ORDER_CANCEL = 'ORDER_CANCEL';
+    public const MARKET_ORDER_REJECT = 'MARKET_ORDER_REJECT';
+    public const ORDER_FILL = 'ORDER_FILL';
+    public const MARKET_ORDER = 'MARKET_ORDER';
 }

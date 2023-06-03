@@ -31,17 +31,18 @@ use Mab05k\OandaClient\Request\Order\MarketOrderRequest;
  */
 class MarketOrder extends MarketOrderRequest
 {
-    use IdTrait;
-    use CreateTimeTrait;
-    use StateTrait;
-    use FilledOrderTrait;
-    use TradeStatusIdTrait;
     use CancelledOrderTrait;
+    use CreateTimeTrait;
+    use FilledOrderTrait;
+    use IdTrait;
+    use StateTrait;
+    use TradeStatusIdTrait;
 
     /**
      * @var MarketOrderTradeClose|null
      *
      * @Serializer\SerializedName("tradeClose")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderTradeClose")
      */
     private $tradeClose;
@@ -50,6 +51,7 @@ class MarketOrder extends MarketOrderRequest
      * @var MarketOrderPositionCloseout|null
      *
      * @Serializer\SerializedName("longPositionCloseout")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderPositionCloseout")
      */
     private $longPositionCloseout;
@@ -58,6 +60,7 @@ class MarketOrder extends MarketOrderRequest
      * @var MarketOrderPositionCloseout|null
      *
      * @Serializer\SerializedName("shortPositionCloseout")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderPositionCloseout")
      */
     private $shortPositionCloseout;
@@ -66,6 +69,7 @@ class MarketOrder extends MarketOrderRequest
      * @var MarketOrderMarginCloseout|null
      *
      * @Serializer\SerializedName("marginCloseout")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderMarginCloseout")
      */
     private $marginCloseout;
@@ -74,6 +78,7 @@ class MarketOrder extends MarketOrderRequest
      * @var MarketOrderDelayedTradeClose|null
      *
      * @Serializer\SerializedName("delayedTradeClose")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Transaction\MarketOrder\MarketOrderDelayedTradeClose")
      */
     private $delayedTradeClose;

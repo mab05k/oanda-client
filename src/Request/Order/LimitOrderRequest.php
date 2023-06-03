@@ -22,9 +22,9 @@ use Mab05k\OandaClient\Definition\Traits\TriggerConditionTrait;
  */
 class LimitOrderRequest extends AbstractOrderRequest
 {
-    use PriceTrait;
+    use ClientExtensionsTrait;
     use GoodUntilDateTrait;
     use PositionFillTrait;
+    use PriceTrait;
     use TriggerConditionTrait;
-    use ClientExtensionsTrait;
 }

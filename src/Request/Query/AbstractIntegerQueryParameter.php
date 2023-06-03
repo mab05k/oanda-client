@@ -21,7 +21,7 @@ abstract class AbstractIntegerQueryParameter extends AbstractQueryParameter impl
      *
      * @param int $value
      */
-    public function __construct(?int $value = null)
+    public function __construct(int $value = null)
     {
         if (null === $value) {
             parent::__construct(null);

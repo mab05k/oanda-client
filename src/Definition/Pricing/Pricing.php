@@ -26,6 +26,7 @@ class Pricing
      * @var array|Price[]|null
      *
      * @Serializer\SerializedName("prices")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Pricing\Price>")
      */
     private $prices;

@@ -26,6 +26,7 @@ class AccountResponse
      * @var Account|null
      *
      * @Serializer\SerializedName("account")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Account\Account")
      */
     private $account;

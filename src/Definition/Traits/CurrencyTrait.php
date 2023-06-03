@@ -22,6 +22,7 @@ trait CurrencyTrait
      * @var string|null
      *
      * @Serializer\SerializedName("currency")
+     *
      * @Serializer\Type("string")
      */
     private $currency;

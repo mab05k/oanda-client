@@ -25,12 +25,12 @@ use Mab05k\OandaClient\Definition\Traits\UnitTrait;
  */
 abstract class AbstractOrderRequest
 {
-    use TypeTrait;
     use InstrumentTrait;
-    use UnitTrait;
-    use TimeInForceTrait;
-    use TakeProfitOnFillTrait;
     use StopLossOnFillTrait;
-    use TrailingStopLossOnFillTrait;
+    use TakeProfitOnFillTrait;
+    use TimeInForceTrait;
     use TradeClientExtensionsTrait;
+    use TrailingStopLossOnFillTrait;
+    use TypeTrait;
+    use UnitTrait;
 }

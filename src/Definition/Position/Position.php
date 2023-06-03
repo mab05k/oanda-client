@@ -24,17 +24,18 @@ use Mab05k\OandaClient\Definition\Traits\ProfitLossTrait;
  */
 class Position
 {
-    use ProfitLossTrait;
-    use GuaranteedExecutionFeesTrait;
-    use MarginUsedTrait;
-    use FinancingTrait;
     use CommissionTrait;
+    use FinancingTrait;
+    use GuaranteedExecutionFeesTrait;
     use InstrumentTrait;
+    use MarginUsedTrait;
+    use ProfitLossTrait;
 
     /**
      * @var PositionSide|null
      *
      * @Serializer\SerializedName("long")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Position\PositionSide")
      */
     private $long;
@@ -43,6 +44,7 @@ class Position
      * @var PositionSide|null
      *
      * @Serializer\SerializedName("short")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Position\PositionSide")
      */
     private $short;

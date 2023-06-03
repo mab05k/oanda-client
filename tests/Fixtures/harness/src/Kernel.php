@@ -21,14 +21,14 @@ class Kernel extends BaseKernel
 {
     use MicroKernelTrait;
 
-    const CONFIG_EXTS = '.{php,xml,yaml,yml}';
+    public const CONFIG_EXTS = '.{php,xml,yaml,yml}';
 
-    public function getCacheDir()
+    public function getCacheDir(): string
     {
         return $this->getProjectDir().'/var/cache/'.$this->environment;
     }
 
-    public function getLogDir()
+    public function getLogDir(): string
     {
         return $this->getProjectDir().'/var/log';
     }
@@ -36,12 +36,12 @@ class Kernel extends BaseKernel
     /**
      * @return string
      */
-    public function getHarnessProjectDir()
+    public function getHarnessProjectDir(): string
     {
         return \dirname(__DIR__);
     }
 
-    public function registerBundles()
+    public function registerBundles(): iterable
     {
         $contents = require $this->getHarnessProjectDir().'/config/bundles.php';
         foreach ($contents as $class => $envs) {

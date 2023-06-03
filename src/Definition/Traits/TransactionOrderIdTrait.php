@@ -22,6 +22,7 @@ trait TransactionOrderIdTrait
      * @var int|null
      *
      * @Serializer\SerializedName("orderID")
+     *
      * @Serializer\Type("integer")
      */
     private $orderId;
@@ -30,6 +31,7 @@ trait TransactionOrderIdTrait
      * @var string|null
      *
      * @Serializer\SerializedName("clientOrderID")
+     *
      * @Serializer\Type("string")
      */
     private $clientOrderId;

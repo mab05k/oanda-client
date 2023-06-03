@@ -23,6 +23,7 @@ trait TradesClosedTrait
      * @var array|\Mab05k\OandaClient\Definition\Transaction\Trade\TradeClosed[]
      *
      * @Serializer\SerializedName("tradesClosed")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Transaction\Trade\TradeClosed>")
      */
     private $tradesClosed;

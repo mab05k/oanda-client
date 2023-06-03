@@ -23,6 +23,7 @@ class MarketIfTouchedOrderRequestEnvelope implements OrderInterface
      * @var MarketIfTouchedOrderRequest|null
      *
      * @Serializer\SerializedName("order")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Request\Order\MarketIfTouchedOrderRequest")
      */
     private $order;

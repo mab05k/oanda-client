@@ -21,7 +21,7 @@ abstract class AbstractDateTimeQueryParameter extends AbstractQueryParameter imp
      *
      * @param \DateTime|null $value
      */
-    public function __construct(?\DateTime $value = null)
+    public function __construct(\DateTime $value = null)
     {
         if (null === $value) {
             parent::__construct(null);
@@ -29,6 +29,6 @@ abstract class AbstractDateTimeQueryParameter extends AbstractQueryParameter imp
             return;
         }
 
-        parent::__construct($value->format(DATE_ATOM));
+        parent::__construct($value->format(\DATE_ATOM));
     }
 }

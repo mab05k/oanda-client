@@ -55,9 +55,9 @@ class BigDecimalHandler implements SubscribingHandlerInterface
 
     /**
      * @param JsonDeserializationVisitor $visitor
-     * @param $bigDecimal
-     * @param array   $type
-     * @param Context $context
+     * @param                            $bigDecimal
+     * @param array                      $type
+     * @param Context                    $context
      *
      * @return BigDecimal
      */

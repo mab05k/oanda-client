@@ -28,6 +28,7 @@ class MarketOrderPositionCloseout
      * @var string|BigDecimal|null
      *
      * @Serializer\SerializedName("units")
+     *
      * @Serializer\Type("string")
      */
     private $units;

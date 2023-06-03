@@ -22,6 +22,7 @@ trait RelatedTransactionIdsTrait
      * @var array|null
      *
      * @Serializer\SerializedName("relatedTransactionIDs")
+     *
      * @Serializer\Type("array<string>")
      */
     private $relatedTransactionIds;

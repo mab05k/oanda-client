@@ -22,6 +22,7 @@ trait PartialFillTrait
      * @var string|null
      *
      * @Serializer\SerializedName("partialFill")
+     *
      * @Serializer\Type("string")
      */
     private $partialFill;

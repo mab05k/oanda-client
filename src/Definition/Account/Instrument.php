@@ -29,6 +29,7 @@ class Instrument
      * @var string|null
      *
      * @Serializer\SerializedName("name")
+     *
      * @Serializer\Type("string")
      */
     private $name;
@@ -37,6 +38,7 @@ class Instrument
      * @var string|null
      *
      * @Serializer\SerializedName("displayName")
+     *
      * @Serializer\Type("string")
      */
     private $displayName;
@@ -45,6 +47,7 @@ class Instrument
      * @var int|null
      *
      * @Serializer\SerializedName("pipLocation")
+     *
      * @Serializer\Type("int")
      */
     private $pipLocation;
@@ -53,6 +56,7 @@ class Instrument
      * @var int|null
      *
      * @Serializer\SerializedName("displayPrecision")
+     *
      * @Serializer\Type("int")
      */
     private $displayPrecision;
@@ -61,6 +65,7 @@ class Instrument
      * @var int|null
      *
      * @Serializer\SerializedName("tradeUnitsPrecision")
+     *
      * @Serializer\Type("int")
      */
     private $tradeUnitsPrecision;
@@ -69,6 +74,7 @@ class Instrument
      * @var Money|null
      *
      * @Serializer\SerializedName("minimumTradeSize")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $minimumTradeSize;
@@ -77,6 +83,7 @@ class Instrument
      * @var Money|null
      *
      * @Serializer\SerializedName("maximumTrailingStopDistance")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $maximumTrailingStopDistance;
@@ -85,6 +92,7 @@ class Instrument
      * @var Money|null
      *
      * @Serializer\SerializedName("minimumTrailingStopDistance")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $minimumTrailingStopDistance;
@@ -93,6 +101,7 @@ class Instrument
      * @var Money|null
      *
      * @Serializer\SerializedName("maximumPositionSize")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $maximumPositionSize;
@@ -101,6 +110,7 @@ class Instrument
      * @var BigDecimal|null
      *
      * @Serializer\SerializedName("maximumOrderUnits")
+     *
      * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $maximumOrderUnits;
@@ -109,6 +119,7 @@ class Instrument
      * @var Money|null
      *
      * @Serializer\SerializedName("marginRate")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $marginRate;
@@ -117,6 +128,7 @@ class Instrument
      * @var InstrumentCommission|null
      *
      * @Serializer\SerializedName("commission")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Account\InstrumentCommission")
      */
     private $commission;

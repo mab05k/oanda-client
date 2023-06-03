@@ -26,6 +26,7 @@ class TransactionsResponse
      * @var array|Transaction[]|null
      *
      * @Serializer\SerializedName("transactions")
+     *
      * @Serializer\Type("array<Mab05k\OandaClient\Definition\Transaction\Transaction>")
      */
     private $transactions;

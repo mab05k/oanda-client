@@ -29,18 +29,19 @@ use Mab05k\OandaClient\Request\Order\MarketIfTouchedOrderRequest;
  */
 class MarketIfTouchedOrder extends MarketIfTouchedOrderRequest
 {
-    use IdTrait;
-    use CreateTimeTrait;
-    use StateTrait;
-    use FilledOrderTrait;
-    use TradeStatusIdTrait;
     use CancelledOrderTrait;
+    use CreateTimeTrait;
+    use FilledOrderTrait;
+    use IdTrait;
     use ReplacedOrderTrait;
+    use StateTrait;
+    use TradeStatusIdTrait;
 
     /**
      * @var Money|null
      *
      * @Serializer\SerializedName("initialMarketPrice")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $initialMarketPrice;

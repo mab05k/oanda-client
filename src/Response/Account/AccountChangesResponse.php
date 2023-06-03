@@ -27,6 +27,7 @@ class AccountChangesResponse
      * @var AccountChanges|null
      *
      * @Serializer\SerializedName("changes")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Account\AccountChanges")
      */
     private $changes;
@@ -35,6 +36,7 @@ class AccountChangesResponse
      * @var AccountState|null
      *
      * @Serializer\SerializedName("state")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Account\AccountState")
      */
     private $state;

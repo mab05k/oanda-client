@@ -24,6 +24,7 @@ trait CancelledOrderTrait
      * @var string|null
      *
      * @Serializer\SerializedName("cancellingTransactionID")
+     *
      * @Serializer\Type("string")
      */
     private $cancellingTransactionId;
@@ -32,6 +33,7 @@ trait CancelledOrderTrait
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("cancelledTime")
+     *
      * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $cancelledTime;

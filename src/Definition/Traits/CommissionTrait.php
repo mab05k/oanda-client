@@ -23,6 +23,7 @@ trait CommissionTrait
      * @var \Brick\Money\Money|null
      *
      * @Serializer\SerializedName("commission")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $commission;

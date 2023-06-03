@@ -28,7 +28,7 @@ abstract class AbstractQueryParameter implements QueryParameterInterface
      *
      * @param string|null $value
      */
-    public function __construct(?string $value = null)
+    public function __construct(string $value = null)
     {
         $this->value = $value;
     }

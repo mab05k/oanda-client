@@ -21,8 +21,8 @@ use Mab05k\OandaClient\Definition\Traits\TypeTrait;
  */
 class OrderCancelTransaction implements OrderTransactionInterface
 {
-    use TypeTrait;
     use OrderTransactionTrait;
-    use TransactionOrderIdTrait;
     use ReasonTrait;
+    use TransactionOrderIdTrait;
+    use TypeTrait;
 }

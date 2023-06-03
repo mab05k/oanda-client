@@ -23,6 +23,7 @@ class StopLossOrderRequestEnvelope implements OrderInterface
      * @var StopLossOrderRequest|null
      *
      * @Serializer\SerializedName("order")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Request\Order\StopLossOrderRequest")
      */
     private $order;

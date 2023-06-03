@@ -30,18 +30,19 @@ use Mab05k\OandaClient\Definition\Traits\StateTrait;
  */
 class Trade
 {
+    use ClientExtensionsTrait;
+    use FinancingTrait;
     use IdTrait;
     use InstrumentTrait;
+    use MarginUsedTrait;
     use PriceTrait;
     use StateTrait;
-    use MarginUsedTrait;
-    use FinancingTrait;
-    use ClientExtensionsTrait;
 
     /**
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("openTime")
+     *
      * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $openTime;
@@ -50,6 +51,7 @@ class Trade
      * @var \DateTime|null
      *
      * @Serializer\SerializedName("closeTime")
+     *
      * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u???\Z'>")
      */
     private $closeTime;
@@ -58,6 +60,7 @@ class Trade
      * @var BigDecimal|null
      *
      * @Serializer\SerializedName("initialUnits")
+     *
      * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $initialUnits;
@@ -66,6 +69,7 @@ class Trade
      * @var Money|null
      *
      * @Serializer\SerializedName("initialMarginRequired")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $initialMarginRequired;
@@ -74,6 +78,7 @@ class Trade
      * @var BigDecimal|null
      *
      * @Serializer\SerializedName("currentUnits")
+     *
      * @Serializer\Type("Brick\Math\BigDecimal")
      */
     private $currentUnits;
@@ -82,6 +87,7 @@ class Trade
      * @var Money|null
      *
      * @Serializer\SerializedName("realizedPL")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $realizedProfitLoss;
@@ -90,6 +96,7 @@ class Trade
      * @var Money|null
      *
      * @Serializer\SerializedName("unrealizedPL")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $unrealizedProfitLoss;
@@ -98,6 +105,7 @@ class Trade
      * @var Money|null
      *
      * @Serializer\SerializedName("averageClosePrice")
+     *
      * @Serializer\Type("Brick\Money\Money")
      */
     private $averageClosePrice;
@@ -106,6 +114,7 @@ class Trade
      * @var array|null
      *
      * @Serializer\SerializedName("closingTransactionIDs")
+     *
      * @Serializer\Type("array<integer>")
      */
     private $closingTransactionIds;
@@ -114,6 +123,7 @@ class Trade
      * @var TakeProfitOrder|null
      *
      * @Serializer\SerializedName("takeProfitOrder")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Order\TakeProfitOrder")
      */
     private $takeProfitOrder;
@@ -122,6 +132,7 @@ class Trade
      * @var StopLossOrder|null
      *
      * @Serializer\SerializedName("stopLossOrder")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Order\StopLossOrder")
      */
     private $stopLossOrder;
@@ -130,6 +141,7 @@ class Trade
      * @var TrailingStopLossOrder|null
      *
      * @Serializer\SerializedName("trailingStopLossOrder")
+     *
      * @Serializer\Type("Mab05k\OandaClient\Definition\Order\TrailingStopLossOrder")
      */
     private $trailingStopLossOrder;
